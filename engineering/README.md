@@ -1,0 +1,1 @@
+1.了解了和Agent相关的词汇（Tool、RAG、MCP、Agent、Agent Skill）。
