@@ -1,0 +1,454 @@
+import argparse
+import collections
+import torch
+import shap
+import numpy as np
+from datetime import datetime
+import os
+import sys
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import xgboost as xgb
+import pandas as pd
+import joblib
+from parse_config import ConfigParser
+from utils.util import (set_seed, build_model, get_dataloader, prepare_device, get_feature_names)
+def get_shap_explanation(model, model_type, input_all, device, seq_len, static_features, dynamic_features, logger=None):
+    """
+    Select the appropriate SHAP explainer for the given model type and compute SHAP values.
+    """
+    n_features = len(static_features) + len(dynamic_features)
+    print(f"Dimensionen von input_all: {input_all.shape}")
+    #if model_type in ['mlp']:
+     #   explainer = shap.DeepExplainer(model, input_all[:100])
+      #  shap_values = explainer.shap_values(input_all[:100])
+
+    if model_type in ['mlp']:
+        if logger:
+            logger.info(f"Using KernelExplainer for model_type='{model_type}'")
+            print(f"input {input_all.shape}, seq_len={seq_len}, n_features={n_features}")
+        # Wrapper to convert input to PyTorch tensor, run the model and convert output back to numpy
+        def model_wrapper(x_numpy):
+            x_tensor = torch.from_numpy(x_numpy.astype(np.float32)).to(device)
+            with torch.no_grad():
+                output = model(x_tensor)
+                output = torch.softmax(output, dim=1)
+            return output.cpu().numpy()
+
+        np.random.seed(42)
+        indices = np.random.choice(len(input_all), 100, replace=False)
+        background = input_all[indices].detach().cpu().numpy()
+        test_input = input_all.detach().cpu().numpy()
+        #test_input = input_all[:10].detach().cpu().numpy()
+
+        explainer = shap.KernelExplainer(model_wrapper, background)
+        shap_values = explainer.shap_values(test_input, nsamples=1000)
+
+    elif model_type in ['tft']:
+        n_background = 50
+        batch_size = 1000
+
+        def model_wrapper(x_numpy_flat):
+            x_numpy = x_numpy_flat.reshape(-1, seq_len, len(dynamic_features) + len(static_features))
+            dyn = x_numpy[:, :, :-len(static_features)]
+            stat = x_numpy[:, 0, -len(static_features):]  # -> [B, F_static]
+
+            dyn_tensor = torch.from_numpy(dyn).float().to(device)
+            stat_tensor = torch.from_numpy(stat).float().to(device)
+            with torch.no_grad():
+                output = model(dyn_tensor, stat_tensor)
+                output = torch.softmax(output, dim=1)
+            return output.cpu().numpy()
+
+        background = input_all[:n_background].detach().cpu().numpy().reshape(n_background, -1)
+        test_input = input_all.detach().cpu().numpy().reshape(input_all.shape[0], -1)
+        #test_input = input_all[:batch_size].detach().cpu().numpy().reshape(batch_size, -1)
+
+        explainer = shap.KernelExplainer(model_wrapper, background)
+
+        shap_values = [[], []]
+        for i in range(0, test_input.shape[0], batch_size):
+            batch = test_input[i:i + batch_size]
+            sv = explainer.shap_values(batch, nsamples=1000)
+            shap_values[0].append(sv[0])
+            shap_values[1].append(sv[1])
+
+        # Zu einer Matrix zusammenfügen
+        shap_values[0] = np.concatenate(shap_values[0], axis=0)
+        shap_values[1] = np.concatenate(shap_values[1], axis=0)
+
+    elif model_type in ['lstm', 'gru', 'cnn', 'transformer', 'gtn']:
+        if logger:
+            logger.info(f"Using KernelExplainer for model_type='{model_type}'")
+
+        def model_wrapper(x_numpy):
+            x_tensor = torch.from_numpy(x_numpy.astype(np.float32)).to(device)
+            if model_type in ['lstm', 'gru', 'cnn']:
+                # Reshape for LSTM/GRU: [batch_size, seq_len, n_features]
+                x_tensor = x_tensor.view(x_tensor.shape[0], seq_len, n_features)
+            if model_type in ['transformer', 'gtn']:
+                x_tensor = x_tensor.reshape(-1, seq_len, len(dynamic_features) + len(static_features))
+                x_tensor = x_tensor.permute(1, 0, 2)  # -> [seq_len, batch_size, features]
+            with torch.no_grad():
+                output = model(x_tensor)
+                output = torch.softmax(output, dim=1)
+            return output.cpu().numpy()
+
+        np.random.seed(42)
+        indices = np.random.choice(len(input_all), 100, replace=False)
+        background = input_all[indices].detach().cpu().numpy().reshape(100, -1)
+        #background = input_all[:10].detach().cpu().numpy().reshape(10, -1)
+        test_input = input_all.detach().cpu().numpy().reshape(input_all.shape[0], -1)
+        #test_input = input_all[:10].detach().cpu().numpy().reshape(10, -1)
+
+        explainer = shap.KernelExplainer(model_wrapper, background)
+        shap_values = explainer.shap_values(test_input, nsamples=1000) #test only nsamples of feature-combinations
+        print(f"SHAP: {np.array(shap_values).shape}")
+    else:
+        raise NotImplementedError(f"SHAP explanation not implemented for model_type='{model_type}'")
+
+    return shap_values
+
+def _xgb_pred_contribs(model, X: np.ndarray) -> np.ndarray:
+    """
+    Returns SHAP contributions from XGBoost directly.
+    Output shape: (n_samples, n_features + 1) where last column is the bias term.
+    """
+    booster = model.get_booster() if hasattr(model, "get_booster") else model
+    dmat = xgb.DMatrix(X)
+    contribs = booster.predict(dmat, pred_contribs=True)
+    return contribs
+
+def generate_tree_shap_values(model, dataloader, base_save_path, model_id, feature_names, model_type, logger=None):
+    """
+    Compute and save SHAP values for a Random Forest model using TreeExplainer,
+    and output the same files as for deep learning models.
+    """
+    X_val_list, y_val_list, x_coords, y_coords, sample_ids = [], [], [], [], []
+
+    for batch in dataloader:
+        dynamic, static, bas_size, labels, x, y, sample_id = batch[:7]
+        static = static.unsqueeze(1).repeat(1, dynamic.shape[1], 1)
+        input_ = torch.cat([dynamic, static], dim=2)
+        input_ = input_.view(input_.shape[0], -1)
+
+        X_val_list.append(input_.cpu().numpy())
+        y_val_list.append(labels.cpu().numpy())
+        x_coords.extend(x.cpu().numpy())
+        y_coords.extend(y.cpu().numpy())
+        sample_ids.extend(sample_id.cpu().numpy().astype(int))
+
+    X_val = np.vstack(X_val_list)
+    y_val = np.concatenate(y_val_list)
+    coords_x = np.array(x_coords)
+    coords_y = np.array(y_coords)
+    sample_ids = np.array(sample_ids)
+
+    if model_type == "xgb":
+        explainer = shap.TreeExplainer(model)
+        shap_values = explainer.shap_values(X_val)
+        #contribs = _xgb_pred_contribs(model, X_val)  # (N, F+1)
+        #shap_class1 = contribs[:, :-1]  # (N, F)
+        #shap_values = [-shap_class1, shap_class1]  # [class_0, class_1]
+    else:
+        explainer = shap.TreeExplainer(model)
+        shap_values = explainer.shap_values(X_val)  # [class_0, class_1]
+
+    timestamp = datetime.now().strftime("%m%d_%H%M%S")
+    shap_dir = os.path.join(base_save_path, timestamp)
+    os.makedirs(shap_dir, exist_ok=True)
+
+    # Save .npz (class only)
+    shap_save_path = os.path.join(shap_dir, f"shap_values_{model_id}_{model_type}.npz")
+    np.savez(shap_save_path, class_0=shap_values[0], class_1=shap_values[1])
+    if logger:
+        logger.info(f"[{model_type}] SHAP values saved at: {shap_save_path}")
+
+    input_save_path = shap_save_path.replace(".npz", "_input.npy")
+    np.save(input_save_path, X_val)
+    if logger:
+        logger.info(f"[{model_type}] Input saved at: {input_save_path}")
+
+    # Save combined .npz
+    combined_npz_path = shap_save_path.replace(".npz", "_combined.npz")
+    np.savez(
+        combined_npz_path,
+        class_0=shap_values[0],
+        class_1=shap_values[1],
+        sample_id=sample_ids,
+        label=y_val,
+        feature_names=np.array(feature_names)
+    )
+    if logger:
+        logger.info(f"[{model_type}] Combined SHAP NPZ saved at: {combined_npz_path}")
+
+    # Save combined CSV (only class 1)
+    df_combined = pd.DataFrame({
+        'sample_id': sample_ids,
+        'label': y_val,
+        'x': coords_x,
+        'y': coords_y
+    })
+    shap_class1_df = pd.DataFrame(shap_values[1], columns=feature_names)
+    shap_class1_df = shap_class1_df.add_prefix("shap_")
+    df_combined = pd.concat([df_combined, shap_class1_df], axis=1)
+
+    combined_csv_path = shap_save_path.replace(".npz", "_combined.csv")
+    df_combined.to_csv(combined_csv_path, index=False)
+    if logger:
+        logger.info(f"[{model_type}] Combined SHAP CSV saved at: {combined_csv_path}")
+
+    # Aggregierte SHAP Map
+    base_feature_names = [name.split("_t-")[0] for name in feature_names]
+    shap_agg_df = shap_class1_df.copy()
+    shap_agg_df.columns = base_feature_names
+    shap_agg = shap_agg_df.groupby(axis=1, level=0).mean()
+
+    df_map = pd.DataFrame({
+        'sample': sample_ids,
+        'label': y_val,
+        'x': coords_x,
+        'y': coords_y
+    })
+    df_map = pd.concat([df_map, shap_agg], axis=1)
+
+    map_csv_path = os.path.join(shap_dir, f"shap_map_{model_type}.csv")
+    df_map.to_csv(map_csv_path, index=False)
+    if logger:
+        logger.info(f"[{model_type}] Aggregated SHAP map CSV saved at: {map_csv_path}")
+
+    #save_tree_shap_interactions(
+    #    model=model,
+     #   X_val=X_val,
+      #  feature_names=feature_names,
+       # shap_dir=shap_dir,
+       # model_id=model_id,
+       # model_type=model_type,
+       # logger=logger,
+       # max_samples=300,
+       # seed=42)
+
+def save_tree_shap_interactions(
+    model,
+    X_val: np.ndarray,
+    feature_names: list,
+    shap_dir: str,
+    model_id: str,
+    model_type: str,
+    logger=None,
+    max_samples: int = 20000,
+    seed: int = 42,
+):
+    """
+    Computes and stores SHAP interaction tensor for tree models.
+    Saves:
+      - shap_interaction_{model_id}_{model_type}.npz  (compressed)
+      - shap_interaction_mean_{model_id}_{model_type}.csv (global heatmap matrix)
+    """
+    import time
+
+    rng = np.random.RandomState(seed)
+    n = X_val.shape[0]
+    if n > max_samples:
+        idx = rng.choice(n, max_samples, replace=False)
+        X_use = X_val[idx]
+    else:
+        X_use = X_val
+
+    print(f"[{model_type}] Interaction setup: X_val={X_val.shape} -> X_use={X_use.shape}, F={X_use.shape[1]}")
+    if logger:
+        logger.info(f"[{model_type}] Interaction setup: X_use={X_use.shape}")
+
+    explainer = shap.TreeExplainer(model)
+
+    # ---- tiny sanity check (so you know it's not stuck) ----
+    sanity_n = min(50, X_use.shape[0])
+    print(f"[{model_type}] Sanity check: shap_interaction_values on {sanity_n} samples ...")
+    t0 = time.time()
+    _ = explainer.shap_interaction_values(X_use[:sanity_n])
+    print(f"[{model_type}] Sanity OK. Took {(time.time() - t0):.1f}s")
+
+    # ---- full run (this is the expensive one) ----
+    print(f"[{model_type}] START full shap_interaction_values on {X_use.shape[0]} samples ...")
+    t1 = time.time()
+    inter = explainer.shap_interaction_values(X_use)
+    dt = time.time() - t1
+    print(f"[{model_type}] DONE full interactions. Took {dt/60:.1f} min")
+
+    # Normalize to class_0 / class_1 arrays
+    if isinstance(inter, list) and len(inter) == 2:
+        inter0, inter1 = inter[0], inter[1]
+    else:
+        inter1 = inter
+        inter0 = -inter1
+
+    out_npz = os.path.join(shap_dir, f"shap_interaction_{model_id}_{model_type}.npz")
+    np.savez_compressed(
+        out_npz,
+        class_0=inter0,
+        class_1=inter1,
+        feature_names=np.array(feature_names),
+    )
+
+    mean_abs = np.abs(inter1).mean(axis=0)  # (F,F)
+    df = pd.DataFrame(mean_abs, index=feature_names, columns=feature_names)
+
+    # Kaggle convention: double off-diagonal
+    vals = df.values
+    diag = np.diag(vals).copy()
+    vals2 = vals * 2.0
+    np.fill_diagonal(vals2, diag)
+    df2 = pd.DataFrame(vals2, index=feature_names, columns=feature_names)
+
+    out_csv = os.path.join(shap_dir, f"shap_interaction_mean_{model_id}_{model_type}.csv")
+    df2.to_csv(out_csv, index=True)
+
+    print(f"[{model_type}] Saved interaction tensor: {out_npz}")
+    print(f"[{model_type}] Saved mean(|interaction|) matrix: {out_csv}")
+
+    if logger:
+        logger.info(f"[{model_type}] SHAP interactions saved at: {out_npz}")
+        logger.info(f"[{model_type}] Mean(|interaction|) heatmap CSV saved at: {out_csv}")
+
+def main(config):
+    SEED = config['seed']
+    set_seed(SEED)
+    logger = config.get_logger('shap')
+
+    checkpoint_path = config["XAI"]["checkpoint_path"]
+    static_features = config["features"]["static"]
+    dynamic_features = config["features"]["dynamic"]
+    seq_len = config["dataset"]["args"]["lag"]
+    model_type = config["model_type"]
+    base_save_path = f"/hkfs/work/workspace/scratch/uyxib-mesogeos2/code/ml_tracks/a_fire_danger/saved/shap-plots/{model_type}/"
+    feature_names = get_feature_names(config)
+
+    dataloader = get_dataloader(config, static_features, dynamic_features, mode='test')
+    device, _ = prepare_device(config['n_gpu'], config['gpu_id'])
+
+    if model_type in ["rf", "xgb"]:
+        model = joblib.load(checkpoint_path)
+        generate_tree_shap_values(
+            model=model,
+            dataloader=dataloader,
+            base_save_path=base_save_path,
+            model_id=os.path.basename(os.path.dirname(checkpoint_path)),
+            feature_names=feature_names,
+            model_type=model_type,
+            logger=logger
+        )
+        return
+    else:
+        model = build_model(config, dynamic_features, static_features)
+        checkpoint = torch.load(checkpoint_path, map_location=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu'))
+        model.load_state_dict(checkpoint['state_dict'])
+        model = model.to(device)
+        model.eval()
+
+        all_inputs, coords_x, coords_y, all_labels, all_samples, all_probs = [], [], [], [], [], []
+        for batch in dataloader:
+            dynamic, static, bas_size, labels, x, y, sample_id = batch[:7]
+            static = static.unsqueeze(1).repeat(1, dynamic.shape[1], 1)
+            input_ = torch.cat([dynamic, static], dim=2)
+            if config["model_type"] == "mlp":
+                input_ = input_.view(input_.shape[0], -1)
+
+            with torch.no_grad():
+                if model_type == "tft":
+                    output = model(input_, static)
+                elif model_type in ["transformer", "gtn"]:
+                    reshaped = input_.permute(1, 0, 2).float().to(device)   # [seq_len, B, F]
+                    output = model(reshaped)
+                elif model_type in ["lstm", "gru", "cnn", "mlp"]:
+                    output = model(input_)
+                else:
+                    raise NotImplementedError
+
+            probs = torch.softmax(output, dim=1)[:, 1]
+
+            all_probs.append(probs.cpu().numpy())
+            all_inputs.append(input_)
+            coords_x.extend(x.cpu().numpy())
+            coords_y.extend(y.cpu().numpy())
+            all_labels.extend(labels.cpu().numpy().astype(int))
+            all_samples.extend(sample_id.cpu().numpy().astype(int))
+
+        input_all = torch.cat(all_inputs, dim=0).to(device).float()
+        print(type(input_all), input_all.shape)
+        logger.info(f"Computing SHAP values on {input_all.shape[0]} samples...")
+        print("input_all shape:", input_all.shape)  # z. B. (4107, 720)
+    print("n_features from feature_names:", len(feature_names))  # z. B. 810?
+    print("expected flat shape:", input_all.shape[0], "×", input_all.shape[1])  # Kontrolle
+
+    shap_values = get_shap_explanation(model, model_type, input_all, device, seq_len, static_features, dynamic_features, logger)
+
+    model_id = os.path.basename(os.path.dirname(checkpoint_path))
+    timestamp = datetime.now().strftime("%m%d_%H%M%S")
+    shap_save_path = os.path.join(base_save_path, timestamp, f"shap_values_{model_id}_{model_type}.npz")
+    os.makedirs(os.path.dirname(shap_save_path), exist_ok=True)
+
+    np.savez(
+        shap_save_path,
+        class_0=shap_values[0],
+        class_1=shap_values[1]
+    )
+
+    combined_npz_path = shap_save_path.replace(".npz", "_combined.npz")
+    np.savez(
+        combined_npz_path,
+        class_0=shap_values[0],
+        class_1=shap_values[1],
+        sample_id=np.array(all_samples),
+        label=np.array(all_labels),
+        feature_names=np.array(feature_names)
+    )
+    logger.info(f"Saved combined SHAP NPZ to: {combined_npz_path}")
+
+    df_combined = pd.DataFrame({
+        'sample_id': all_samples,
+        'label': all_labels,
+        'x': coords_x,
+        'y': coords_y
+    })
+
+    for i, class_name in enumerate(['class_0', 'class_1']):
+        class_df = pd.DataFrame(shap_values[i], columns=feature_names)
+        class_df = class_df.add_prefix(f'shap_{class_name}_')
+        df_combined = pd.concat([df_combined, class_df], axis=1)
+
+    combined_csv_path = shap_save_path.replace(".npz", "_combined.csv")
+    df_combined.to_csv(combined_csv_path, index=False)
+    logger.info(f"Saved combined SHAP CSV to: {combined_csv_path}")
+
+    base_feature_names = [name.split("_t-")[0] for name in feature_names]
+    shap_df = pd.DataFrame(shap_values[1], columns=feature_names)
+    shap_df.columns = base_feature_names
+    shap_agg = shap_df.groupby(axis=1, level=0).sum()  # → (n_samples, n_base_features) jetzt hier summ statt mean
+    df_shap = shap_agg.copy()
+    df_shap['x'] = coords_x
+    df_shap['y'] = coords_y
+    df_shap['label'] = all_labels
+    df_shap['sample'] = all_samples
+    df_shap['prob'] = np.concatenate(all_probs)
+    csv_save_path = os.path.join(base_save_path, timestamp, f"shap_map_{model_type}.csv")
+    os.makedirs(os.path.dirname(csv_save_path), exist_ok=True)
+    df_shap.to_csv(csv_save_path, index=False)
+
+    np.save(shap_save_path.replace(".npz", "_input.npy"), input_all.cpu().numpy())
+
+    logger.info(f"Saved SHAP value + coordinate map CSV to: {csv_save_path}")
+
+
+if __name__ == '__main__':
+    args = argparse.ArgumentParser(description='Compute SHAP values')
+    args.add_argument('-c', '--config', required=True, type=str, help='Path to config file')
+    args.add_argument('-r', '--resume', default=None, type=str, help='Path to trained checkpoint')
+    args.add_argument('-d', '--device', default=None, type=str, help='indices of GPUs to enable (default: all)')
+
+    CustomArgs = collections.namedtuple('CustomArgs', 'flags type target nargs')
+    options = []
+    config = ConfigParser.from_args(args, options)
+    main(config)
