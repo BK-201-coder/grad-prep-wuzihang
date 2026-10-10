@@ -1,7 +1,5 @@
 科研任务：
 
-科研任务：
-
 1.复习了transformer模型。
 
 2.阅读了Deep learning for wildfire risk prediction Integrating remote sensing and environmental data，这篇论文系统综述了**多源遥感与环境数据驱动的森林火灾风险预测方法**，重点梳理了风险定义、关键影响因子、深度学习时空建模、特征共线性与可解释性，并指出未来应向**多模态数据融合、物理约束、概率校准和高效时空模型**方向发展。
@@ -12,13 +10,17 @@
 
 5.阅读了Mesogeos A multi-purpose dataset for data-driven  wildfire modeling in the Mediterranean，多源数据驱动的森林火灾短期风险预测首先要解决“**数据如何统一、标签如何可靠、时间信息如何组织**”的问题，**在此基础上再讨论长短期记忆网络、变换器等模型结构**，往往比单纯追求更复杂的深度学习网络更有研究价值。
 
-6.阅读了 Assessing and explaining temporal deep learning models for wildfire danger prediction，了解到森林火灾短期风险预测不仅要关注模型精度，还应重视**历史时间窗口、空间泛化和物理可解释性**；Transformer 能更好利用长期时序信息，但更复杂的模型不一定更优，因此后续研究应重点放在**多源数据融合、时空特征建模以及预测性能与物理一致性的协同提升**上。
+6.阅读并复现了 Assessing and explaining temporal deep learning models for wildfire danger prediction，了解到森林火灾短期风险预测不仅要关注模型精度，还应重视**历史时间窗口、空间泛化和物理可解释性**；Transformer 能更好利用长期时序信息，但更复杂的模型不一定更优，因此后续研究应重点放在**多源数据融合、时空特征建模以及预测性能与物理一致性的协同提升**上。
 
-7.阅读了 **Current model capabilities and future predictive pathways of wildfires under a changing climate**，了解到当前森林火灾预测主要包括 **LSM（陆面模型）、ESM（地球系统模型）和统计/机器学习模型** 三类，其中过程模型更强调物理机制和长期气候响应，机器学习更适合多源数据融合和高效预测；未来的发展重点不是单纯提高模型复杂度，而是加强 **过程模型与AI融合、动态燃料和人类活动表征、多模型集成、高分辨率时空预测、不确定性量化以及物理信息机器学习**，从而提高火灾预测在未来气候和不同区域中的可靠性与泛化能力。
+7.阅读了 Current model capabilities and future predictive pathways of wildfires under a changing climate，了解到当前森林火灾预测主要包括 **LSM（陆面模型）、ESM（地球系统模型）和统计/机器学习模型** 三类，其中过程模型更强调物理机制和长期气候响应，机器学习更适合多源数据融合和高效预测；未来的发展重点不是单纯提高模型复杂度，而是加强 **过程模型与AI融合、动态燃料和人类活动表征、多模型集成、高分辨率时空预测、不确定性量化以及物理信息机器学习**，从而提高火灾预测在未来气候和不同区域中的可靠性与泛化能力。
 
 8.阅读了 BCWildfire，了解到多源森林火灾短期风险预测的关键不仅在于选择 Transformer、Mamba 等模型，而在于**构建长期统一的多源时空数据、合理设计负样本和历史时间窗口，并同时利用燃料、气象、空间位置和人类活动信息**；后续研究可重点围绕**多时间尺度、动态/静态特征融合、空间邻域建模以及预测不确定性**展开。
 
-9.对于创新也有了自己的理解，可以先了解不同模型框架，再缝合不同的框架或者只在框架内进行模块的修改，取得好的实验结果之后再做消融实验来验证修改后的模型确实有效。
+9.阅读了CGFNet: Frequency-Domain Causal Discovery and Dual-Path Spectral Filtering for Wildfire Prediction，了解到**不同火灾驱动因素具有不同的时间变化规律和作用滞后，森林火灾预测不仅需要融合多源数据，还需要考虑变量之间的动态关系及长期、短期时间尺度的差异**；论文提出 CGFNet（因果图滤波网络），通过频域因果发现、时间超图和双路径动态滤波，同时学习变量间的时滞关系与变量自身的时间变化。
+
+10.阅读了 Trustworthy Data-Driven Wildfire Risk Prediction and Understanding in Western Canada，了解到**多源森林火灾短期风险预测不仅需要融合长期与短期环境信息，还需要考虑负样本构建、预测不确定性和模型可解释性**；论文通过 WaveletMixer（小波混合网络）实现多尺度时间建模，并利用 SHAP（夏普利加性解释方法）分析不同环境下的驱动因素差异。
+
+11.对于创新也有了自己的理解，可以先了解不同模型框架，再缝合不同的框架或者只在框架内进行模块的修改，取得好的实验结果之后再做消融实验来验证修改后的模型确实有效。
 
 
 
