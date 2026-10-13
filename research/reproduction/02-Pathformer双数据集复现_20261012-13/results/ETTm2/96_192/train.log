@@ -1,0 +1,79 @@
+Args in experiment:
+Namespace(is_training=1, model='PathFormer', model_id='ETTm2_96_192_repro_20261012', data='ETTm2', root_path='./dataset/ETT/', data_path='ETTm2.csv', features='M', target='OT', freq='h', checkpoints='/root/autodl-tmp/pathformer_repro/pathformer/reproductions/ETTm2_96_192_repro_20261012/checkpoints/', seq_len=96, pred_len=192, individual=False, d_model=16, d_ff=64, num_nodes=7, layer_nums=3, k=2, num_experts_list=[4, 4, 4], patch_size_list=[[16, 12, 8, 32], [12, 8, 6, 32], [8, 6, 16, 12]], do_predict=False, revin=1, drop=0.1, embed='timeF', residual_connection=0, metric='mae', batch_norm=0, num_workers=10, itr=1, train_epochs=30, batch_size=512, patience=10, learning_rate=0.001, lradj='TST', use_amp=False, pct_start=0.4, use_gpu=True, gpu=0, use_multi_gpu=False, devices='2', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : ETTm2_96_192_repro_20261012_PathFormer_ftETTm2_slM_pl96_192>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 34273
+val 11329
+test 11329
+Epoch: 1 cost time: 34.77458667755127
+Epoch: 1, Steps: 66 | Train Loss: 0.3500772 Vali Loss: 0.2915445 Test Loss: 0.3136802
+Validation loss decreased (inf --> 0.291544).  Saving model ...
+Updating learning rate to 5.639674655048485e-05
+Epoch: 2 cost time: 36.61278319358826
+Epoch: 2, Steps: 66 | Train Loss: 0.3256668 Vali Loss: 0.2830602 Test Loss: 0.3041165
+Validation loss decreased (0.291544 --> 0.283060).  Saving model ...
+Updating learning rate to 0.00010446676412926941
+Epoch: 3 cost time: 34.760568141937256
+Epoch: 3, Steps: 66 | Train Loss: 0.3164042 Vali Loss: 0.2778546 Test Loss: 0.2984560
+Validation loss decreased (0.283060 --> 0.277855).  Saving model ...
+Updating learning rate to 0.0001809259198408673
+Epoch: 4 cost time: 33.540486097335815
+Epoch: 4, Steps: 66 | Train Loss: 0.3087714 Vali Loss: 0.2751282 Test Loss: 0.2942106
+Validation loss decreased (0.277855 --> 0.275128).  Saving model ...
+Updating learning rate to 0.00028055054119499893
+Epoch: 5 cost time: 33.866461753845215
+Epoch: 5, Steps: 66 | Train Loss: 0.2992737 Vali Loss: 0.2743401 Test Loss: 0.2936182
+Validation loss decreased (0.275128 --> 0.274340).  Saving model ...
+Updating learning rate to 0.000396534296247782
+Epoch: 6 cost time: 33.858012676239014
+Epoch: 6, Steps: 66 | Train Loss: 0.2903121 Vali Loss: 0.2727092 Test Loss: 0.2911479
+Validation loss decreased (0.274340 --> 0.272709).  Saving model ...
+Updating learning rate to 0.0005209532006843251
+Epoch: 7 cost time: 33.842891216278076
+Epoch: 7, Steps: 66 | Train Loss: 0.2814874 Vali Loss: 0.2726300 Test Loss: 0.2919406
+Validation loss decreased (0.272709 --> 0.272630).  Saving model ...
+Updating learning rate to 0.0006453069826623989
+Epoch: 8 cost time: 33.585487604141235
+Epoch: 8, Steps: 66 | Train Loss: 0.2746554 Vali Loss: 0.2732074 Test Loss: 0.2945001
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 0.0007610998194916337
+Epoch: 9 cost time: 33.74693036079407
+Epoch: 9, Steps: 66 | Train Loss: 0.2680852 Vali Loss: 0.2740867 Test Loss: 0.2958907
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 0.000860420770347652
+Epoch: 10 cost time: 33.45174837112427
+Epoch: 10, Steps: 66 | Train Loss: 0.2628410 Vali Loss: 0.2744986 Test Loss: 0.2980394
+EarlyStopping counter: 3 out of 10
+Updating learning rate to 0.000936484249987373
+Epoch: 11 cost time: 32.83392381668091
+Epoch: 11, Steps: 66 | Train Loss: 0.2580144 Vali Loss: 0.2751198 Test Loss: 0.2973943
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 0.000984093618421629
+Epoch: 12 cost time: 34.04398727416992
+Epoch: 12, Steps: 66 | Train Loss: 0.2531706 Vali Loss: 0.2765370 Test Loss: 0.3006472
+EarlyStopping counter: 5 out of 10
+Updating learning rate to 0.0009999982517445833
+Epoch: 13 cost time: 33.9271879196167
+Epoch: 13, Steps: 66 | Train Loss: 0.2495360 Vali Loss: 0.2771573 Test Loss: 0.3032033
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 0.0009921725854386612
+Epoch: 14 cost time: 34.5147123336792
+Epoch: 14, Steps: 66 | Train Loss: 0.2454838 Vali Loss: 0.2790539 Test Loss: 0.3060410
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 0.0009693925649445185
+Epoch: 15 cost time: 33.75002336502075
+Epoch: 15, Steps: 66 | Train Loss: 0.2413764 Vali Loss: 0.2794172 Test Loss: 0.3041576
+EarlyStopping counter: 8 out of 10
+Updating learning rate to 0.0009323503496576233
+Epoch: 16 cost time: 33.32886528968811
+Epoch: 16, Steps: 66 | Train Loss: 0.2362711 Vali Loss: 0.2785090 Test Loss: 0.3037780
+EarlyStopping counter: 9 out of 10
+Updating learning rate to 0.0008821714485452022
+Epoch: 17 cost time: 33.82940649986267
+Epoch: 17, Steps: 66 | Train Loss: 0.2319462 Vali Loss: 0.2792671 Test Loss: 0.3061442
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : ETTm2_96_192_repro_20261012_PathFormer_ftETTm2_slM_pl96_192<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11329
+mse:0.2336859405040741, mae:0.2919405400753021, rse:0.39068326354026794
+Inference time:  8.53239107131958

@@ -1,0 +1,4 @@
+pred_len=720
+d_model=16
+k=3
+patch_sizes=16 12 8 32 12 8 6 32 8 6 16 12

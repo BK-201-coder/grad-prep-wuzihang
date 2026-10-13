@@ -1,0 +1,4 @@
+pred_len=192
+d_model=8
+k=2
+patch_sizes=16 12 8 32 12 8 6 4 8 6 4 2

@@ -20,4 +20,4 @@
 
 10.阅读了 Trustworthy Data-Driven Wildfire Risk Prediction and Understanding in Western Canada，了解到**多源森林火灾短期风险预测不仅需要融合长期与短期环境信息，还需要考虑负样本构建、预测不确定性和模型可解释性**；论文通过 WaveletMixer（小波混合网络）实现多尺度时间建模，并利用 SHAP（夏普利加性解释方法）分析不同环境下的驱动因素差异。
 
-11.对于创新也有了自己的理解，可以先了解不同模型框架，再缝合不同的框架或者只在框架内进行模块的修改，取得好的实验结果之后再做消融实验来验证修改后的模型确实有效。
+11.阅读并复现了 **Pathformer: Multi-scale Transformers with Adaptive Pathways for Time Series Forecasting**，了解到复杂时序数据预测不仅需要融合**不同时间尺度下的局部变化与长期趋势信息**，还需要根据不同样本的动态特征**自适应选择有效的信息尺度**；论文提出 **Pathformer（多尺度自适应路径 Transformer）**，通过**多尺度 Patch 划分**结合**双重注意力机制（Dual Attention）**，同时建模不同时间分辨率和时间距离下的**局部细节与全局依赖关系**，并利用**多尺度路由器（Multi-scale Router）根据输入数据的趋势与周期特征动态选择关键尺度**，实现**自适应多尺度时序表征**。
