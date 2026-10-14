@@ -1,0 +1,184 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.6041869,
+    "val_loss": 0.289248,
+    "test_loss": 0.392869,
+    "epoch_wall_seconds": 21.042460449039936
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.5596974,
+    "val_loss": 0.2796701,
+    "test_loss": 0.3811349,
+    "epoch_wall_seconds": 15.667472694069147
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.5476773,
+    "val_loss": 0.2748686,
+    "test_loss": 0.3743474,
+    "epoch_wall_seconds": 16.335690163075924
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.5395331,
+    "val_loss": 0.2726429,
+    "test_loss": 0.3710459,
+    "epoch_wall_seconds": 16.02137716114521
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.5335034,
+    "val_loss": 0.2710435,
+    "test_loss": 0.3681577,
+    "epoch_wall_seconds": 15.715094465762377
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.5286076,
+    "val_loss": 0.2696201,
+    "test_loss": 0.3674859,
+    "epoch_wall_seconds": 16.03233953937888
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.524682,
+    "val_loss": 0.2697898,
+    "test_loss": 0.3644863,
+    "epoch_wall_seconds": 16.069241918623447
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.5202969,
+    "val_loss": 0.2707997,
+    "test_loss": 0.3630291,
+    "epoch_wall_seconds": 15.771107405424118
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.5137446,
+    "val_loss": 0.2709579,
+    "test_loss": 0.3616802,
+    "epoch_wall_seconds": 15.742486324161291
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.506937,
+    "val_loss": 0.2718865,
+    "test_loss": 0.359943,
+    "epoch_wall_seconds": 15.819057453423738
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.4997535,
+    "val_loss": 0.2741604,
+    "test_loss": 0.3558005,
+    "epoch_wall_seconds": 15.896265890449286
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.4941953,
+    "val_loss": 0.2757344,
+    "test_loss": 0.3580542,
+    "epoch_wall_seconds": 16.075872775167227
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.4855175,
+    "val_loss": 0.2810962,
+    "test_loss": 0.3564546,
+    "epoch_wall_seconds": 15.798508133739233
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.4753649,
+    "val_loss": 0.280753,
+    "test_loss": 0.361714,
+    "epoch_wall_seconds": 15.588302813470364
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.4647615,
+    "val_loss": 0.2868287,
+    "test_loss": 0.3658293,
+    "epoch_wall_seconds": 15.670467883348465
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.4553736,
+    "val_loss": 0.2902802,
+    "test_loss": 0.3753392,
+    "epoch_wall_seconds": 15.750938504934311
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.4480277,
+    "val_loss": 0.2918493,
+    "test_loss": 0.3768544,
+    "epoch_wall_seconds": 15.692496620118618
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.4411781,
+    "val_loss": 0.2953833,
+    "test_loss": 0.3788709,
+    "epoch_wall_seconds": 15.56350925564766
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.4335753,
+    "val_loss": 0.2995407,
+    "test_loss": 0.3837407,
+    "epoch_wall_seconds": 15.754729729145765
+  },
+  {
+    "epoch": 20,
+    "train_loss": 0.4293429,
+    "val_loss": 0.3018628,
+    "test_loss": 0.3893355,
+    "epoch_wall_seconds": 15.364598993211985
+  },
+  {
+    "epoch": 21,
+    "train_loss": 0.4228609,
+    "val_loss": 0.3036243,
+    "test_loss": 0.3924005,
+    "epoch_wall_seconds": 15.582065667957067
+  },
+  {
+    "epoch": 22,
+    "train_loss": 0.4170537,
+    "val_loss": 0.3030043,
+    "test_loss": 0.3955136,
+    "epoch_wall_seconds": 15.498477295041084
+  },
+  {
+    "epoch": 23,
+    "train_loss": 0.4129314,
+    "val_loss": 0.3092349,
+    "test_loss": 0.395106,
+    "epoch_wall_seconds": 15.240363486111164
+  },
+  {
+    "epoch": 24,
+    "train_loss": 0.4059173,
+    "val_loss": 0.3050241,
+    "test_loss": 0.3901293,
+    "epoch_wall_seconds": 15.189942330121994
+  },
+  {
+    "epoch": 25,
+    "train_loss": 0.4002701,
+    "val_loss": 0.3106773,
+    "test_loss": 0.3910466,
+    "epoch_wall_seconds": 15.418442949652672
+  },
+  {
+    "epoch": 26,
+    "train_loss": 0.3941894,
+    "val_loss": 0.3032475,
+    "test_loss": 0.3952913,
+    "epoch_wall_seconds": 15.844648905098438
+  }
+]

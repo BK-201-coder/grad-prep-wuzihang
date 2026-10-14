@@ -1,0 +1,56 @@
+diff --git a/PatchTST_supervised/exp/exp_main.py b/PatchTST_supervised/exp/exp_main.py
+index 6ab36b2..383ed65 100644
+--- a/PatchTST_supervised/exp/exp_main.py
++++ b/PatchTST_supervised/exp/exp_main.py
+@@ -12,6 +12,7 @@ from torch.optim import lr_scheduler
+ 
+ import os
+ import time
++import json
+ 
+ import warnings
+ import matplotlib.pyplot as plt
+@@ -105,6 +106,8 @@ class Exp_Main(Exp_Basic):
+         path = os.path.join(self.args.checkpoints, setting)
+         if not os.path.exists(path):
+             os.makedirs(path)
++        with open(os.path.join(path, 'config.json'), 'w') as config_file:
++            json.dump(vars(self.args), config_file, indent=2)
+ 
+         time_now = time.time()
+ 
+@@ -306,9 +309,13 @@ class Exp_Main(Exp_Basic):
+         f.write('\n')
+         f.close()
+ 
+-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
++        metrics = dict(mae=float(mae), mse=float(mse), rmse=float(rmse),
++                       mape=float(mape), mspe=float(mspe), rse=float(rse),
++                       corr=np.asarray(corr).tolist(), shape=list(preds.shape))
++        with open(folder_path + 'metrics.json', 'w') as metrics_file:
++            json.dump(metrics, metrics_file, indent=2)
+         np.save(folder_path + 'pred.npy', preds)
+-        # np.save(folder_path + 'true.npy', trues)
++        np.save(folder_path + 'true.npy', trues)
+         # np.save(folder_path + 'x.npy', inputx)
+         return
+ 
+diff --git a/PatchTST_supervised/utils/tools.py b/PatchTST_supervised/utils/tools.py
+index ff90a6a..650040c 100644
+--- a/PatchTST_supervised/utils/tools.py
++++ b/PatchTST_supervised/utils/tools.py
+@@ -98,6 +98,7 @@ def visual(true, preds=None, name='./pic/test.pdf'):
+         plt.plot(preds, label='Prediction', linewidth=2)
+     plt.legend()
+     plt.savefig(name, bbox_inches='tight')
++    plt.close()
+ 
+ def test_params_flop(model,x_shape):
+     """
+@@ -113,4 +114,4 @@ def test_params_flop(model,x_shape):
+         # print('Flops:' + flops)
+         # print('Params:' + params)
+         print('{:<30}  {:<8}'.format('Computational complexity: ', macs))
+-        print('{:<30}  {:<8}'.format('Number of parameters: ', params))
+\ No newline at end of file
++        print('{:<30}  {:<8}'.format('Number of parameters: ', params))

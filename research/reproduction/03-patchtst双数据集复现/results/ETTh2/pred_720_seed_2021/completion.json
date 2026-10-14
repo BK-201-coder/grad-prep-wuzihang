@@ -1,0 +1,20 @@
+{
+  "dataset": "ETTh2",
+  "model": "PatchTST/42",
+  "seq_len": 336,
+  "pred_len": 720,
+  "seed": 2021,
+  "mse": 0.37899065017700195,
+  "mae": 0.42156657576560974,
+  "paper_mse": 0.379,
+  "paper_mae": 0.422,
+  "mse_delta": -9.349822998050428e-06,
+  "mae_delta": -0.000433424234390245,
+  "epochs": 100,
+  "elapsed_minutes": 5.405299986836811,
+  "test_samples": 2048,
+  "verified": true,
+  "completed_at": "2026-10-13T22:35:32+08:00",
+  "verified_mse": 0.3789906662794172,
+  "verified_mae": 0.4215665536506845
+}

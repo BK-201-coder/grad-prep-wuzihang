@@ -1,0 +1,226 @@
+[2026-10-13T22:49:24+08:00] Args in experiment:
+[2026-10-13T22:49:24+08:00] Namespace(random_seed=2021, is_training=1, model_id='ETTm2_336_336', model='PatchTST', data='ETTm2', root_path='/root/autodl-tmp/patchtst_repro/data', data_path='ETTm2.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, label_len=48, pred_len=336, fc_dropout=0.2, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=128, n_heads=16, e_layers=3, d_layers=1, d_ff=256, moving_avg=25, factor=1, distil=True, dropout=0.2, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=4, itr=1, train_epochs=100, batch_size=128, patience=20, learning_rate=0.0001, des='Exp', loss='mse', lradj='TST', pct_start=0.4, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+[2026-10-13T22:49:24+08:00] Use GPU: cuda:0
+[2026-10-13T22:49:24+08:00] >>>>>>>start training : ETTm2_336_336_PatchTST_ETTm2_ftM_sl336_ll48_pl336_dm128_nh16_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2026-10-13T22:49:24+08:00] train 33889
+[2026-10-13T22:49:24+08:00] val 11185
+[2026-10-13T22:49:24+08:00] test 11185
+[2026-10-13T22:49:29+08:00] 	iters: 100, epoch: 1 | loss: 0.3678712
+[2026-10-13T22:49:29+08:00] 	speed: 0.0424s/iter; left time: 1114.2335s
+[2026-10-13T22:49:32+08:00] 	iters: 200, epoch: 1 | loss: 0.7389058
+[2026-10-13T22:49:32+08:00] 	speed: 0.0355s/iter; left time: 929.7318s
+[2026-10-13T22:49:35+08:00] Epoch: 1 cost time: 9.805285453796387
+[2026-10-13T22:49:39+08:00] Epoch: 1, Steps: 264 | Train Loss: 0.4878632 Vali Loss: 0.2250648 Test Loss: 0.3038889
+[2026-10-13T22:49:39+08:00] Validation loss decreased (inf --> 0.225065).  Saving model ...
+[2026-10-13T22:49:39+08:00] Updating learning rate to 4.147995994617984e-06
+[2026-10-13T22:49:43+08:00] 	iters: 100, epoch: 2 | loss: 0.3870873
+[2026-10-13T22:49:43+08:00] 	speed: 0.1103s/iter; left time: 2871.4398s
+[2026-10-13T22:49:47+08:00] 	iters: 200, epoch: 2 | loss: 0.4793549
+[2026-10-13T22:49:47+08:00] 	speed: 0.0359s/iter; left time: 930.3902s
+[2026-10-13T22:49:49+08:00] Epoch: 2 cost time: 9.826683759689331
+[2026-10-13T22:49:54+08:00] Epoch: 2, Steps: 264 | Train Loss: 0.4356843 Vali Loss: 0.2131675 Test Loss: 0.2907054
+[2026-10-13T22:49:54+08:00] Validation loss decreased (0.225065 --> 0.213167).  Saving model ...
+[2026-10-13T22:49:54+08:00] Updating learning rate to 4.591071361204269e-06
+[2026-10-13T22:49:58+08:00] 	iters: 100, epoch: 3 | loss: 0.4817140
+[2026-10-13T22:49:58+08:00] 	speed: 0.1091s/iter; left time: 2812.5067s
+[2026-10-13T22:50:01+08:00] 	iters: 200, epoch: 3 | loss: 0.5022153
+[2026-10-13T22:50:01+08:00] 	speed: 0.0362s/iter; left time: 929.1839s
+[2026-10-13T22:50:04+08:00] Epoch: 3 cost time: 9.889561653137207
+[2026-10-13T22:50:08+08:00] Epoch: 3, Steps: 264 | Train Loss: 0.4210333 Vali Loss: 0.2085486 Test Loss: 0.2836631
+[2026-10-13T22:50:08+08:00] Validation loss decreased (0.213167 --> 0.208549).  Saving model ...
+[2026-10-13T22:50:08+08:00] Updating learning rate to 5.3264938756102174e-06
+[2026-10-13T22:50:12+08:00] 	iters: 100, epoch: 4 | loss: 0.3768481
+[2026-10-13T22:50:12+08:00] 	speed: 0.1070s/iter; left time: 2730.4496s
+[2026-10-13T22:50:16+08:00] 	iters: 200, epoch: 4 | loss: 0.3901211
+[2026-10-13T22:50:16+08:00] 	speed: 0.0361s/iter; left time: 918.2578s
+[2026-10-13T22:50:18+08:00] Epoch: 4 cost time: 9.861193895339966
+[2026-10-13T22:50:23+08:00] Epoch: 4, Steps: 264 | Train Loss: 0.4115020 Vali Loss: 0.2058985 Test Loss: 0.2803511
+[2026-10-13T22:50:23+08:00] Validation loss decreased (0.208549 --> 0.205898).  Saving model ...
+[2026-10-13T22:50:23+08:00] Updating learning rate to 6.349728555065631e-06
+[2026-10-13T22:50:27+08:00] 	iters: 100, epoch: 5 | loss: 0.3454458
+[2026-10-13T22:50:27+08:00] 	speed: 0.1108s/iter; left time: 2796.9035s
+[2026-10-13T22:50:30+08:00] 	iters: 200, epoch: 5 | loss: 0.4543379
+[2026-10-13T22:50:30+08:00] 	speed: 0.0360s/iter; left time: 906.1981s
+[2026-10-13T22:50:33+08:00] Epoch: 5 cost time: 10.043790340423584
+[2026-10-13T22:50:37+08:00] Epoch: 5, Steps: 264 | Train Loss: 0.4058325 Vali Loss: 0.2034534 Test Loss: 0.2786019
+[2026-10-13T22:50:37+08:00] Validation loss decreased (0.205898 --> 0.203453).  Saving model ...
+[2026-10-13T22:50:37+08:00] Updating learning rate to 7.654465623149092e-06
+[2026-10-13T22:50:41+08:00] 	iters: 100, epoch: 6 | loss: 0.2606336
+[2026-10-13T22:50:41+08:00] 	speed: 0.1099s/iter; left time: 2746.4295s
+[2026-10-13T22:50:45+08:00] 	iters: 200, epoch: 6 | loss: 0.5402040
+[2026-10-13T22:50:45+08:00] 	speed: 0.0362s/iter; left time: 900.7716s
+[2026-10-13T22:50:47+08:00] Epoch: 6 cost time: 10.020037174224854
+[2026-10-13T22:50:52+08:00] Epoch: 6, Steps: 264 | Train Loss: 0.4010010 Vali Loss: 0.2033260 Test Loss: 0.2779017
+[2026-10-13T22:50:52+08:00] Validation loss decreased (0.203453 --> 0.203326).  Saving model ...
+[2026-10-13T22:50:52+08:00] Updating learning rate to 9.232659419022894e-06
+[2026-10-13T22:50:56+08:00] 	iters: 100, epoch: 7 | loss: 0.3690015
+[2026-10-13T22:50:56+08:00] 	speed: 0.1093s/iter; left time: 2701.1240s
+[2026-10-13T22:51:00+08:00] 	iters: 200, epoch: 7 | loss: 0.3240092
+[2026-10-13T22:51:00+08:00] 	speed: 0.0358s/iter; left time: 881.9523s
+[2026-10-13T22:51:02+08:00] Epoch: 7 cost time: 9.858734607696533
+[2026-10-13T22:51:06+08:00] Epoch: 7, Steps: 264 | Train Loss: 0.3976013 Vali Loss: 0.2013897 Test Loss: 0.2778600
+[2026-10-13T22:51:06+08:00] Validation loss decreased (0.203326 --> 0.201390).  Saving model ...
+[2026-10-13T22:51:06+08:00] Updating learning rate to 1.1074578010998666e-05
+[2026-10-13T22:51:10+08:00] 	iters: 100, epoch: 8 | loss: 0.3892806
+[2026-10-13T22:51:10+08:00] 	speed: 0.1075s/iter; left time: 2627.8067s
+[2026-10-13T22:51:14+08:00] 	iters: 200, epoch: 8 | loss: 0.6466491
+[2026-10-13T22:51:14+08:00] 	speed: 0.0362s/iter; left time: 881.8549s
+[2026-10-13T22:51:16+08:00] Epoch: 8 cost time: 9.896809577941895
+[2026-10-13T22:51:21+08:00] Epoch: 8, Steps: 264 | Train Loss: 0.3942103 Vali Loss: 0.2021150 Test Loss: 0.2754374
+[2026-10-13T22:51:21+08:00] EarlyStopping counter: 1 out of 20
+[2026-10-13T22:51:21+08:00] Updating learning rate to 1.3168863208492038e-05
+[2026-10-13T22:51:25+08:00] 	iters: 100, epoch: 9 | loss: 0.5780085
+[2026-10-13T22:51:25+08:00] 	speed: 0.1084s/iter; left time: 2620.8798s
+[2026-10-13T22:51:28+08:00] 	iters: 200, epoch: 9 | loss: 0.3870654
+[2026-10-13T22:51:28+08:00] 	speed: 0.0360s/iter; left time: 867.7779s
+[2026-10-13T22:51:31+08:00] Epoch: 9 cost time: 9.824722051620483
+[2026-10-13T22:51:35+08:00] Epoch: 9, Steps: 264 | Train Loss: 0.3898696 Vali Loss: 0.2034333 Test Loss: 0.2755627
+[2026-10-13T22:51:35+08:00] EarlyStopping counter: 2 out of 20
+[2026-10-13T22:51:35+08:00] Updating learning rate to 1.5502600602302323e-05
+[2026-10-13T22:51:39+08:00] 	iters: 100, epoch: 10 | loss: 0.4235805
+[2026-10-13T22:51:39+08:00] 	speed: 0.1055s/iter; left time: 2525.2552s
+[2026-10-13T22:51:42+08:00] 	iters: 200, epoch: 10 | loss: 0.3748258
+[2026-10-13T22:51:42+08:00] 	speed: 0.0359s/iter; left time: 856.0694s
+[2026-10-13T22:51:45+08:00] Epoch: 10 cost time: 9.879040002822876
+[2026-10-13T22:51:49+08:00] Epoch: 10, Steps: 264 | Train Loss: 0.3836596 Vali Loss: 0.2062318 Test Loss: 0.2742704
+[2026-10-13T22:51:49+08:00] EarlyStopping counter: 3 out of 20
+[2026-10-13T22:51:49+08:00] Updating learning rate to 1.8061399201313948e-05
+[2026-10-13T22:51:53+08:00] 	iters: 100, epoch: 11 | loss: 0.3008747
+[2026-10-13T22:51:53+08:00] 	speed: 0.1072s/iter; left time: 2536.9241s
+[2026-10-13T22:51:57+08:00] 	iters: 200, epoch: 11 | loss: 0.3855443
+[2026-10-13T22:51:57+08:00] 	speed: 0.0364s/iter; left time: 858.3005s
+[2026-10-13T22:51:59+08:00] Epoch: 11 cost time: 9.967797994613647
+[2026-10-13T22:52:04+08:00] Epoch: 11, Steps: 264 | Train Loss: 0.3749969 Vali Loss: 0.2067075 Test Loss: 0.2781735
+[2026-10-13T22:52:04+08:00] EarlyStopping counter: 4 out of 20
+[2026-10-13T22:52:04+08:00] Updating learning rate to 2.08294801745399e-05
+[2026-10-13T22:52:08+08:00] 	iters: 100, epoch: 12 | loss: 0.5509416
+[2026-10-13T22:52:08+08:00] 	speed: 0.1140s/iter; left time: 2666.7294s
+[2026-10-13T22:52:12+08:00] 	iters: 200, epoch: 12 | loss: 0.4033831
+[2026-10-13T22:52:12+08:00] 	speed: 0.0360s/iter; left time: 839.1721s
+[2026-10-13T22:52:14+08:00] Epoch: 12 cost time: 10.12742829322815
+[2026-10-13T22:52:19+08:00] Epoch: 12, Steps: 264 | Train Loss: 0.3638150 Vali Loss: 0.2140767 Test Loss: 0.2791994
+[2026-10-13T22:52:19+08:00] EarlyStopping counter: 5 out of 20
+[2026-10-13T22:52:19+08:00] Updating learning rate to 2.378977415127951e-05
+[2026-10-13T22:52:23+08:00] 	iters: 100, epoch: 13 | loss: 0.3896228
+[2026-10-13T22:52:23+08:00] 	speed: 0.1079s/iter; left time: 2495.2397s
+[2026-10-13T22:52:26+08:00] 	iters: 200, epoch: 13 | loss: 0.3773589
+[2026-10-13T22:52:26+08:00] 	speed: 0.0359s/iter; left time: 826.9574s
+[2026-10-13T22:52:29+08:00] Epoch: 13 cost time: 9.77571153640747
+[2026-10-13T22:52:33+08:00] Epoch: 13, Steps: 264 | Train Loss: 0.3510976 Vali Loss: 0.2140303 Test Loss: 0.2861362
+[2026-10-13T22:52:33+08:00] EarlyStopping counter: 6 out of 20
+[2026-10-13T22:52:33+08:00] Updating learning rate to 2.6924026479389104e-05
+[2026-10-13T22:52:37+08:00] 	iters: 100, epoch: 14 | loss: 0.3579585
+[2026-10-13T22:52:37+08:00] 	speed: 0.1090s/iter; left time: 2492.9421s
+[2026-10-13T22:52:41+08:00] 	iters: 200, epoch: 14 | loss: 0.3602768
+[2026-10-13T22:52:41+08:00] 	speed: 0.0361s/iter; left time: 821.4851s
+[2026-10-13T22:52:43+08:00] Epoch: 14 cost time: 9.98961091041565
+[2026-10-13T22:52:48+08:00] Epoch: 14, Steps: 264 | Train Loss: 0.3385943 Vali Loss: 0.2141434 Test Loss: 0.2879093
+[2026-10-13T22:52:48+08:00] EarlyStopping counter: 7 out of 20
+[2026-10-13T22:52:48+08:00] Updating learning rate to 3.0212909792590238e-05
+[2026-10-13T22:52:52+08:00] 	iters: 100, epoch: 15 | loss: 0.2637908
+[2026-10-13T22:52:52+08:00] 	speed: 0.1088s/iter; left time: 2459.0007s
+[2026-10-13T22:52:55+08:00] 	iters: 200, epoch: 15 | loss: 0.3738737
+[2026-10-13T22:52:55+08:00] 	speed: 0.0362s/iter; left time: 815.7878s
+[2026-10-13T22:52:58+08:00] Epoch: 15 cost time: 9.893138408660889
+[2026-10-13T22:53:02+08:00] Epoch: 15, Steps: 264 | Train Loss: 0.3286689 Vali Loss: 0.2174927 Test Loss: 0.2910938
+[2026-10-13T22:53:02+08:00] EarlyStopping counter: 8 out of 20
+[2026-10-13T22:53:02+08:00] Updating learning rate to 3.363614319266957e-05
+[2026-10-13T22:53:06+08:00] 	iters: 100, epoch: 16 | loss: 0.3365194
+[2026-10-13T22:53:06+08:00] 	speed: 0.1084s/iter; left time: 2421.6751s
+[2026-10-13T22:53:10+08:00] 	iters: 200, epoch: 16 | loss: 0.2898873
+[2026-10-13T22:53:10+08:00] 	speed: 0.0361s/iter; left time: 803.4181s
+[2026-10-13T22:53:12+08:00] Epoch: 16 cost time: 9.976420402526855
+[2026-10-13T22:53:16+08:00] Epoch: 16, Steps: 264 | Train Loss: 0.3210081 Vali Loss: 0.2214379 Test Loss: 0.2887385
+[2026-10-13T22:53:16+08:00] EarlyStopping counter: 9 out of 20
+[2026-10-13T22:53:16+08:00] Updating learning rate to 3.7172617311633196e-05
+[2026-10-13T22:53:20+08:00] 	iters: 100, epoch: 17 | loss: 0.3720658
+[2026-10-13T22:53:20+08:00] 	speed: 0.1059s/iter; left time: 2337.7558s
+[2026-10-13T22:53:24+08:00] 	iters: 200, epoch: 17 | loss: 0.2621788
+[2026-10-13T22:53:24+08:00] 	speed: 0.0359s/iter; left time: 789.3754s
+[2026-10-13T22:53:26+08:00] Epoch: 17 cost time: 9.881636381149292
+[2026-10-13T22:53:31+08:00] Epoch: 17, Steps: 264 | Train Loss: 0.3152638 Vali Loss: 0.2194499 Test Loss: 0.3004978
+[2026-10-13T22:53:31+08:00] EarlyStopping counter: 10 out of 20
+[2026-10-13T22:53:31+08:00] Updating learning rate to 4.0800524482619576e-05
+[2026-10-13T22:53:34+08:00] 	iters: 100, epoch: 18 | loss: 0.3364191
+[2026-10-13T22:53:34+08:00] 	speed: 0.1054s/iter; left time: 2298.9251s
+[2026-10-13T22:53:38+08:00] 	iters: 200, epoch: 18 | loss: 0.4010556
+[2026-10-13T22:53:38+08:00] 	speed: 0.0358s/iter; left time: 777.0357s
+[2026-10-13T22:53:40+08:00] Epoch: 18 cost time: 9.729770183563232
+[2026-10-13T22:53:45+08:00] Epoch: 18, Steps: 264 | Train Loss: 0.3085265 Vali Loss: 0.2240934 Test Loss: 0.3006456
+[2026-10-13T22:53:45+08:00] EarlyStopping counter: 11 out of 20
+[2026-10-13T22:53:45+08:00] Updating learning rate to 4.449749321687241e-05
+[2026-10-13T22:53:49+08:00] 	iters: 100, epoch: 19 | loss: 0.2340184
+[2026-10-13T22:53:49+08:00] 	speed: 0.1082s/iter; left time: 2331.9966s
+[2026-10-13T22:53:52+08:00] 	iters: 200, epoch: 19 | loss: 0.3103100
+[2026-10-13T22:53:52+08:00] 	speed: 0.0366s/iter; left time: 785.8633s
+[2026-10-13T22:53:55+08:00] Epoch: 19 cost time: 9.994269847869873
+[2026-10-13T22:53:59+08:00] Epoch: 19, Steps: 264 | Train Loss: 0.3041386 Vali Loss: 0.2260852 Test Loss: 0.2995157
+[2026-10-13T22:53:59+08:00] EarlyStopping counter: 12 out of 20
+[2026-10-13T22:53:59+08:00] Updating learning rate to 4.824072615752094e-05
+[2026-10-13T22:54:03+08:00] 	iters: 100, epoch: 20 | loss: 0.3327743
+[2026-10-13T22:54:03+08:00] 	speed: 0.1092s/iter; left time: 2324.9867s
+[2026-10-13T22:54:07+08:00] 	iters: 200, epoch: 20 | loss: 0.2355559
+[2026-10-13T22:54:07+08:00] 	speed: 0.0363s/iter; left time: 768.7673s
+[2026-10-13T22:54:09+08:00] Epoch: 20 cost time: 10.077392101287842
+[2026-10-13T22:54:14+08:00] Epoch: 20, Steps: 264 | Train Loss: 0.2995494 Vali Loss: 0.2224281 Test Loss: 0.2994235
+[2026-10-13T22:54:14+08:00] EarlyStopping counter: 13 out of 20
+[2026-10-13T22:54:14+08:00] Updating learning rate to 5.200714065947608e-05
+[2026-10-13T22:54:18+08:00] 	iters: 100, epoch: 21 | loss: 0.3233484
+[2026-10-13T22:54:18+08:00] 	speed: 0.1094s/iter; left time: 2298.9723s
+[2026-10-13T22:54:22+08:00] 	iters: 200, epoch: 21 | loss: 0.3065309
+[2026-10-13T22:54:22+08:00] 	speed: 0.0361s/iter; left time: 754.3974s
+[2026-10-13T22:54:24+08:00] Epoch: 21 cost time: 9.87166142463684
+[2026-10-13T22:54:28+08:00] Epoch: 21, Steps: 264 | Train Loss: 0.2946564 Vali Loss: 0.2245640 Test Loss: 0.3041738
+[2026-10-13T22:54:28+08:00] EarlyStopping counter: 14 out of 20
+[2026-10-13T22:54:28+08:00] Updating learning rate to 5.577351112855618e-05
+[2026-10-13T22:54:32+08:00] 	iters: 100, epoch: 22 | loss: 0.3905726
+[2026-10-13T22:54:32+08:00] 	speed: 0.1081s/iter; left time: 2242.8344s
+[2026-10-13T22:54:36+08:00] 	iters: 200, epoch: 22 | loss: 0.2731221
+[2026-10-13T22:54:36+08:00] 	speed: 0.0363s/iter; left time: 749.7929s
+[2026-10-13T22:54:38+08:00] Epoch: 22 cost time: 9.956329345703125
+[2026-10-13T22:54:43+08:00] Epoch: 22, Steps: 264 | Train Loss: 0.2909627 Vali Loss: 0.2215841 Test Loss: 0.3002361
+[2026-10-13T22:54:43+08:00] EarlyStopping counter: 15 out of 20
+[2026-10-13T22:54:43+08:00] Updating learning rate to 5.951661224210828e-05
+[2026-10-13T22:54:47+08:00] 	iters: 100, epoch: 23 | loss: 0.2829016
+[2026-10-13T22:54:47+08:00] 	speed: 0.1067s/iter; left time: 2186.1139s
+[2026-10-13T22:54:50+08:00] 	iters: 200, epoch: 23 | loss: 0.2379135
+[2026-10-13T22:54:50+08:00] 	speed: 0.0358s/iter; left time: 729.2679s
+[2026-10-13T22:54:53+08:00] Epoch: 23 cost time: 9.722096681594849
+[2026-10-13T22:54:57+08:00] Epoch: 23, Steps: 264 | Train Loss: 0.2863979 Vali Loss: 0.2229461 Test Loss: 0.2985290
+[2026-10-13T22:54:57+08:00] EarlyStopping counter: 16 out of 20
+[2026-10-13T22:54:57+08:00] Updating learning rate to 6.321336216795497e-05
+[2026-10-13T22:55:01+08:00] 	iters: 100, epoch: 24 | loss: 0.2504190
+[2026-10-13T22:55:01+08:00] 	speed: 0.1114s/iter; left time: 2253.4634s
+[2026-10-13T22:55:05+08:00] 	iters: 200, epoch: 24 | loss: 0.2448220
+[2026-10-13T22:55:05+08:00] 	speed: 0.0355s/iter; left time: 714.7090s
+[2026-10-13T22:55:07+08:00] Epoch: 24 cost time: 9.912788152694702
+[2026-10-13T22:55:12+08:00] Epoch: 24, Steps: 264 | Train Loss: 0.2829807 Vali Loss: 0.2286242 Test Loss: 0.3072054
+[2026-10-13T22:55:12+08:00] EarlyStopping counter: 17 out of 20
+[2026-10-13T22:55:12+08:00] Updating learning rate to 6.684096489850761e-05
+[2026-10-13T22:55:16+08:00] 	iters: 100, epoch: 25 | loss: 0.2677188
+[2026-10-13T22:55:16+08:00] 	speed: 0.1061s/iter; left time: 2118.7230s
+[2026-10-13T22:55:19+08:00] 	iters: 200, epoch: 25 | loss: 0.2499264
+[2026-10-13T22:55:19+08:00] 	speed: 0.0357s/iter; left time: 708.6765s
+[2026-10-13T22:55:21+08:00] Epoch: 25 cost time: 9.676953554153442
+[2026-10-13T22:55:26+08:00] Epoch: 25, Steps: 264 | Train Loss: 0.2796212 Vali Loss: 0.2218819 Test Loss: 0.3090391
+[2026-10-13T22:55:26+08:00] EarlyStopping counter: 18 out of 20
+[2026-10-13T22:55:26+08:00] Updating learning rate to 7.03770508223417e-05
+[2026-10-13T22:55:30+08:00] 	iters: 100, epoch: 26 | loss: 0.2911587
+[2026-10-13T22:55:30+08:00] 	speed: 0.1073s/iter; left time: 2114.8285s
+[2026-10-13T22:55:33+08:00] 	iters: 200, epoch: 26 | loss: 0.3426045
+[2026-10-13T22:55:33+08:00] 	speed: 0.0360s/iter; left time: 705.0994s
+[2026-10-13T22:55:36+08:00] Epoch: 26 cost time: 9.83595061302185
+[2026-10-13T22:55:40+08:00] Epoch: 26, Steps: 264 | Train Loss: 0.2759647 Vali Loss: 0.2241657 Test Loss: 0.3086384
+[2026-10-13T22:55:40+08:00] EarlyStopping counter: 19 out of 20
+[2026-10-13T22:55:40+08:00] Updating learning rate to 7.379981466640088e-05
+[2026-10-13T22:55:44+08:00] 	iters: 100, epoch: 27 | loss: 0.2735839
+[2026-10-13T22:55:44+08:00] 	speed: 0.1077s/iter; left time: 2093.5299s
+[2026-10-13T22:55:48+08:00] 	iters: 200, epoch: 27 | loss: 0.2924428
+[2026-10-13T22:55:48+08:00] 	speed: 0.0358s/iter; left time: 692.9068s
+[2026-10-13T22:55:50+08:00] Epoch: 27 cost time: 9.861576557159424
+[2026-10-13T22:55:55+08:00] Epoch: 27, Steps: 264 | Train Loss: 0.2717757 Vali Loss: 0.2256592 Test Loss: 0.3073416
+[2026-10-13T22:55:55+08:00] EarlyStopping counter: 20 out of 20
+[2026-10-13T22:55:55+08:00] Early stopping
+[2026-10-13T22:55:55+08:00] >>>>>>>testing : ETTm2_336_336_PatchTST_ETTm2_ftM_sl336_ll48_pl336_dm128_nh16_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2026-10-13T22:55:55+08:00] test 11185
+[2026-10-13T22:56:01+08:00] mse:0.27786025404930115, mae:0.32939696311950684, rse:0.42528223991394043
