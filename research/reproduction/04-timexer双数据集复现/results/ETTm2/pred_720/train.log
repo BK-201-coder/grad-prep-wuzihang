@@ -1,0 +1,120 @@
+2026-10-14T21:42:13+08:00 START ETTm2 prediction=720; estimated time: 4-12 minutes
+Official code commit: 76011909357972bd55a27adba2e1be994d81b327
+GPU: NVIDIA vGPU-32GB
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTm2_96_720        Model:              TimeXer             
+
+[1mData Loader[0m
+  Data:               ETTm2               Root Path:          /root/autodl-tmp/timexer_repro/dataset/ETT-small/
+  Data Path:          ETTm2.csv           Features:           MS                  
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /root/autodl-tmp/timexer_repro/results/ETTm2/pred_720/checkpoints/
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           720                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Timexer-MS          Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTm2_96_720_TimeXer_ETTm2_ftMS_sl96_ll48_pl720_dm128_nh8_el1_dl1_df2048_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 33745
+val 10801
+test 10801
+	iters: 100, epoch: 1 | loss: 0.2741687
+	speed: 0.0594s/iter; left time: 150.9510s
+	iters: 200, epoch: 1 | loss: 0.2572502
+	speed: 0.0509s/iter; left time: 124.2999s
+Epoch: 1 cost time: 14.240113258361816
+Epoch: 1, Steps: 264 | Train Loss: 0.2885661 Vali Loss: 0.2583418 Test Loss: 0.1804458
+Validation loss decreased (inf --> 0.258342).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.2745490
+	speed: 0.1960s/iter; left time: 446.3555s
+	iters: 200, epoch: 2 | loss: 0.2849670
+	speed: 0.0470s/iter; left time: 102.3632s
+Epoch: 2 cost time: 13.218623399734497
+Epoch: 2, Steps: 264 | Train Loss: 0.2737046 Vali Loss: 0.2501540 Test Loss: 0.1811271
+Validation loss decreased (0.258342 --> 0.250154).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2955932
+	speed: 0.1969s/iter; left time: 396.3147s
+	iters: 200, epoch: 3 | loss: 0.2340592
+	speed: 0.0480s/iter; left time: 91.8180s
+Epoch: 3 cost time: 13.015356063842773
+Epoch: 3, Steps: 264 | Train Loss: 0.2647219 Vali Loss: 0.2502218 Test Loss: 0.1812517
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.2561345
+	speed: 0.1991s/iter; left time: 348.1769s
+	iters: 200, epoch: 4 | loss: 0.2280108
+	speed: 0.0480s/iter; left time: 79.1514s
+Epoch: 4 cost time: 13.183153629302979
+Epoch: 4, Steps: 264 | Train Loss: 0.2616467 Vali Loss: 0.2478274 Test Loss: 0.1813708
+Validation loss decreased (0.250154 --> 0.247827).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2318348
+	speed: 0.1980s/iter; left time: 294.0731s
+	iters: 200, epoch: 5 | loss: 0.2602927
+	speed: 0.0479s/iter; left time: 66.3349s
+Epoch: 5 cost time: 13.434587478637695
+Epoch: 5, Steps: 264 | Train Loss: 0.2603934 Vali Loss: 0.2462598 Test Loss: 0.1824367
+Validation loss decreased (0.247827 --> 0.246260).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.2487802
+	speed: 0.2070s/iter; left time: 252.8011s
+	iters: 200, epoch: 6 | loss: 0.3166031
+	speed: 0.0481s/iter; left time: 53.9760s
+Epoch: 6 cost time: 13.31040096282959
+Epoch: 6, Steps: 264 | Train Loss: 0.2599927 Vali Loss: 0.2481623 Test Loss: 0.1811651
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.2452882
+	speed: 0.1998s/iter; left time: 191.2454s
+	iters: 200, epoch: 7 | loss: 0.2601717
+	speed: 0.0500s/iter; left time: 42.8305s
+Epoch: 7 cost time: 13.306933879852295
+Epoch: 7, Steps: 264 | Train Loss: 0.2596002 Vali Loss: 0.2477230 Test Loss: 0.1814050
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.2821365
+	speed: 0.1990s/iter; left time: 137.9288s
+	iters: 200, epoch: 8 | loss: 0.2322835
+	speed: 0.0500s/iter; left time: 29.6366s
+Epoch: 8 cost time: 13.239336252212524
+Epoch: 8, Steps: 264 | Train Loss: 0.2595870 Vali Loss: 0.2473395 Test Loss: 0.1814484
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTm2_96_720_TimeXer_ETTm2_ftMS_sl96_ll48_pl720_dm128_nh8_el1_dl1_df2048_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10801
+test shape: (10801, 720, 1) (10801, 720, 1)
+test shape: (10801, 720, 1) (10801, 720, 1)
+mse:0.1821547895669937, mae:0.3322075605392456
+{"dataset": "ETTm2", "pred_len": 720, "features": "MS", "seq_len": 96, "seed": 2021, "mse": 0.1821547895669937, "mae": 0.3322075605392456, "test_shape": [10801, 720, 1], "elapsed_seconds": 209.0, "verified": true, "checkpoint": "checkpoints/long_term_forecast_ETTm2_96_720_TimeXer_ETTm2_ftMS_sl96_ll48_pl720_dm128_nh8_el1_dl1_df2048_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/checkpoint.pth", "metrics": "results/long_term_forecast_ETTm2_96_720_TimeXer_ETTm2_ftMS_sl96_ll48_pl720_dm128_nh8_el1_dl1_df2048_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/metrics.npy"}
+2026-10-14T21:45:42+08:00 VERIFIED ETTm2/720

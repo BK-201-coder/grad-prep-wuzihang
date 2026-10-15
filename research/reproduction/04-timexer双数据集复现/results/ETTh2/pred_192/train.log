@@ -1,0 +1,84 @@
+2026-10-14T21:19:09+08:00 START ETTh2 prediction=192; estimated time: 1-3 minutes
+Official code commit: 76011909357972bd55a27adba2e1be994d81b327
+GPU: NVIDIA vGPU-32GB
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh2_96_192        Model:              TimeXer             
+
+[1mData Loader[0m
+  Data:               ETTh2               Root Path:          /root/autodl-tmp/timexer_repro/dataset/ETT-small/
+  Data Path:          ETTh2.csv           Features:           MS                  
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /root/autodl-tmp/timexer_repro/results/ETTh2/pred_192/checkpoints/
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           192                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         128                 
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Timexer-MS          Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh2_96_192_TimeXer_ETTh2_ftMS_sl96_ll48_pl192_dm128_nh8_el1_dl1_df512_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 3.518155097961426
+Epoch: 1, Steps: 66 | Train Loss: 0.2900125 Vali Loss: 0.2427897 Test Loss: 0.1870347
+Validation loss decreased (inf --> 0.242790).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 2.922333240509033
+Epoch: 2, Steps: 66 | Train Loss: 0.2564790 Vali Loss: 0.2284433 Test Loss: 0.1819436
+Validation loss decreased (0.242790 --> 0.228443).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 3.065192699432373
+Epoch: 3, Steps: 66 | Train Loss: 0.2494195 Vali Loss: 0.2178582 Test Loss: 0.1803491
+Validation loss decreased (0.228443 --> 0.217858).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 2.992380380630493
+Epoch: 4, Steps: 66 | Train Loss: 0.2468820 Vali Loss: 0.2111459 Test Loss: 0.1795878
+Validation loss decreased (0.217858 --> 0.211146).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 3.093186855316162
+Epoch: 5, Steps: 66 | Train Loss: 0.2448939 Vali Loss: 0.2120029 Test Loss: 0.1798137
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 3.1029539108276367
+Epoch: 6, Steps: 66 | Train Loss: 0.2446037 Vali Loss: 0.2120808 Test Loss: 0.1798568
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 3.1082661151885986
+Epoch: 7, Steps: 66 | Train Loss: 0.2429263 Vali Loss: 0.2220640 Test Loss: 0.1799773
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh2_96_192_TimeXer_ETTh2_ftMS_sl96_ll48_pl192_dm128_nh8_el1_dl1_df512_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+test shape: (2689, 192, 1) (2689, 192, 1)
+test shape: (2689, 192, 1) (2689, 192, 1)
+mse:0.18147428333759308, mae:0.33253583312034607
+{"dataset": "ETTh2", "pred_len": 192, "features": "MS", "seq_len": 96, "seed": 2021, "mse": 0.18147428333759308, "mae": 0.33253583312034607, "test_shape": [2689, 192, 1], "elapsed_seconds": 41.0, "verified": true, "checkpoint": "checkpoints/long_term_forecast_ETTh2_96_192_TimeXer_ETTh2_ftMS_sl96_ll48_pl192_dm128_nh8_el1_dl1_df512_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/checkpoint.pth", "metrics": "results/long_term_forecast_ETTh2_96_192_TimeXer_ETTh2_ftMS_sl96_ll48_pl192_dm128_nh8_el1_dl1_df512_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/metrics.npy"}
+2026-10-14T21:19:50+08:00 VERIFIED ETTh2/192

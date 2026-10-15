@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/root/autodl-tmp/timexer_repro/venv/bin/python /root/autodl-tmp/timexer_repro/code/run.py --task_name long_term_forecast --is_training 1 --root_path /root/autodl-tmp/timexer_repro/dataset/ETT-small/ --data_path ETTm2.csv --model_id ETTm2_96_336 --model TimeXer --data ETTm2 --features MS --seq_len 96 --label_len 48 --pred_len 336 --e_layers 1 --factor 3 --enc_in 7 --dec_in 7 --c_out 7 --d_model 128 --d_ff 2048 --batch_size 128 --des Timexer-MS --itr 1 --gpu 0 --checkpoints /root/autodl-tmp/timexer_repro/results/ETTm2/pred_336/checkpoints/ 

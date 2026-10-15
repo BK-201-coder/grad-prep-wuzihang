@@ -1,0 +1,68 @@
+diff --git a/exp/exp_basic.py b/exp/exp_basic.py
+index 88b04fd..d107665 100644
+--- a/exp/exp_basic.py
++++ b/exp/exp_basic.py
+@@ -1,41 +1,12 @@
+ import os
+ import torch
+-from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
+-    Informer, LightTS, Reformer, ETSformer, Pyraformer, PatchTST, MICN, Crossformer, FiLM, iTransformer, \
+-    Koopa, TiDE, FreTS, TimeMixer, TSMixer, SegRNN, MambaSimple, TemporalFusionTransformer, SCINet, TimeXer
++from models import TimeXer
+ 
+ 
+ class Exp_Basic(object):
+     def __init__(self, args):
+         self.args = args
+-        self.model_dict = {
+-            'TimesNet': TimesNet,
+-            'Autoformer': Autoformer,
+-            'Transformer': Transformer,
+-            'Nonstationary_Transformer': Nonstationary_Transformer,
+-            'DLinear': DLinear,
+-            'FEDformer': FEDformer,
+-            'Informer': Informer,
+-            'LightTS': LightTS,
+-            'Reformer': Reformer,
+-            'ETSformer': ETSformer,
+-            'PatchTST': PatchTST,
+-            'Pyraformer': Pyraformer,
+-            'MICN': MICN,
+-            'Crossformer': Crossformer,
+-            'FiLM': FiLM,
+-            'iTransformer': iTransformer,
+-            'Koopa': Koopa,
+-            'TiDE': TiDE,
+-            'FreTS': FreTS,
+-            'MambaSimple': MambaSimple,
+-            'TimeMixer': TimeMixer,
+-            'TSMixer': TSMixer,
+-            'SegRNN': SegRNN,
+-            'TemporalFusionTransformer': TemporalFusionTransformer,
+-            "SCINet": SCINet,
+-            'TimeXer': TimeXer
+-        }
++        self.model_dict = {'TimeXer': TimeXer}
+         if args.model == 'Mamba':
+             print('Please make sure you have successfully installed mamba_ssm')
+             from models import Mamba
+diff --git a/layers/SelfAttention_Family.py b/layers/SelfAttention_Family.py
+index b151bff..b93d3d1 100644
+--- a/layers/SelfAttention_Family.py
++++ b/layers/SelfAttention_Family.py
+@@ -3,7 +3,6 @@ import torch.nn as nn
+ import numpy as np
+ from math import sqrt
+ from utils.masking import TriangularCausalMask, ProbMask
+-from reformer_pytorch import LSHSelfAttention
+ from einops import rearrange, repeat
+ 
+ 
+@@ -217,6 +216,7 @@ class ReformerLayer(nn.Module):
+     def __init__(self, attention, d_model, n_heads, d_keys=None,
+                  d_values=None, causal=False, bucket_size=4, n_hashes=4):
+         super().__init__()
++        from reformer_pytorch import LSHSelfAttention
+         self.bucket_size = bucket_size
+         self.attn = LSHSelfAttention(
+             dim=d_model,

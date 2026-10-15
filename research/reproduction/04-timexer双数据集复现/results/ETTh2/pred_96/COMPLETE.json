@@ -1,0 +1,18 @@
+{
+  "dataset": "ETTh2",
+  "pred_len": 96,
+  "features": "MS",
+  "seq_len": 96,
+  "seed": 2021,
+  "mse": 0.1323835253715515,
+  "mae": 0.27958229184150696,
+  "test_shape": [
+    2785,
+    96,
+    1
+  ],
+  "elapsed_seconds": 53.0,
+  "verified": true,
+  "checkpoint": "checkpoints/long_term_forecast_ETTh2_96_96_TimeXer_ETTh2_ftMS_sl96_ll48_pl96_dm128_nh8_el1_dl1_df128_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/checkpoint.pth",
+  "metrics": "results/long_term_forecast_ETTh2_96_96_TimeXer_ETTh2_ftMS_sl96_ll48_pl96_dm128_nh8_el1_dl1_df128_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/metrics.npy"
+}

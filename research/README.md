@@ -23,3 +23,5 @@
 11.阅读并复现了 **Pathformer: Multi-scale Transformers with Adaptive Pathways for Time Series Forecasting**，了解到复杂时序数据预测不仅需要融合**不同时间尺度下的局部变化与长期趋势信息**，还需要根据不同样本的动态特征**自适应选择有效的信息尺度**；论文提出 **Pathformer（多尺度自适应路径 Transformer）**，通过**多尺度 Patch 划分**结合**双重注意力机制（Dual Attention）**，同时建模不同时间分辨率和时间距离下的**局部细节与全局依赖关系**，并利用**多尺度路由器（Multi-scale Router）根据输入数据的趋势与周期特征动态选择关键尺度**，实现**自适应多尺度时序表征**。
 
 12.阅读并复现了A TIME SERIES IS WORTH 64 WORDS LONG-TERM FORECASTING WITH TRANSFORMERS，**这篇论文最重要的贡献不是提出更复杂的 Transformer 结构，而是通过时间片段划分（Patching）和通道独立（Channel Independence）解决长期时间序列预测中“历史窗口受限、计算成本高、不同变量时间规律难以有效学习”的问题。**作者提出 **PatchTST**，将连续时间点划分为 Patch 作为 Transformer 的输入，在保留局部时间变化特征的同时降低注意力计算成本，并通过各变量独立建模、共享网络参数以及掩码自监督学习提高预测性能和泛化能力，为森林火灾预测中**多源驱动因素的长期历史信息提取**提供了重要思路，但尚未解决**不同环境状态下各驱动因素历史窗口自适应选择和复杂负样本识别**的问题。
+
+13.**这篇论文最重要的贡献不是提出全新的 Transformer 注意力机制，而是解决时间序列预测中“目标变量与外部驱动因素难以有效融合”的问题**，作者提出 **TimeXer**，通过**内生变量的 Patch 级自注意力、外生变量的 Variate 级表示以及 Global Token 桥接的交叉注意力**，在保留目标序列时间变化特征的同时引入辅助变量信息，为森林火灾预测中**多源驱动因素交互建模**提供重要思路。

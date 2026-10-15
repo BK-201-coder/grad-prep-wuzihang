@@ -1,0 +1,126 @@
+2026-10-14T21:19:50+08:00 START ETTh2 prediction=336; estimated time: 3-10 minutes
+Official code commit: 76011909357972bd55a27adba2e1be994d81b327
+GPU: NVIDIA vGPU-32GB
+True
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          long_term_forecast  Is Training:        1                   
+  Model ID:           ETTh2_96_336        Model:              TimeXer             
+
+[1mData Loader[0m
+  Data:               ETTh2               Root Path:          /root/autodl-tmp/timexer_repro/dataset/ETT-small/
+  Data Path:          ETTh2.csv           Features:           MS                  
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /root/autodl-tmp/timexer_repro/results/ETTh2/pred_336/checkpoints/
+
+[1mForecasting Task[0m
+  Seq Len:            96                  Label Len:          48                  
+  Pred Len:           336                 Seasonal Patterns:  Monthly             
+  Inverse:            0                   
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            128                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             3                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       10                  Batch Size:         16                  
+  Patience:           3                   Learning Rate:      0.0001              
+  Des:                Timexer-MS          Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ETTh2_96_336_TimeXer_ETTh2_ftMS_sl96_ll48_pl336_dm128_nh8_el2_dl1_df256_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+	iters: 100, epoch: 1 | loss: 0.2818990
+	speed: 0.0551s/iter; left time: 277.6034s
+	iters: 200, epoch: 1 | loss: 0.2480937
+	speed: 0.0438s/iter; left time: 216.3240s
+	iters: 300, epoch: 1 | loss: 0.3822162
+	speed: 0.0540s/iter; left time: 261.6190s
+	iters: 400, epoch: 1 | loss: 0.2600247
+	speed: 0.0431s/iter; left time: 204.1373s
+	iters: 500, epoch: 1 | loss: 0.3810586
+	speed: 0.0401s/iter; left time: 186.1920s
+Epoch: 1 cost time: 24.048691511154175
+Epoch: 1, Steps: 514 | Train Loss: 0.2830073 Vali Loss: 0.2409097 Test Loss: 0.2263283
+Validation loss decreased (inf --> 0.240910).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3711599
+	speed: 0.1429s/iter; left time: 646.8802s
+	iters: 200, epoch: 2 | loss: 0.2388462
+	speed: 0.0450s/iter; left time: 199.1952s
+	iters: 300, epoch: 2 | loss: 0.2549796
+	speed: 0.0439s/iter; left time: 190.0318s
+	iters: 400, epoch: 2 | loss: 0.2696870
+	speed: 0.0453s/iter; left time: 191.5539s
+	iters: 500, epoch: 2 | loss: 0.1599449
+	speed: 0.0428s/iter; left time: 176.7993s
+Epoch: 2 cost time: 22.980223178863525
+Epoch: 2, Steps: 514 | Train Loss: 0.2495851 Vali Loss: 0.2297084 Test Loss: 0.2237628
+Validation loss decreased (0.240910 --> 0.229708).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.1975709
+	speed: 0.1430s/iter; left time: 573.7889s
+	iters: 200, epoch: 3 | loss: 0.2275541
+	speed: 0.0449s/iter; left time: 175.7495s
+	iters: 300, epoch: 3 | loss: 0.2492839
+	speed: 0.0420s/iter; left time: 160.2506s
+	iters: 400, epoch: 3 | loss: 0.1839692
+	speed: 0.0449s/iter; left time: 166.7314s
+	iters: 500, epoch: 3 | loss: 0.2310164
+	speed: 0.0401s/iter; left time: 144.8937s
+Epoch: 3 cost time: 22.172604084014893
+Epoch: 3, Steps: 514 | Train Loss: 0.2378026 Vali Loss: 0.2322129 Test Loss: 0.2262895
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.2651798
+	speed: 0.1441s/iter; left time: 504.2426s
+	iters: 200, epoch: 4 | loss: 0.1931611
+	speed: 0.0561s/iter; left time: 190.6177s
+	iters: 300, epoch: 4 | loss: 0.2094859
+	speed: 0.0469s/iter; left time: 154.6804s
+	iters: 400, epoch: 4 | loss: 0.2669192
+	speed: 0.0420s/iter; left time: 134.4011s
+	iters: 500, epoch: 4 | loss: 0.2654279
+	speed: 0.0479s/iter; left time: 148.3273s
+Epoch: 4 cost time: 25.3374240398407
+Epoch: 4, Steps: 514 | Train Loss: 0.2320785 Vali Loss: 0.2323956 Test Loss: 0.2282609
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.2192185
+	speed: 0.1369s/iter; left time: 408.7438s
+	iters: 200, epoch: 5 | loss: 0.2452234
+	speed: 0.0411s/iter; left time: 118.5105s
+	iters: 300, epoch: 5 | loss: 0.2162143
+	speed: 0.0530s/iter; left time: 147.7338s
+	iters: 400, epoch: 5 | loss: 0.2690984
+	speed: 0.0490s/iter; left time: 131.6407s
+	iters: 500, epoch: 5 | loss: 0.2341150
+	speed: 0.0478s/iter; left time: 123.6397s
+Epoch: 5 cost time: 23.918879508972168
+Epoch: 5, Steps: 514 | Train Loss: 0.2292886 Vali Loss: 0.2334532 Test Loss: 0.2278502
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ETTh2_96_336_TimeXer_ETTh2_ftMS_sl96_ll48_pl336_dm128_nh8_el2_dl1_df256_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+test shape: (2545, 336, 1) (2545, 336, 1)
+test shape: (2545, 336, 1) (2545, 336, 1)
+mse:0.2231050729751587, mae:0.3773280382156372
+{"dataset": "ETTh2", "pred_len": 336, "features": "MS", "seq_len": 96, "seed": 2021, "mse": 0.2231050729751587, "mae": 0.3773280382156372, "test_shape": [2545, 336, 1], "elapsed_seconds": 172.0, "verified": true, "checkpoint": "checkpoints/long_term_forecast_ETTh2_96_336_TimeXer_ETTh2_ftMS_sl96_ll48_pl336_dm128_nh8_el2_dl1_df256_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/checkpoint.pth", "metrics": "results/long_term_forecast_ETTh2_96_336_TimeXer_ETTh2_ftMS_sl96_ll48_pl336_dm128_nh8_el2_dl1_df256_expand2_dc4_fc3_ebtimeF_dtTrue_Timexer-MS_0/metrics.npy"}
+2026-10-14T21:22:42+08:00 VERIFIED ETTh2/336
