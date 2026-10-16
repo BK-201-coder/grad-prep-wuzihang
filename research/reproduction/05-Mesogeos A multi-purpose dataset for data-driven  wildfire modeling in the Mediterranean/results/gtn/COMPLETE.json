@@ -1,0 +1,69 @@
+{
+  "verified": true,
+  "scope": "Mesogeos 2023 Track A official gtn, one 30-epoch run",
+  "code_commit": "828db48231637884a3fde5795760e42338cf780c",
+  "seed": 12345,
+  "best_epoch": 28,
+  "epochs_completed": 30,
+  "checkpoints_saved": 30,
+  "test_samples": 4107,
+  "test_metrics": {
+    "loss": 1.393109927074097,
+    "accuracy": 0.8541514487460433,
+    "precision": 0.7818448023426061,
+    "recall": 0.7801314828341855,
+    "f1_score": 0.7809872029250458,
+    "aucpr": 0.8565372627524064
+  },
+  "paper_table_1": {
+    "precision": 0.781,
+    "recall": 0.79,
+    "f1_score": 0.786,
+    "aucpr": 0.858
+  },
+  "difference_reproduction_minus_paper": {
+    "precision": 0.000845,
+    "recall": -0.009869,
+    "f1_score": -0.005013,
+    "aucpr": -0.001463
+  },
+  "best_checkpoint": "/root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/model_best.pth",
+  "best_checkpoint_sha256": "42629daf8f16f25498bde04caf8b399bc6157bd06666473a5eef042858ba29d1",
+  "config_sha256": "4ee970ca5095215ede3d545e09ef91b79795113a9a32fef4c538f651e8c84d9a",
+  "original_data": {
+    "positives.csv": {
+      "bytes": 72849438,
+      "sha256": "c44554e29f0d676ad13d42950500fb5bc6361c5dc5afe77958c59b7cc3c8ed0b",
+      "rows": 257220,
+      "samples": 8574,
+      "year_split_samples": {
+        "train": 6451,
+        "val": 754,
+        "test": 1369
+      },
+      "unique_sample_ids": {
+        "train": 6451,
+        "val": 754,
+        "test": 1369
+      }
+    },
+    "negatives.csv": {
+      "bytes": 144945185,
+      "sha256": "ce5e6fd204d4c26189fe45c2a2d709ccfdead6fa08c0fcbeb5ce5c59d654820b",
+      "rows": 520260,
+      "samples": 17342,
+      "year_split_samples": {
+        "train": 13053,
+        "val": 1538,
+        "test": 2751
+      },
+      "unique_sample_ids": {
+        "train": 13053,
+        "val": 1538,
+        "test": 2751
+      }
+    }
+  },
+  "config_note": "Only result paths/name/data path were changed; GTN gpu_id was changed from 1 to 0 because there is one GPU.",
+  "sampling_note": "Official test.py does not seed NumPy before sampling the negative candidate pool; repeated tests can vary slightly."
+}

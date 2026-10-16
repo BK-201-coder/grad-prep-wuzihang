@@ -1,0 +1,642 @@
+START 2026-10-15T21:35:01+08:00 official Mesogeos Track A gtn
+CONFIG /root/autodl-tmp/mesogeos_repro/results/gtn/config_train.json
+SOURCE_COMMIT 828db48231637884a3fde5795760e42338cf780c
+Positives: 6451.0 / Negatives: 12902.0
+Dataset length 19353.0
+Positives: 754.0 / Negatives: 1508.0
+Dataset length 2262.0
+/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+TransformerNet(
+  (lin_time): Linear(in_features=24, out_features=256, bias=True)
+  (lin_channel): Linear(in_features=30, out_features=256, bias=True)
+  (pos_encoder): PositionalEncoding(
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (transformer_encoder_time): TransformerEncoder(
+    (layers): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (transformer_encoder_channel): TransformerEncoder(
+    (layers): ModuleList(
+      (0-3): 4 x TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+        )
+        (linear1): Linear(in_features=256, out_features=512, bias=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+        (linear2): Linear(in_features=512, out_features=256, bias=True)
+        (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        (dropout1): Dropout(p=0.1, inplace=False)
+        (dropout2): Dropout(p=0.1, inplace=False)
+      )
+    )
+  )
+  (out_time): Linear(in_features=256, out_features=256, bias=True)
+  (out_channel): Linear(in_features=256, out_features=256, bias=True)
+  (lin): Linear(in_features=512, out_features=2, bias=True)
+  (classifier): Linear(in_features=512, out_features=2, bias=True)
+)
+Train Epoch: 1 [0/76 (0%)] Loss: 2.840523
+Train Epoch: 1 [16/76 (21%)] Loss: 1.969371
+Train Epoch: 1 [32/76 (42%)] Loss: 1.815079
+Train Epoch: 1 [48/76 (63%)] Loss: 1.706199
+Train Epoch: 1 [64/76 (84%)] Loss: 1.705513
+    epoch          : 1
+    loss           : 1.8911469700551677
+    accuracy       : 0.7773471813155584
+    precision      : 0.6402566788894709
+    recall         : 0.7578669973647496
+    f1_score       : 0.6941151416199333
+    aucpr          : 0.736298830833583
+    val_loss       : 1.7214640373681942
+    val_accuracy   : 0.8160919540229885
+    val_precision  : 0.7194805194805195
+    val_recall     : 0.7347480106100795
+    val_f1_score   : 0.7270341207349081
+    val_aucpr      : 0.8047800481740301
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch1.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 2 [0/76 (0%)] Loss: 1.559494
+Train Epoch: 2 [16/76 (21%)] Loss: 1.689690
+Train Epoch: 2 [32/76 (42%)] Loss: 1.505459
+Train Epoch: 2 [48/76 (63%)] Loss: 1.450274
+Train Epoch: 2 [64/76 (84%)] Loss: 1.777599
+    epoch          : 2
+    loss           : 1.5181242985817307
+    accuracy       : 0.8311889629514804
+    precision      : 0.7168346499591391
+    recall         : 0.8158425050379786
+    f1_score       : 0.7631407235554266
+    aucpr          : 0.8241043311905569
+    val_loss       : 1.5546215112814326
+    val_accuracy   : 0.8147656940760389
+    val_precision  : 0.6703967446592065
+    val_recall     : 0.8740053050397878
+    val_f1_score   : 0.7587795048934945
+    val_aucpr      : 0.8432043406661555
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch2.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 3 [0/76 (0%)] Loss: 1.629739
+Train Epoch: 3 [16/76 (21%)] Loss: 1.460728
+Train Epoch: 3 [32/76 (42%)] Loss: 1.441232
+Train Epoch: 3 [48/76 (63%)] Loss: 1.555159
+Train Epoch: 3 [64/76 (84%)] Loss: 1.393058
+    epoch          : 3
+    loss           : 1.4735979807381174
+    accuracy       : 0.8327391102154704
+    precision      : 0.7185799782372143
+    recall         : 0.8189427995659587
+    f1_score       : 0.7654857639643555
+    aucpr          : 0.8319165167885523
+    val_loss       : 1.4438817884730197
+    val_accuracy   : 0.8289124668435013
+    val_precision  : 0.6941798941798942
+    val_recall     : 0.870026525198939
+    val_f1_score   : 0.772218952324897
+    val_aucpr      : 0.8496636136378438
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch3.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 4 [0/76 (0%)] Loss: 1.081072
+Train Epoch: 4 [16/76 (21%)] Loss: 1.277732
+Train Epoch: 4 [32/76 (42%)] Loss: 1.173181
+Train Epoch: 4 [48/76 (63%)] Loss: 1.466817
+Train Epoch: 4 [64/76 (84%)] Loss: 1.271425
+    epoch          : 4
+    loss           : 1.3560123300328153
+    accuracy       : 0.8523743088926782
+    precision      : 0.7473162675474814
+    recall         : 0.841729964346613
+    f1_score       : 0.7917183057519865
+    aucpr          : 0.8598945245156387
+    val_loss       : 1.4169393834764192
+    val_accuracy   : 0.8443854995579133
+    val_precision  : 0.7603626943005182
+    val_recall     : 0.7785145888594165
+    val_f1_score   : 0.7693315858453473
+    val_aucpr      : 0.8592483400677322
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch4.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 5 [0/76 (0%)] Loss: 1.452925
+Train Epoch: 5 [16/76 (21%)] Loss: 1.387458
+Train Epoch: 5 [32/76 (42%)] Loss: 1.256000
+Train Epoch: 5 [48/76 (63%)] Loss: 1.596022
+Train Epoch: 5 [64/76 (84%)] Loss: 1.515421
+    epoch          : 5
+    loss           : 1.3276380477737335
+    accuracy       : 0.8538211130057356
+    precision      : 0.7484906695938529
+    recall         : 0.8456053325065881
+    f1_score       : 0.7940898173083921
+    aucpr          : 0.8657450628567535
+    val_loss       : 1.4281515562882159
+    val_accuracy   : 0.8315649867374005
+    val_precision  : 0.6936656282450675
+    val_recall     : 0.8859416445623343
+    val_f1_score   : 0.7781013395457193
+    val_aucpr      : 0.8554213464310162
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch5.pth ...
+Train Epoch: 6 [0/76 (0%)] Loss: 1.170888
+Train Epoch: 6 [16/76 (21%)] Loss: 1.302023
+Train Epoch: 6 [32/76 (42%)] Loss: 1.099236
+Train Epoch: 6 [48/76 (63%)] Loss: 1.310975
+Train Epoch: 6 [64/76 (84%)] Loss: 1.459355
+    epoch          : 6
+    loss           : 1.3127674756848164
+    accuracy       : 0.8573864517129127
+    precision      : 0.756283849465352
+    recall         : 0.844210199968997
+    f1_score       : 0.7978318195136244
+    aucpr          : 0.8686625624650075
+    val_loss       : 1.410223118400911
+    val_accuracy   : 0.830238726790451
+    val_precision  : 0.6931106471816284
+    val_recall     : 0.8806366047745358
+    val_f1_score   : 0.7757009345794392
+    val_aucpr      : 0.8631257626961902
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch6.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 7 [0/76 (0%)] Loss: 1.142131
+Train Epoch: 7 [16/76 (21%)] Loss: 1.346197
+Train Epoch: 7 [32/76 (42%)] Loss: 1.488075
+Train Epoch: 7 [48/76 (63%)] Loss: 1.287615
+Train Epoch: 7 [64/76 (84%)] Loss: 1.393111
+    epoch          : 7
+    loss           : 1.3010964158129177
+    accuracy       : 0.8584715547977058
+    precision      : 0.7562120375483159
+    recall         : 0.8491706712137653
+    f1_score       : 0.8
+    aucpr          : 0.8698962803433293
+    val_loss       : 1.3493045814052078
+    val_accuracy   : 0.8448275862068966
+    val_precision  : 0.7340301974448316
+    val_recall     : 0.8381962864721485
+    val_f1_score   : 0.7826625386996904
+    val_aucpr      : 0.8686794431957519
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch7.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 8 [0/76 (0%)] Loss: 1.234161
+Train Epoch: 8 [16/76 (21%)] Loss: 1.135095
+Train Epoch: 8 [32/76 (42%)] Loss: 1.368289
+Train Epoch: 8 [48/76 (63%)] Loss: 1.123997
+Train Epoch: 8 [64/76 (84%)] Loss: 1.174470
+    epoch          : 8
+    loss           : 1.2709722353716892
+    accuracy       : 0.8623985945331473
+    precision      : 0.7610253583241455
+    recall         : 0.8559913191753217
+    f1_score       : 0.8057197052600861
+    aucpr          : 0.875406580695665
+    val_loss       : 1.2585263433549174
+    val_accuracy   : 0.8585322723253758
+    val_precision  : 0.7565011820330969
+    val_recall     : 0.8488063660477454
+    val_f1_score   : 0.8
+    val_aucpr      : 0.8799065435168145
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch8.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 9 [0/76 (0%)] Loss: 1.147557
+Train Epoch: 9 [16/76 (21%)] Loss: 1.074853
+Train Epoch: 9 [32/76 (42%)] Loss: 1.363115
+Train Epoch: 9 [48/76 (63%)] Loss: 1.160827
+Train Epoch: 9 [64/76 (84%)] Loss: 1.226351
+    epoch          : 9
+    loss           : 1.2420149729343395
+    accuracy       : 0.8643104428254017
+    precision      : 0.7661795407098121
+    recall         : 0.8533560688265385
+    f1_score       : 0.807421531240833
+    aucpr          : 0.8815813629340405
+    val_loss       : 1.3672706863713622
+    val_accuracy   : 0.8532272325375774
+    val_precision  : 0.7805851063829787
+    val_recall     : 0.7785145888594165
+    val_f1_score   : 0.7795484727755644
+    val_aucpr      : 0.8692914150878512
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch9.pth ...
+Train Epoch: 10 [0/76 (0%)] Loss: 1.150242
+Train Epoch: 10 [16/76 (21%)] Loss: 1.473942
+Train Epoch: 10 [32/76 (42%)] Loss: 1.444484
+Train Epoch: 10 [48/76 (63%)] Loss: 1.484901
+Train Epoch: 10 [64/76 (84%)] Loss: 1.323098
+    epoch          : 10
+    loss           : 1.2296289549695363
+    accuracy       : 0.8670490363251175
+    precision      : 0.7693055555555556
+    recall         : 0.8586265695241048
+    f1_score       : 0.8115156398798623
+    aucpr          : 0.8833419253030654
+    val_loss       : 1.3095995711605704
+    val_accuracy   : 0.8527851458885941
+    val_precision  : 0.7427912341407151
+    val_recall     : 0.8541114058355438
+    val_f1_score   : 0.7945712523133868
+    val_aucpr      : 0.8738247365993147
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch10.pth ...
+Train Epoch: 11 [0/76 (0%)] Loss: 0.955801
+Train Epoch: 11 [16/76 (21%)] Loss: 1.131504
+Train Epoch: 11 [32/76 (42%)] Loss: 1.398616
+Train Epoch: 11 [48/76 (63%)] Loss: 1.370231
+Train Epoch: 11 [64/76 (84%)] Loss: 1.227923
+    epoch          : 11
+    loss           : 1.2232644768153729
+    accuracy       : 0.8659122616648581
+    precision      : 0.7656379167814825
+    recall         : 0.861416834599287
+    f1_score       : 0.810708293821577
+    aucpr          : 0.885774803570619
+    val_loss       : 1.427065114127546
+    val_accuracy   : 0.8465959328028294
+    val_precision  : 0.7304643261608154
+    val_recall     : 0.8554376657824934
+    val_f1_score   : 0.7880268784361637
+    val_aucpr      : 0.8704478220048109
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch11.pth ...
+Train Epoch: 12 [0/76 (0%)] Loss: 1.233212
+Train Epoch: 12 [16/76 (21%)] Loss: 1.171150
+Train Epoch: 12 [32/76 (42%)] Loss: 1.275102
+Train Epoch: 12 [48/76 (63%)] Loss: 1.309539
+Train Epoch: 12 [64/76 (84%)] Loss: 1.270370
+    epoch          : 12
+    loss           : 1.216997091951145
+    accuracy       : 0.8689092130419056
+    precision      : 0.771127736215018
+    recall         : 0.862811967136878
+    f1_score       : 0.8143975418830931
+    aucpr          : 0.8847044408592447
+    val_loss       : 1.2875753681181175
+    val_accuracy   : 0.8607427055702918
+    val_precision  : 0.7660606060606061
+    val_recall     : 0.8381962864721485
+    val_f1_score   : 0.8005066497783407
+    val_aucpr      : 0.8796214856563693
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch12.pth ...
+Train Epoch: 13 [0/76 (0%)] Loss: 1.264069
+Train Epoch: 13 [16/76 (21%)] Loss: 1.005311
+Train Epoch: 13 [32/76 (42%)] Loss: 1.511981
+Train Epoch: 13 [48/76 (63%)] Loss: 1.022950
+Train Epoch: 13 [64/76 (84%)] Loss: 0.939828
+    epoch          : 13
+    loss           : 1.195276255103246
+    accuracy       : 0.8715444633906888
+    precision      : 0.7759220598469033
+    recall         : 0.8642070996744691
+    f1_score       : 0.8176884716925785
+    aucpr          : 0.8900654822996232
+    val_loss       : 1.3564632806390076
+    val_accuracy   : 0.8430592396109637
+    val_precision  : 0.7097791798107256
+    val_recall     : 0.8952254641909815
+    val_f1_score   : 0.7917888563049853
+    val_aucpr      : 0.8777337033131711
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch13.pth ...
+Train Epoch: 14 [0/76 (0%)] Loss: 1.097342
+Train Epoch: 14 [16/76 (21%)] Loss: 1.172168
+Train Epoch: 14 [32/76 (42%)] Loss: 1.041350
+Train Epoch: 14 [48/76 (63%)] Loss: 1.278131
+Train Epoch: 14 [64/76 (84%)] Loss: 1.164111
+    epoch          : 14
+    loss           : 1.2097926808655222
+    accuracy       : 0.8685991835891076
+    precision      : 0.769889502762431
+    recall         : 0.8640520849480701
+    f1_score       : 0.8142575414505879
+    aucpr          : 0.886277121109635
+    val_loss       : 1.3313121493151503
+    val_accuracy   : 0.8558797524314765
+    val_precision  : 0.7757731958762887
+    val_recall     : 0.7984084880636605
+    val_f1_score   : 0.7869281045751634
+    val_aucpr      : 0.8743518262255052
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch14.pth ...
+Train Epoch: 15 [0/76 (0%)] Loss: 1.215614
+Train Epoch: 15 [16/76 (21%)] Loss: 1.355997
+Train Epoch: 15 [32/76 (42%)] Loss: 1.327593
+Train Epoch: 15 [48/76 (63%)] Loss: 1.167768
+Train Epoch: 15 [64/76 (84%)] Loss: 1.010199
+    epoch          : 15
+    loss           : 1.212106744355948
+    accuracy       : 0.869580943522968
+    precision      : 0.7743467933491687
+    recall         : 0.8590916137033018
+    f1_score       : 0.8145208700764256
+    aucpr          : 0.8869147582541849
+    val_loss       : 1.2695838776865858
+    val_accuracy   : 0.8585322723253758
+    val_precision  : 0.7511574074074074
+    val_recall     : 0.8607427055702918
+    val_f1_score   : 0.8022249690976514
+    val_aucpr      : 0.8828830919314243
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch15.pth ...
+Train Epoch: 16 [0/76 (0%)] Loss: 1.486677
+Train Epoch: 16 [16/76 (21%)] Loss: 1.062028
+Train Epoch: 16 [32/76 (42%)] Loss: 1.187114
+Train Epoch: 16 [48/76 (63%)] Loss: 1.142997
+Train Epoch: 16 [64/76 (84%)] Loss: 1.346147
+    epoch          : 16
+    loss           : 1.1321268310991854
+    accuracy       : 0.8773833514183847
+    precision      : 0.7839042049568365
+    recall         : 0.8727329096264145
+    f1_score       : 0.8259370644759041
+    aucpr          : 0.9012876459388677
+    val_loss       : 1.258503866027036
+    val_accuracy   : 0.8616268788682582
+    val_precision  : 0.7591069330199764
+    val_recall     : 0.8567639257294429
+    val_f1_score   : 0.8049844236760124
+    val_aucpr      : 0.8840927094028292
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch16.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 17 [0/76 (0%)] Loss: 1.179559
+Train Epoch: 17 [16/76 (21%)] Loss: 1.273766
+Train Epoch: 17 [32/76 (42%)] Loss: 0.938884
+Train Epoch: 17 [48/76 (63%)] Loss: 1.177841
+Train Epoch: 17 [64/76 (84%)] Loss: 1.094584
+    epoch          : 17
+    loss           : 1.1345367899657046
+    accuracy       : 0.8791401849842402
+    precision      : 0.7861915367483296
+    recall         : 0.8755231747015967
+    f1_score       : 0.8284561789512285
+    aucpr          : 0.9001326150347068
+    val_loss       : 1.2535242599053893
+    val_accuracy   : 0.8647214854111406
+    val_precision  : 0.7641509433962265
+    val_recall     : 0.8594164456233422
+    val_f1_score   : 0.8089887640449438
+    val_aucpr      : 0.8849326444594616
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch17.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 18 [0/76 (0%)] Loss: 1.068084
+Train Epoch: 18 [16/76 (21%)] Loss: 0.967328
+Train Epoch: 18 [32/76 (42%)] Loss: 0.906600
+Train Epoch: 18 [48/76 (63%)] Loss: 1.170620
+Train Epoch: 18 [64/76 (84%)] Loss: 1.167511
+    epoch          : 18
+    loss           : 1.1248130795352373
+    accuracy       : 0.8797085723143698
+    precision      : 0.7891709917239444
+    recall         : 0.8721128507208185
+    f1_score       : 0.8285714285714286
+    aucpr          : 0.9012104958061539
+    val_loss       : 1.2559387513117701
+    val_accuracy   : 0.863395225464191
+    val_precision  : 0.7590221187427241
+    val_recall     : 0.8647214854111406
+    val_f1_score   : 0.8084314941103534
+    val_aucpr      : 0.8845772108149167
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch18.pth ...
+Train Epoch: 19 [0/76 (0%)] Loss: 1.221564
+Train Epoch: 19 [16/76 (21%)] Loss: 1.145652
+Train Epoch: 19 [32/76 (42%)] Loss: 1.175499
+Train Epoch: 19 [48/76 (63%)] Loss: 1.150651
+Train Epoch: 19 [64/76 (84%)] Loss: 1.089828
+    epoch          : 19
+    loss           : 1.1239980935914902
+    accuracy       : 0.8786234692295768
+    precision      : 0.7864525139664804
+    recall         : 0.8728879243528135
+    f1_score       : 0.8274189993387702
+    aucpr          : 0.9013725458802684
+    val_loss       : 1.2670735567676399
+    val_accuracy   : 0.8616268788682582
+    val_precision  : 0.7615658362989324
+    val_recall     : 0.8514588859416445
+    val_f1_score   : 0.8040075140889167
+    val_aucpr      : 0.8845101099425607
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch19.pth ...
+Train Epoch: 20 [0/76 (0%)] Loss: 1.190237
+Train Epoch: 20 [16/76 (21%)] Loss: 1.465763
+Train Epoch: 20 [32/76 (42%)] Loss: 1.244654
+Train Epoch: 20 [48/76 (63%)] Loss: 0.850403
+Train Epoch: 20 [64/76 (84%)] Loss: 1.257470
+    epoch          : 20
+    loss           : 1.1193173701391228
+    accuracy       : 0.8799669301917016
+    precision      : 0.7906223598986201
+    recall         : 0.8704076887304294
+    f1_score       : 0.8285988342064488
+    aucpr          : 0.9029996886977749
+    val_loss       : 1.261881536240076
+    val_accuracy   : 0.8598585322723253
+    val_precision  : 0.7514384349827388
+    val_recall     : 0.8660477453580901
+    val_f1_score   : 0.8046826863832409
+    val_aucpr      : 0.8852346087497661
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch20.pth ...
+Train Epoch: 21 [0/76 (0%)] Loss: 1.016345
+Train Epoch: 21 [16/76 (21%)] Loss: 1.004582
+Train Epoch: 21 [32/76 (42%)] Loss: 1.351296
+Train Epoch: 21 [48/76 (63%)] Loss: 1.141797
+Train Epoch: 21 [64/76 (84%)] Loss: 0.926899
+    epoch          : 21
+    loss           : 1.1165370023423669
+    accuracy       : 0.8807420038236966
+    precision      : 0.7910636504145004
+    recall         : 0.8727329096264145
+    f1_score       : 0.8298938679245284
+    aucpr          : 0.903596617224222
+    val_loss       : 1.2633952645471305
+    val_accuracy   : 0.861184792219275
+    val_precision  : 0.7546296296296297
+    val_recall     : 0.8647214854111406
+    val_f1_score   : 0.8059332509270705
+    val_aucpr      : 0.8859477939389617
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch21.pth ...
+Train Epoch: 22 [0/76 (0%)] Loss: 1.213380
+Train Epoch: 22 [16/76 (21%)] Loss: 1.228797
+Train Epoch: 22 [32/76 (42%)] Loss: 1.037765
+Train Epoch: 22 [48/76 (63%)] Loss: 1.025903
+Train Epoch: 22 [64/76 (84%)] Loss: 1.418382
+    epoch          : 22
+    loss           : 1.1216750304372356
+    accuracy       : 0.8792951997106392
+    precision      : 0.7868395371532134
+    recall         : 0.8749031157960007
+    f1_score       : 0.8285378743394011
+    aucpr          : 0.9019141855286782
+    val_loss       : 1.2540694628006372
+    val_accuracy   : 0.8642793987621574
+    val_precision  : 0.7702539298669892
+    val_recall     : 0.8448275862068966
+    val_f1_score   : 0.8058191018342821
+    val_aucpr      : 0.886183786706517
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch22.pth ...
+Train Epoch: 23 [0/76 (0%)] Loss: 1.090416
+Train Epoch: 23 [16/76 (21%)] Loss: 1.159355
+Train Epoch: 23 [32/76 (42%)] Loss: 0.942688
+Train Epoch: 23 [48/76 (63%)] Loss: 1.057443
+Train Epoch: 23 [64/76 (84%)] Loss: 1.123166
+    epoch          : 23
+    loss           : 1.113888310362361
+    accuracy       : 0.8802252880690332
+    precision      : 0.7914257509519109
+    recall         : 0.8699426445512324
+    f1_score       : 0.8288288288288288
+    aucpr          : 0.9029690717532627
+    val_loss       : 1.2566487509839626
+    val_accuracy   : 0.8638373121131742
+    val_precision  : 0.7648456057007126
+    val_recall     : 0.8541114058355438
+    val_f1_score   : 0.8070175438596491
+    val_aucpr      : 0.884967146432464
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch23.pth ...
+Train Epoch: 24 [0/76 (0%)] Loss: 1.217179
+Train Epoch: 24 [16/76 (21%)] Loss: 1.623366
+Train Epoch: 24 [32/76 (42%)] Loss: 1.340233
+Train Epoch: 24 [48/76 (63%)] Loss: 1.200610
+Train Epoch: 24 [64/76 (84%)] Loss: 1.209218
+    epoch          : 24
+    loss           : 1.1120148781737647
+    accuracy       : 0.8809486901255619
+    precision      : 0.7903654950287075
+    recall         : 0.8749031157960007
+    f1_score       : 0.8304885226603884
+    aucpr          : 0.9033277855555378
+    val_loss       : 1.240800820231754
+    val_accuracy   : 0.8642793987621574
+    val_precision  : 0.7657550535077289
+    val_recall     : 0.8541114058355438
+    val_f1_score   : 0.8075235109717869
+    val_aucpr      : 0.8870850538578096
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch24.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 25 [0/76 (0%)] Loss: 0.920548
+Train Epoch: 25 [16/76 (21%)] Loss: 1.093655
+Train Epoch: 25 [32/76 (42%)] Loss: 1.142193
+Train Epoch: 25 [48/76 (63%)] Loss: 1.028005
+Train Epoch: 25 [64/76 (84%)] Loss: 1.108941
+    epoch          : 25
+    loss           : 1.1102759636003448
+    accuracy       : 0.8833772541724797
+    precision      : 0.7976156684643769
+    recall         : 0.8711827623624244
+    f1_score       : 0.8327776542935467
+    aucpr          : 0.9041672956075469
+    val_loss       : 1.2666923414807105
+    val_accuracy   : 0.8607427055702918
+    val_precision  : 0.7520091848450058
+    val_recall     : 0.8687002652519894
+    val_f1_score   : 0.8061538461538461
+    val_aucpr      : 0.8852854656292586
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch25.pth ...
+Train Epoch: 26 [0/76 (0%)] Loss: 0.992456
+Train Epoch: 26 [16/76 (21%)] Loss: 1.212665
+Train Epoch: 26 [32/76 (42%)] Loss: 1.019264
+Train Epoch: 26 [48/76 (63%)] Loss: 1.158273
+Train Epoch: 26 [64/76 (84%)] Loss: 1.085997
+    epoch          : 26
+    loss           : 1.1067315411926184
+    accuracy       : 0.8808970185500956
+    precision      : 0.7907433380084151
+    recall         : 0.8739730274376065
+    f1_score       : 0.8302775936970768
+    aucpr          : 0.9027976522887373
+    val_loss       : 1.2455699432222955
+    val_accuracy   : 0.8620689655172413
+    val_precision  : 0.7587822014051522
+    val_recall     : 0.8594164456233422
+    val_f1_score   : 0.8059701492537313
+    val_aucpr      : 0.8876256731864213
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch26.pth ...
+Train Epoch: 27 [0/76 (0%)] Loss: 1.017749
+Train Epoch: 27 [16/76 (21%)] Loss: 1.090653
+Train Epoch: 27 [32/76 (42%)] Loss: 0.933515
+Train Epoch: 27 [48/76 (63%)] Loss: 1.306523
+Train Epoch: 27 [64/76 (84%)] Loss: 0.959644
+    epoch          : 27
+    loss           : 1.1105631174015234
+    accuracy       : 0.8806903322482302
+    precision      : 0.7901372933594845
+    recall         : 0.8742830568904046
+    f1_score       : 0.8300831554934138
+    aucpr          : 0.904500807121328
+    val_loss       : 1.2450792505928734
+    val_accuracy   : 0.8669319186560566
+    val_precision  : 0.7772337821297429
+    val_recall     : 0.8421750663129973
+    val_f1_score   : 0.8084022915340547
+    val_aucpr      : 0.8878770833517692
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch27.pth ...
+Train Epoch: 28 [0/76 (0%)] Loss: 1.083033
+Train Epoch: 28 [16/76 (21%)] Loss: 1.006380
+Train Epoch: 28 [32/76 (42%)] Loss: 1.133348
+Train Epoch: 28 [48/76 (63%)] Loss: 1.099266
+Train Epoch: 28 [64/76 (84%)] Loss: 1.052382
+    epoch          : 28
+    loss           : 1.1061851986925626
+    accuracy       : 0.8807936753991629
+    precision      : 0.7906846240179574
+    recall         : 0.8736629979848085
+    f1_score       : 0.8301053096693424
+    aucpr          : 0.9048393830587058
+    val_loss       : 1.2387575753276903
+    val_accuracy   : 0.8673740053050398
+    val_precision  : 0.7866161616161617
+    val_recall     : 0.8262599469496021
+    val_f1_score   : 0.8059508408796895
+    val_aucpr      : 0.8886287476444625
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch28.pth ...
+Saving current best: model_best.pth ...
+Train Epoch: 29 [0/76 (0%)] Loss: 1.047444
+Train Epoch: 29 [16/76 (21%)] Loss: 0.919373
+Train Epoch: 29 [32/76 (42%)] Loss: 1.408343
+Train Epoch: 29 [48/76 (63%)] Loss: 1.321122
+Train Epoch: 29 [64/76 (84%)] Loss: 1.066686
+    epoch          : 29
+    loss           : 1.1113886357659624
+    accuracy       : 0.8831705678706143
+    precision      : 0.7956534010725373
+    recall         : 0.8739730274376065
+    f1_score       : 0.8329762872128241
+    aucpr          : 0.9040816401413464
+    val_loss       : 1.2663471654492284
+    val_accuracy   : 0.8589743589743589
+    val_precision  : 0.7520278099652375
+    val_recall     : 0.8607427055702918
+    val_f1_score   : 0.8027210884353742
+    val_aucpr      : 0.886107264183661
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch29.pth ...
+Train Epoch: 30 [0/76 (0%)] Loss: 0.999551
+Train Epoch: 30 [16/76 (21%)] Loss: 1.172863
+Train Epoch: 30 [32/76 (42%)] Loss: 1.116721
+Train Epoch: 30 [48/76 (63%)] Loss: 1.128678
+Train Epoch: 30 [64/76 (84%)] Loss: 1.143963
+    epoch          : 30
+    loss           : 1.1096579043408028
+    accuracy       : 0.8801219449181006
+    precision      : 0.7890023786204001
+    recall         : 0.8741280421640055
+    f1_score       : 0.8293866745109575
+    aucpr          : 0.9034094458403774
+    val_loss       : 1.2533274365146005
+    val_accuracy   : 0.8629531388152077
+    val_precision  : 0.7674698795180723
+    val_recall     : 0.8448275862068966
+    val_f1_score   : 0.8042929292929293
+    val_aucpr      : 0.8860085837704462
+Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/checkpoint-epoch30.pth ...
+TEST_START 2026-10-15T21:40:34+08:00 best_checkpoint=/root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/model_best.pth
+Positives: 1369.0 / Negatives: 2738.0
+Dataset length 4107.0
+/root/miniconda3/lib/python3.10/site-packages/torch/nn/modules/transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+Loading checkpoint: /root/autodl-tmp/mesogeos_repro/results/gtn/models/mesogeos_trackA_gtn_seed12345/1015_213503/model_best.pth ...
+{'loss': 1.393109927074097, 'accuracy': 0.8541514487460433, 'precision': 0.7818448023426061, 'recall': 0.7801314828341855, 'f1_score': 0.7809872029250458, 'aucpr': 0.8565372627524064}
+RUN_FINISHED 2026-10-15T21:40:43+08:00
+EXIT_CODE 0 2026-10-15T21:40:43+08:00

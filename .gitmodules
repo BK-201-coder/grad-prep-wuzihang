@@ -1,0 +1,3 @@
+[submodule "mesogeos-official-code"]
+	path = research/reproduction/05-Mesogeos A multi-purpose dataset for data-driven  wildfire modeling in the Mediterranean/code
+	url = https://github.com/Orion-AI-Lab/mesogeos.git

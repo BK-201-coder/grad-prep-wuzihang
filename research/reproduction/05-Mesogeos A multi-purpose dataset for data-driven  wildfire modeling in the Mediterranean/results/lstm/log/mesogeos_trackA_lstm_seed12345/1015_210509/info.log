@@ -1,0 +1,449 @@
+2026-10-15 21:05:18,085 - train - INFO - SimpleLSTM(
+  (lstm): LSTM(24, 128, batch_first=True)
+  (ln1): LayerNorm((24,), eps=1e-05, elementwise_affine=True)
+  (fc1): Linear(in_features=128, out_features=128, bias=True)
+  (drop1): Dropout(p=0.5, inplace=False)
+  (relu): ReLU()
+  (fc2): Linear(in_features=128, out_features=64, bias=True)
+  (drop2): Dropout(p=0.5, inplace=False)
+  (fc3): Linear(in_features=64, out_features=2, bias=True)
+  (fc_nn): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Dropout(p=0.5, inplace=False)
+    (2): ReLU()
+    (3): Linear(in_features=128, out_features=64, bias=True)
+    (4): Dropout(p=0.5, inplace=False)
+    (5): ReLU()
+    (6): Linear(in_features=64, out_features=2, bias=True)
+  )
+)
+2026-10-15 21:05:28,253 - trainer - INFO -     epoch          : 1
+2026-10-15 21:05:28,253 - trainer - INFO -     loss           : 1.7676684145335355
+2026-10-15 21:05:28,253 - trainer - INFO -     accuracy       : 0.8041647289825867
+2026-10-15 21:05:28,253 - trainer - INFO -     precision      : 0.677376349820024
+2026-10-15 21:05:28,253 - trainer - INFO -     recall         : 0.7876298248333592
+2026-10-15 21:05:28,253 - trainer - INFO -     f1_score       : 0.7283543577981652
+2026-10-15 21:05:28,253 - trainer - INFO -     aucpr          : 0.7566691495938515
+2026-10-15 21:05:28,253 - trainer - INFO -     val_loss       : 1.458664894736414
+2026-10-15 21:05:28,253 - trainer - INFO -     val_accuracy   : 0.8381962864721485
+2026-10-15 21:05:28,253 - trainer - INFO -     val_precision  : 0.7468193384223919
+2026-10-15 21:05:28,254 - trainer - INFO -     val_recall     : 0.7785145888594165
+2026-10-15 21:05:28,254 - trainer - INFO -     val_f1_score   : 0.7623376623376623
+2026-10-15 21:05:28,254 - trainer - INFO -     val_aucpr      : 0.843835276791838
+2026-10-15 21:05:28,260 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch1.pth ...
+2026-10-15 21:05:28,266 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:05:38,000 - trainer - INFO -     epoch          : 2
+2026-10-15 21:05:38,000 - trainer - INFO -     loss           : 1.478102547619895
+2026-10-15 21:05:38,000 - trainer - INFO -     accuracy       : 0.8377512530357051
+2026-10-15 21:05:38,000 - trainer - INFO -     precision      : 0.7227829363477325
+2026-10-15 21:05:38,000 - trainer - INFO -     recall         : 0.8325840954890714
+2026-10-15 21:05:38,000 - trainer - INFO -     f1_score       : 0.7738078086731018
+2026-10-15 21:05:38,000 - trainer - INFO -     aucpr          : 0.8247919186337411
+2026-10-15 21:05:38,000 - trainer - INFO -     val_loss       : 1.413383540171211
+2026-10-15 21:05:38,000 - trainer - INFO -     val_accuracy   : 0.843501326259947
+2026-10-15 21:05:38,000 - trainer - INFO -     val_precision  : 0.7570694087403599
+2026-10-15 21:05:38,000 - trainer - INFO -     val_recall     : 0.7811671087533156
+2026-10-15 21:05:38,000 - trainer - INFO -     val_f1_score   : 0.7689295039164491
+2026-10-15 21:05:38,000 - trainer - INFO -     val_aucpr      : 0.8545272611664178
+2026-10-15 21:05:38,007 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch2.pth ...
+2026-10-15 21:05:38,013 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:05:47,635 - trainer - INFO -     epoch          : 3
+2026-10-15 21:05:47,635 - trainer - INFO -     loss           : 1.4038613677388265
+2026-10-15 21:05:47,635 - trainer - INFO -     accuracy       : 0.8492223427892317
+2026-10-15 21:05:47,636 - trainer - INFO -     precision      : 0.7407659806460406
+2026-10-15 21:05:47,636 - trainer - INFO -     recall         : 0.842505037978608
+2026-10-15 21:05:47,636 - trainer - INFO -     f1_score       : 0.7883666956774006
+2026-10-15 21:05:47,636 - trainer - INFO -     aucpr          : 0.8422085984810279
+2026-10-15 21:05:47,636 - trainer - INFO -     val_loss       : 1.366627155311544
+2026-10-15 21:05:47,636 - trainer - INFO -     val_accuracy   : 0.843501326259947
+2026-10-15 21:05:47,636 - trainer - INFO -     val_precision  : 0.7247191011235955
+2026-10-15 21:05:47,636 - trainer - INFO -     val_recall     : 0.8554376657824934
+2026-10-15 21:05:47,636 - trainer - INFO -     val_f1_score   : 0.7846715328467153
+2026-10-15 21:05:47,636 - trainer - INFO -     val_aucpr      : 0.858692028019302
+2026-10-15 21:05:47,647 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch3.pth ...
+2026-10-15 21:05:47,657 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:05:57,501 - trainer - INFO -     epoch          : 4
+2026-10-15 21:05:57,501 - trainer - INFO -     loss           : 1.373545851681834
+2026-10-15 21:05:57,501 - trainer - INFO -     accuracy       : 0.8543895003358652
+2026-10-15 21:05:57,501 - trainer - INFO -     precision      : 0.7472437729685586
+2026-10-15 21:05:57,501 - trainer - INFO -     recall         : 0.8510308479305534
+2026-10-15 21:05:57,501 - trainer - INFO -     f1_score       : 0.7957675025365996
+2026-10-15 21:05:57,501 - trainer - INFO -     aucpr          : 0.8489059082276356
+2026-10-15 21:05:57,501 - trainer - INFO -     val_loss       : 1.3415003693493777
+2026-10-15 21:05:57,501 - trainer - INFO -     val_accuracy   : 0.8483642793987621
+2026-10-15 21:05:57,501 - trainer - INFO -     val_precision  : 0.7571964956195244
+2026-10-15 21:05:57,501 - trainer - INFO -     val_recall     : 0.8023872679045093
+2026-10-15 21:05:57,501 - trainer - INFO -     val_f1_score   : 0.7791371538956857
+2026-10-15 21:05:57,501 - trainer - INFO -     val_aucpr      : 0.8633188936319441
+2026-10-15 21:05:57,507 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch4.pth ...
+2026-10-15 21:05:57,513 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:06:07,701 - trainer - INFO -     epoch          : 5
+2026-10-15 21:06:07,701 - trainer - INFO -     loss           : 1.329069565680762
+2026-10-15 21:06:07,701 - trainer - INFO -     accuracy       : 0.8577481527411771
+2026-10-15 21:06:07,701 - trainer - INFO -     precision      : 0.7517701525054467
+2026-10-15 21:06:07,702 - trainer - INFO -     recall         : 0.8558363044489227
+2026-10-15 21:06:07,702 - trainer - INFO -     f1_score       : 0.8004349401957231
+2026-10-15 21:06:07,702 - trainer - INFO -     aucpr          : 0.8576923446507532
+2026-10-15 21:06:07,702 - trainer - INFO -     val_loss       : 1.3018047511314101
+2026-10-15 21:06:07,702 - trainer - INFO -     val_accuracy   : 0.8603006189213086
+2026-10-15 21:06:07,702 - trainer - INFO -     val_precision  : 0.769041769041769
+2026-10-15 21:06:07,702 - trainer - INFO -     val_recall     : 0.830238726790451
+2026-10-15 21:06:07,702 - trainer - INFO -     val_f1_score   : 0.798469387755102
+2026-10-15 21:06:07,702 - trainer - INFO -     val_aucpr      : 0.870542003181905
+2026-10-15 21:06:07,710 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch5.pth ...
+2026-10-15 21:06:07,716 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:06:17,754 - trainer - INFO -     epoch          : 6
+2026-10-15 21:06:17,755 - trainer - INFO -     loss           : 1.2985448189954059
+2026-10-15 21:06:17,755 - trainer - INFO -     accuracy       : 0.8620885650803493
+2026-10-15 21:06:17,755 - trainer - INFO -     precision      : 0.7611878453038674
+2026-10-15 21:06:17,755 - trainer - INFO -     recall         : 0.8542861571849326
+2026-10-15 21:06:17,755 - trainer - INFO -     f1_score       : 0.8050544153093273
+2026-10-15 21:06:17,755 - trainer - INFO -     aucpr          : 0.8671303315148868
+2026-10-15 21:06:17,755 - trainer - INFO -     val_loss       : 1.3117227715585846
+2026-10-15 21:06:17,755 - trainer - INFO -     val_accuracy   : 0.8545534924845269
+2026-10-15 21:06:17,755 - trainer - INFO -     val_precision  : 0.7456647398843931
+2026-10-15 21:06:17,755 - trainer - INFO -     val_recall     : 0.8554376657824934
+2026-10-15 21:06:17,756 - trainer - INFO -     val_f1_score   : 0.7967881408276714
+2026-10-15 21:06:17,756 - trainer - INFO -     val_aucpr      : 0.8709896831736689
+2026-10-15 21:06:17,766 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch6.pth ...
+2026-10-15 21:06:27,789 - trainer - INFO -     epoch          : 7
+2026-10-15 21:06:27,790 - trainer - INFO -     loss           : 1.306265589821673
+2026-10-15 21:06:27,790 - trainer - INFO -     accuracy       : 0.8623985945331473
+2026-10-15 21:06:27,790 - trainer - INFO -     precision      : 0.759168035030104
+2026-10-15 21:06:27,790 - trainer - INFO -     recall         : 0.8600217020616958
+2026-10-15 21:06:27,790 - trainer - INFO -     f1_score       : 0.8064539574096955
+2026-10-15 21:06:27,790 - trainer - INFO -     aucpr          : 0.8667253512140287
+2026-10-15 21:06:27,790 - trainer - INFO -     val_loss       : 1.2594830447019043
+2026-10-15 21:06:27,790 - trainer - INFO -     val_accuracy   : 0.8625110521662246
+2026-10-15 21:06:27,790 - trainer - INFO -     val_precision  : 0.7519908987485779
+2026-10-15 21:06:27,791 - trainer - INFO -     val_recall     : 0.876657824933687
+2026-10-15 21:06:27,791 - trainer - INFO -     val_f1_score   : 0.8095529699938763
+2026-10-15 21:06:27,791 - trainer - INFO -     val_aucpr      : 0.8808201243592924
+2026-10-15 21:06:27,797 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch7.pth ...
+2026-10-15 21:06:27,802 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:06:37,531 - trainer - INFO -     epoch          : 8
+2026-10-15 21:06:37,532 - trainer - INFO -     loss           : 1.2699007595662757
+2026-10-15 21:06:37,532 - trainer - INFO -     accuracy       : 0.8655505606365939
+2026-10-15 21:06:37,532 - trainer - INFO -     precision      : 0.7666620479423584
+2026-10-15 21:06:37,532 - trainer - INFO -     recall         : 0.8576964811657107
+2026-10-15 21:06:37,532 - trainer - INFO -     f1_score       : 0.8096283289435177
+2026-10-15 21:06:37,532 - trainer - INFO -     aucpr          : 0.8743669558067328
+2026-10-15 21:06:37,532 - trainer - INFO -     val_loss       : 1.3160205811762788
+2026-10-15 21:06:37,532 - trainer - INFO -     val_accuracy   : 0.8430592396109637
+2026-10-15 21:06:37,533 - trainer - INFO -     val_precision  : 0.7161430119176598
+2026-10-15 21:06:37,533 - trainer - INFO -     val_recall     : 0.876657824933687
+2026-10-15 21:06:37,533 - trainer - INFO -     val_f1_score   : 0.7883124627310674
+2026-10-15 21:06:37,533 - trainer - INFO -     val_aucpr      : 0.8723162963921792
+2026-10-15 21:06:37,539 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch8.pth ...
+2026-10-15 21:06:47,354 - trainer - INFO -     epoch          : 9
+2026-10-15 21:06:47,354 - trainer - INFO -     loss           : 1.2620274724993836
+2026-10-15 21:06:47,354 - trainer - INFO -     accuracy       : 0.8654988890611275
+2026-10-15 21:06:47,354 - trainer - INFO -     precision      : 0.763923182441701
+2026-10-15 21:06:47,354 - trainer - INFO -     recall         : 0.863277011316075
+2026-10-15 21:06:47,354 - trainer - INFO -     f1_score       : 0.8105669165271814
+2026-10-15 21:06:47,354 - trainer - INFO -     aucpr          : 0.8763233379898907
+2026-10-15 21:06:47,354 - trainer - INFO -     val_loss       : 1.2727538044741469
+2026-10-15 21:06:47,354 - trainer - INFO -     val_accuracy   : 0.8669319186560566
+2026-10-15 21:06:47,354 - trainer - INFO -     val_precision  : 0.789272030651341
+2026-10-15 21:06:47,354 - trainer - INFO -     val_recall     : 0.8196286472148541
+2026-10-15 21:06:47,354 - trainer - INFO -     val_f1_score   : 0.8041639557579701
+2026-10-15 21:06:47,354 - trainer - INFO -     val_aucpr      : 0.877365266164825
+2026-10-15 21:06:47,360 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch9.pth ...
+2026-10-15 21:06:57,448 - trainer - INFO -     epoch          : 10
+2026-10-15 21:06:57,448 - trainer - INFO -     loss           : 1.2320336117791506
+2026-10-15 21:06:57,448 - trainer - INFO -     accuracy       : 0.870356017154963
+2026-10-15 21:06:57,448 - trainer - INFO -     precision      : 0.7747421243378868
+2026-10-15 21:06:57,448 - trainer - INFO -     recall         : 0.861571849325686
+2026-10-15 21:06:57,449 - trainer - INFO -     f1_score       : 0.8158532110091743
+2026-10-15 21:06:57,449 - trainer - INFO -     aucpr          : 0.8789510937798128
+2026-10-15 21:06:57,449 - trainer - INFO -     val_loss       : 1.3323236036680106
+2026-10-15 21:06:57,449 - trainer - INFO -     val_accuracy   : 0.852343059239611
+2026-10-15 21:06:57,449 - trainer - INFO -     val_precision  : 0.7625
+2026-10-15 21:06:57,449 - trainer - INFO -     val_recall     : 0.8090185676392573
+2026-10-15 21:06:57,449 - trainer - INFO -     val_f1_score   : 0.7850707850707851
+2026-10-15 21:06:57,449 - trainer - INFO -     val_aucpr      : 0.8726299577681
+2026-10-15 21:06:57,461 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch10.pth ...
+2026-10-15 21:07:07,514 - trainer - INFO -     epoch          : 11
+2026-10-15 21:07:07,514 - trainer - INFO -     loss           : 1.2399917183529467
+2026-10-15 21:07:07,514 - trainer - INFO -     accuracy       : 0.870511031881362
+2026-10-15 21:07:07,514 - trainer - INFO -     precision      : 0.7747597158378604
+2026-10-15 21:07:07,514 - trainer - INFO -     recall         : 0.862191908231282
+2026-10-15 21:07:07,514 - trainer - INFO -     f1_score       : 0.8161408657373441
+2026-10-15 21:07:07,514 - trainer - INFO -     aucpr          : 0.8776384127920551
+2026-10-15 21:07:07,515 - trainer - INFO -     val_loss       : 1.2276407578263422
+2026-10-15 21:07:07,515 - trainer - INFO -     val_accuracy   : 0.8620689655172413
+2026-10-15 21:07:07,515 - trainer - INFO -     val_precision  : 0.7662650602409639
+2026-10-15 21:07:07,515 - trainer - INFO -     val_recall     : 0.843501326259947
+2026-10-15 21:07:07,515 - trainer - INFO -     val_f1_score   : 0.803030303030303
+2026-10-15 21:07:07,515 - trainer - INFO -     val_aucpr      : 0.8827468344990802
+2026-10-15 21:07:07,521 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch11.pth ...
+2026-10-15 21:07:07,526 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:07:17,450 - trainer - INFO -     epoch          : 12
+2026-10-15 21:07:17,450 - trainer - INFO -     loss           : 1.2190417038749455
+2026-10-15 21:07:17,451 - trainer - INFO -     accuracy       : 0.8699426445512324
+2026-10-15 21:07:17,451 - trainer - INFO -     precision      : 0.774108138238573
+2026-10-15 21:07:17,451 - trainer - INFO -     recall         : 0.861106805146489
+2026-10-15 21:07:17,451 - trainer - INFO -     f1_score       : 0.815293167975343
+2026-10-15 21:07:17,451 - trainer - INFO -     aucpr          : 0.8837590027703377
+2026-10-15 21:07:17,451 - trainer - INFO -     val_loss       : 1.266979107068346
+2026-10-15 21:07:17,451 - trainer - INFO -     val_accuracy   : 0.8554376657824934
+2026-10-15 21:07:17,451 - trainer - INFO -     val_precision  : 0.7575392038600723
+2026-10-15 21:07:17,451 - trainer - INFO -     val_recall     : 0.8328912466843501
+2026-10-15 21:07:17,451 - trainer - INFO -     val_f1_score   : 0.7934301958307012
+2026-10-15 21:07:17,451 - trainer - INFO -     val_aucpr      : 0.8773358736899348
+2026-10-15 21:07:17,457 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch12.pth ...
+2026-10-15 21:07:27,404 - trainer - INFO -     epoch          : 13
+2026-10-15 21:07:27,404 - trainer - INFO -     loss           : 1.2198188439183277
+2026-10-15 21:07:27,404 - trainer - INFO -     accuracy       : 0.8711827623624244
+2026-10-15 21:07:27,404 - trainer - INFO -     precision      : 0.7723644371043215
+2026-10-15 21:07:27,404 - trainer - INFO -     recall         : 0.8699426445512324
+2026-10-15 21:07:27,404 - trainer - INFO -     f1_score       : 0.8182547204199169
+2026-10-15 21:07:27,404 - trainer - INFO -     aucpr          : 0.8821068824610657
+2026-10-15 21:07:27,404 - trainer - INFO -     val_loss       : 1.3056520173024753
+2026-10-15 21:07:27,404 - trainer - INFO -     val_accuracy   : 0.8558797524314765
+2026-10-15 21:07:27,404 - trainer - INFO -     val_precision  : 0.7622549019607843
+2026-10-15 21:07:27,404 - trainer - INFO -     val_recall     : 0.8249336870026526
+2026-10-15 21:07:27,404 - trainer - INFO -     val_f1_score   : 0.7923566878980892
+2026-10-15 21:07:27,404 - trainer - INFO -     val_aucpr      : 0.8712680152644482
+2026-10-15 21:07:27,412 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch13.pth ...
+2026-10-15 21:07:37,392 - trainer - INFO -     epoch          : 14
+2026-10-15 21:07:37,392 - trainer - INFO -     loss           : 1.225983960624937
+2026-10-15 21:07:37,392 - trainer - INFO -     accuracy       : 0.8718544928434868
+2026-10-15 21:07:37,392 - trainer - INFO -     precision      : 0.7762626965354111
+2026-10-15 21:07:37,392 - trainer - INFO -     recall         : 0.8648271585800651
+2026-10-15 21:07:37,393 - trainer - INFO -     f1_score       : 0.8181551547147675
+2026-10-15 21:07:37,393 - trainer - INFO -     aucpr          : 0.8801950199109299
+2026-10-15 21:07:37,393 - trainer - INFO -     val_loss       : 1.2544744521722027
+2026-10-15 21:07:37,393 - trainer - INFO -     val_accuracy   : 0.8629531388152077
+2026-10-15 21:07:37,393 - trainer - INFO -     val_precision  : 0.7599531615925058
+2026-10-15 21:07:37,393 - trainer - INFO -     val_recall     : 0.8607427055702918
+2026-10-15 21:07:37,393 - trainer - INFO -     val_f1_score   : 0.8072139303482587
+2026-10-15 21:07:37,393 - trainer - INFO -     val_aucpr      : 0.8796230852564793
+2026-10-15 21:07:37,399 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch14.pth ...
+2026-10-15 21:07:47,416 - trainer - INFO -     epoch          : 15
+2026-10-15 21:07:47,417 - trainer - INFO -     loss           : 1.1991734683947903
+2026-10-15 21:07:47,417 - trainer - INFO -     accuracy       : 0.8757815325789283
+2026-10-15 21:07:47,417 - trainer - INFO -     precision      : 0.7821782178217822
+2026-10-15 21:07:47,417 - trainer - INFO -     recall         : 0.8694776003720354
+2026-10-15 21:07:47,417 - trainer - INFO -     f1_score       : 0.8235207752165614
+2026-10-15 21:07:47,417 - trainer - INFO -     aucpr          : 0.8857540464381334
+2026-10-15 21:07:47,417 - trainer - INFO -     val_loss       : 1.2435273478033266
+2026-10-15 21:07:47,417 - trainer - INFO -     val_accuracy   : 0.8664898320070734
+2026-10-15 21:07:47,417 - trainer - INFO -     val_precision  : 0.7621809744779582
+2026-10-15 21:07:47,417 - trainer - INFO -     val_recall     : 0.8713527851458885
+2026-10-15 21:07:47,417 - trainer - INFO -     val_f1_score   : 0.8131188118811881
+2026-10-15 21:07:47,417 - trainer - INFO -     val_aucpr      : 0.8779441552260403
+2026-10-15 21:07:47,426 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch15.pth ...
+2026-10-15 21:07:57,330 - trainer - INFO -     epoch          : 16
+2026-10-15 21:07:57,330 - trainer - INFO -     loss           : 1.1319156088262592
+2026-10-15 21:07:57,330 - trainer - INFO -     accuracy       : 0.88125871957836
+2026-10-15 21:07:57,331 - trainer - INFO -     precision      : 0.7881226585264326
+2026-10-15 21:07:57,331 - trainer - INFO -     recall         : 0.8804836459463649
+2026-10-15 21:07:57,331 - trainer - INFO -     f1_score       : 0.8317469614877727
+2026-10-15 21:07:57,331 - trainer - INFO -     aucpr          : 0.8994009793007451
+2026-10-15 21:07:57,331 - trainer - INFO -     val_loss       : 1.2301611275297684
+2026-10-15 21:07:57,331 - trainer - INFO -     val_accuracy   : 0.870026525198939
+2026-10-15 21:07:57,331 - trainer - INFO -     val_precision  : 0.779126213592233
+2026-10-15 21:07:57,331 - trainer - INFO -     val_recall     : 0.8514588859416445
+2026-10-15 21:07:57,331 - trainer - INFO -     val_f1_score   : 0.8136882129277566
+2026-10-15 21:07:57,331 - trainer - INFO -     val_aucpr      : 0.8847875681492329
+2026-10-15 21:07:57,337 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch16.pth ...
+2026-10-15 21:08:07,358 - trainer - INFO -     epoch          : 17
+2026-10-15 21:08:07,358 - trainer - INFO -     loss           : 1.1124287126649846
+2026-10-15 21:08:07,358 - trainer - INFO -     accuracy       : 0.8863742055495272
+2026-10-15 21:08:07,358 - trainer - INFO -     precision      : 0.7968444568556269
+2026-10-15 21:08:07,358 - trainer - INFO -     recall         : 0.8846690435591381
+2026-10-15 21:08:07,358 - trainer - INFO -     f1_score       : 0.8384632336736942
+2026-10-15 21:08:07,358 - trainer - INFO -     aucpr          : 0.9019330019205609
+2026-10-15 21:08:07,358 - trainer - INFO -     val_loss       : 1.230234486987167
+2026-10-15 21:08:07,358 - trainer - INFO -     val_accuracy   : 0.8691423519009726
+2026-10-15 21:08:07,358 - trainer - INFO -     val_precision  : 0.7739234449760766
+2026-10-15 21:08:07,358 - trainer - INFO -     val_recall     : 0.8580901856763926
+2026-10-15 21:08:07,358 - trainer - INFO -     val_f1_score   : 0.8138364779874214
+2026-10-15 21:08:07,358 - trainer - INFO -     val_aucpr      : 0.8846944340393283
+2026-10-15 21:08:07,364 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch17.pth ...
+2026-10-15 21:08:17,255 - trainer - INFO -     epoch          : 18
+2026-10-15 21:08:17,255 - trainer - INFO -     loss           : 1.0927200386618199
+2026-10-15 21:08:17,255 - trainer - INFO -     accuracy       : 0.8871492791815222
+2026-10-15 21:08:17,255 - trainer - INFO -     precision      : 0.797186237637554
+2026-10-15 21:08:17,255 - trainer - INFO -     recall         : 0.8871492791815222
+2026-10-15 21:08:17,255 - trainer - INFO -     f1_score       : 0.8397652237710932
+2026-10-15 21:08:17,255 - trainer - INFO -     aucpr          : 0.9037351605235371
+2026-10-15 21:08:17,255 - trainer - INFO -     val_loss       : 1.2451792903751742
+2026-10-15 21:08:17,256 - trainer - INFO -     val_accuracy   : 0.8735632183908046
+2026-10-15 21:08:17,256 - trainer - INFO -     val_precision  : 0.7881773399014779
+2026-10-15 21:08:17,256 - trainer - INFO -     val_recall     : 0.8488063660477454
+2026-10-15 21:08:17,256 - trainer - INFO -     val_f1_score   : 0.8173690932311622
+2026-10-15 21:08:17,256 - trainer - INFO -     val_aucpr      : 0.8837286686426128
+2026-10-15 21:08:17,262 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch18.pth ...
+2026-10-15 21:08:27,346 - trainer - INFO -     epoch          : 19
+2026-10-15 21:08:27,347 - trainer - INFO -     loss           : 1.086399768012713
+2026-10-15 21:08:27,347 - trainer - INFO -     accuracy       : 0.888337725417248
+2026-10-15 21:08:27,347 - trainer - INFO -     precision      : 0.803566374186244
+2026-10-15 21:08:27,347 - trainer - INFO -     recall         : 0.8801736164935668
+2026-10-15 21:08:27,347 - trainer - INFO -     f1_score       : 0.8401272471702301
+2026-10-15 21:08:27,347 - trainer - INFO -     aucpr          : 0.9056888907392371
+2026-10-15 21:08:27,347 - trainer - INFO -     val_loss       : 1.2199876668914875
+2026-10-15 21:08:27,347 - trainer - INFO -     val_accuracy   : 0.8687002652519894
+2026-10-15 21:08:27,347 - trainer - INFO -     val_precision  : 0.7743097238895558
+2026-10-15 21:08:27,347 - trainer - INFO -     val_recall     : 0.8554376657824934
+2026-10-15 21:08:27,347 - trainer - INFO -     val_f1_score   : 0.8128544423440454
+2026-10-15 21:08:27,347 - trainer - INFO -     val_aucpr      : 0.8863224201183131
+2026-10-15 21:08:27,354 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch19.pth ...
+2026-10-15 21:08:27,360 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:08:37,007 - trainer - INFO -     epoch          : 20
+2026-10-15 21:08:37,007 - trainer - INFO -     loss           : 1.0823439474143532
+2026-10-15 21:08:37,007 - trainer - INFO -     accuracy       : 0.889267813775642
+2026-10-15 21:08:37,007 - trainer - INFO -     precision      : 0.8032094594594594
+2026-10-15 21:08:37,007 - trainer - INFO -     recall         : 0.8845140288327391
+2026-10-15 21:08:37,007 - trainer - INFO -     f1_score       : 0.8419033566949465
+2026-10-15 21:08:37,007 - trainer - INFO -     aucpr          : 0.9054323031727449
+2026-10-15 21:08:37,007 - trainer - INFO -     val_loss       : 1.237351823654141
+2026-10-15 21:08:37,007 - trainer - INFO -     val_accuracy   : 0.8717948717948718
+2026-10-15 21:08:37,007 - trainer - INFO -     val_precision  : 0.7951653944020356
+2026-10-15 21:08:37,007 - trainer - INFO -     val_recall     : 0.8289124668435013
+2026-10-15 21:08:37,007 - trainer - INFO -     val_f1_score   : 0.8116883116883117
+2026-10-15 21:08:37,007 - trainer - INFO -     val_aucpr      : 0.8855541079444837
+2026-10-15 21:08:37,014 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch20.pth ...
+2026-10-15 21:08:47,204 - trainer - INFO -     epoch          : 21
+2026-10-15 21:08:47,204 - trainer - INFO -     loss           : 1.0750757564545073
+2026-10-15 21:08:47,204 - trainer - INFO -     accuracy       : 0.8890611274737766
+2026-10-15 21:08:47,204 - trainer - INFO -     precision      : 0.8023321157628547
+2026-10-15 21:08:47,205 - trainer - INFO -     recall         : 0.8852891024647341
+2026-10-15 21:08:47,205 - trainer - INFO -     f1_score       : 0.8417716854595033
+2026-10-15 21:08:47,205 - trainer - INFO -     aucpr          : 0.9046167198498346
+2026-10-15 21:08:47,205 - trainer - INFO -     val_loss       : 1.2182473180359386
+2026-10-15 21:08:47,205 - trainer - INFO -     val_accuracy   : 0.8691423519009726
+2026-10-15 21:08:47,205 - trainer - INFO -     val_precision  : 0.7732696897374701
+2026-10-15 21:08:47,205 - trainer - INFO -     val_recall     : 0.8594164456233422
+2026-10-15 21:08:47,205 - trainer - INFO -     val_f1_score   : 0.8140703517587939
+2026-10-15 21:08:47,205 - trainer - INFO -     val_aucpr      : 0.8881409788609731
+2026-10-15 21:08:47,216 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch21.pth ...
+2026-10-15 21:08:47,226 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:08:57,235 - trainer - INFO -     epoch          : 22
+2026-10-15 21:08:57,237 - trainer - INFO -     loss           : 1.084599226770158
+2026-10-15 21:08:57,237 - trainer - INFO -     accuracy       : 0.8896295148039064
+2026-10-15 21:08:57,237 - trainer - INFO -     precision      : 0.8028920398708409
+2026-10-15 21:08:57,237 - trainer - INFO -     recall         : 0.8865292202759262
+2026-10-15 21:08:57,237 - trainer - INFO -     f1_score       : 0.842640341829969
+2026-10-15 21:08:57,237 - trainer - INFO -     aucpr          : 0.9063326199189409
+2026-10-15 21:08:57,237 - trainer - INFO -     val_loss       : 1.2266798274481223
+2026-10-15 21:08:57,237 - trainer - INFO -     val_accuracy   : 0.867816091954023
+2026-10-15 21:08:57,237 - trainer - INFO -     val_precision  : 0.7771010962241169
+2026-10-15 21:08:57,237 - trainer - INFO -     val_recall     : 0.8461538461538461
+2026-10-15 21:08:57,237 - trainer - INFO -     val_f1_score   : 0.8101587301587302
+2026-10-15 21:08:57,237 - trainer - INFO -     val_aucpr      : 0.8866806301774609
+2026-10-15 21:08:57,243 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch22.pth ...
+2026-10-15 21:09:07,521 - trainer - INFO -     epoch          : 23
+2026-10-15 21:09:07,522 - trainer - INFO -     loss           : 1.0761031367973055
+2026-10-15 21:09:07,522 - trainer - INFO -     accuracy       : 0.88957784322844
+2026-10-15 21:09:07,522 - trainer - INFO -     precision      : 0.8021854861305688
+2026-10-15 21:09:07,522 - trainer - INFO -     recall         : 0.8876143233607192
+2026-10-15 21:09:07,522 - trainer - INFO -     f1_score       : 0.8427404518360438
+2026-10-15 21:09:07,522 - trainer - INFO -     aucpr          : 0.9070577913384335
+2026-10-15 21:09:07,522 - trainer - INFO -     val_loss       : 1.243666437323593
+2026-10-15 21:09:07,522 - trainer - INFO -     val_accuracy   : 0.8691423519009726
+2026-10-15 21:09:07,522 - trainer - INFO -     val_precision  : 0.7792682926829269
+2026-10-15 21:09:07,522 - trainer - INFO -     val_recall     : 0.8474801061007957
+2026-10-15 21:09:07,522 - trainer - INFO -     val_f1_score   : 0.8119440914866582
+2026-10-15 21:09:07,522 - trainer - INFO -     val_aucpr      : 0.8859717207391213
+2026-10-15 21:09:07,528 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch23.pth ...
+2026-10-15 21:09:17,333 - trainer - INFO -     epoch          : 24
+2026-10-15 21:09:17,333 - trainer - INFO -     loss           : 1.0627026822914025
+2026-10-15 21:09:17,333 - trainer - INFO -     accuracy       : 0.8915413630961608
+2026-10-15 21:09:17,333 - trainer - INFO -     precision      : 0.8084774595973916
+2026-10-15 21:09:17,333 - trainer - INFO -     recall         : 0.8840489846535421
+2026-10-15 21:09:17,333 - trainer - INFO -     f1_score       : 0.8445760829322473
+2026-10-15 21:09:17,333 - trainer - INFO -     aucpr          : 0.9099213203060896
+2026-10-15 21:09:17,333 - trainer - INFO -     val_loss       : 1.2375504383463232
+2026-10-15 21:09:17,333 - trainer - INFO -     val_accuracy   : 0.8673740053050398
+2026-10-15 21:09:17,333 - trainer - INFO -     val_precision  : 0.7754854368932039
+2026-10-15 21:09:17,333 - trainer - INFO -     val_recall     : 0.8474801061007957
+2026-10-15 21:09:17,333 - trainer - INFO -     val_f1_score   : 0.8098859315589354
+2026-10-15 21:09:17,333 - trainer - INFO -     val_aucpr      : 0.8870336281298794
+2026-10-15 21:09:17,343 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch24.pth ...
+2026-10-15 21:09:27,147 - trainer - INFO -     epoch          : 25
+2026-10-15 21:09:27,147 - trainer - INFO -     loss           : 1.0688029779227632
+2026-10-15 21:09:27,147 - trainer - INFO -     accuracy       : 0.8907662894641658
+2026-10-15 21:09:27,147 - trainer - INFO -     precision      : 0.8059827853816848
+2026-10-15 21:09:27,147 - trainer - INFO -     recall         : 0.8854441171911331
+2026-10-15 21:09:27,147 - trainer - INFO -     f1_score       : 0.843846949327818
+2026-10-15 21:09:27,147 - trainer - INFO -     aucpr          : 0.9085213061743528
+2026-10-15 21:09:27,147 - trainer - INFO -     val_loss       : 1.2341736746930527
+2026-10-15 21:09:27,147 - trainer - INFO -     val_accuracy   : 0.8673740053050398
+2026-10-15 21:09:27,147 - trainer - INFO -     val_precision  : 0.768957345971564
+2026-10-15 21:09:27,147 - trainer - INFO -     val_recall     : 0.8607427055702918
+2026-10-15 21:09:27,147 - trainer - INFO -     val_f1_score   : 0.8122653316645807
+2026-10-15 21:09:27,148 - trainer - INFO -     val_aucpr      : 0.88613653138532
+2026-10-15 21:09:27,154 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch25.pth ...
+2026-10-15 21:09:37,008 - trainer - INFO -     epoch          : 26
+2026-10-15 21:09:37,008 - trainer - INFO -     loss           : 1.0584252770911788
+2026-10-15 21:09:37,008 - trainer - INFO -     accuracy       : 0.8893194853511084
+2026-10-15 21:09:37,008 - trainer - INFO -     precision      : 0.8020468246179728
+2026-10-15 21:09:37,008 - trainer - INFO -     recall         : 0.8868392497287242
+2026-10-15 21:09:37,008 - trainer - INFO -     f1_score       : 0.8423144876325088
+2026-10-15 21:09:37,008 - trainer - INFO -     aucpr          : 0.9107447699448634
+2026-10-15 21:09:37,008 - trainer - INFO -     val_loss       : 1.2451437868764188
+2026-10-15 21:09:37,008 - trainer - INFO -     val_accuracy   : 0.8704686118479222
+2026-10-15 21:09:37,008 - trainer - INFO -     val_precision  : 0.7928843710292249
+2026-10-15 21:09:37,008 - trainer - INFO -     val_recall     : 0.8275862068965517
+2026-10-15 21:09:37,008 - trainer - INFO -     val_f1_score   : 0.8098637248539909
+2026-10-15 21:09:37,008 - trainer - INFO -     val_aucpr      : 0.8859977036423253
+2026-10-15 21:09:37,014 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch26.pth ...
+2026-10-15 21:09:46,799 - trainer - INFO -     epoch          : 27
+2026-10-15 21:09:46,800 - trainer - INFO -     loss           : 1.0678282214191688
+2026-10-15 21:09:46,800 - trainer - INFO -     accuracy       : 0.8924197798790885
+2026-10-15 21:09:46,800 - trainer - INFO -     precision      : 0.8099021137750035
+2026-10-15 21:09:46,800 - trainer - INFO -     recall         : 0.8849790730119361
+2026-10-15 21:09:46,800 - trainer - INFO -     f1_score       : 0.8457777777777777
+2026-10-15 21:09:46,800 - trainer - INFO -     aucpr          : 0.9065416751726458
+2026-10-15 21:09:46,800 - trainer - INFO -     val_loss       : 1.2374684369532436
+2026-10-15 21:09:46,800 - trainer - INFO -     val_accuracy   : 0.8669319186560566
+2026-10-15 21:09:46,800 - trainer - INFO -     val_precision  : 0.7725631768953068
+2026-10-15 21:09:46,800 - trainer - INFO -     val_recall     : 0.8514588859416445
+2026-10-15 21:09:46,800 - trainer - INFO -     val_f1_score   : 0.8100946372239748
+2026-10-15 21:09:46,800 - trainer - INFO -     val_aucpr      : 0.8852514841364787
+2026-10-15 21:09:46,807 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch27.pth ...
+2026-10-15 21:09:56,908 - trainer - INFO -     epoch          : 28
+2026-10-15 21:09:56,909 - trainer - INFO -     loss           : 1.0541254591185418
+2026-10-15 21:09:56,909 - trainer - INFO -     accuracy       : 0.8931948535110835
+2026-10-15 21:09:56,909 - trainer - INFO -     precision      : 0.8098671190274244
+2026-10-15 21:09:56,909 - trainer - INFO -     recall         : 0.8880793675399163
+2026-10-15 21:09:56,909 - trainer - INFO -     f1_score       : 0.8471719038817006
+2026-10-15 21:09:56,909 - trainer - INFO -     aucpr          : 0.9084919509317437
+2026-10-15 21:09:56,909 - trainer - INFO -     val_loss       : 1.2388715107392463
+2026-10-15 21:09:56,909 - trainer - INFO -     val_accuracy   : 0.8647214854111406
+2026-10-15 21:09:56,909 - trainer - INFO -     val_precision  : 0.7698795180722892
+2026-10-15 21:09:56,909 - trainer - INFO -     val_recall     : 0.8474801061007957
+2026-10-15 21:09:56,909 - trainer - INFO -     val_f1_score   : 0.8068181818181818
+2026-10-15 21:09:56,909 - trainer - INFO -     val_aucpr      : 0.8854173069586222
+2026-10-15 21:09:56,915 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch28.pth ...
+2026-10-15 21:10:06,611 - trainer - INFO -     epoch          : 29
+2026-10-15 21:10:06,611 - trainer - INFO -     loss           : 1.0525472355105738
+2026-10-15 21:10:06,611 - trainer - INFO -     accuracy       : 0.8918513925489588
+2026-10-15 21:10:06,611 - trainer - INFO -     precision      : 0.8085528178986123
+2026-10-15 21:10:06,611 - trainer - INFO -     recall         : 0.8851340877383351
+2026-10-15 21:10:06,611 - trainer - INFO -     f1_score       : 0.8451121142603419
+2026-10-15 21:10:06,611 - trainer - INFO -     aucpr          : 0.9112855069963879
+2026-10-15 21:10:06,612 - trainer - INFO -     val_loss       : 1.2154175230721054
+2026-10-15 21:10:06,612 - trainer - INFO -     val_accuracy   : 0.8726790450928382
+2026-10-15 21:10:06,612 - trainer - INFO -     val_precision  : 0.7841463414634147
+2026-10-15 21:10:06,612 - trainer - INFO -     val_recall     : 0.8527851458885941
+2026-10-15 21:10:06,612 - trainer - INFO -     val_f1_score   : 0.8170266836086404
+2026-10-15 21:10:06,612 - trainer - INFO -     val_aucpr      : 0.8869043717131931
+2026-10-15 21:10:06,619 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch29.pth ...
+2026-10-15 21:10:06,624 - trainer - INFO - Saving current best: model_best.pth ...
+2026-10-15 21:10:16,800 - trainer - INFO -     epoch          : 30
+2026-10-15 21:10:16,800 - trainer - INFO -     loss           : 1.058484203802032
+2026-10-15 21:10:16,800 - trainer - INFO -     accuracy       : 0.8912313336433628
+2026-10-15 21:10:16,800 - trainer - INFO -     precision      : 0.8066610217329946
+2026-10-15 21:10:16,800 - trainer - INFO -     recall         : 0.8860641760967292
+2026-10-15 21:10:16,800 - trainer - INFO -     f1_score       : 0.844500258550639
+2026-10-15 21:10:16,800 - trainer - INFO -     aucpr          : 0.9103019662871226
+2026-10-15 21:10:16,800 - trainer - INFO -     val_loss       : 1.229057624949279
+2026-10-15 21:10:16,800 - trainer - INFO -     val_accuracy   : 0.8713527851458885
+2026-10-15 21:10:16,800 - trainer - INFO -     val_precision  : 0.7964148527528809
+2026-10-15 21:10:16,800 - trainer - INFO -     val_recall     : 0.8249336870026526
+2026-10-15 21:10:16,800 - trainer - INFO -     val_f1_score   : 0.8104234527687296
+2026-10-15 21:10:16,800 - trainer - INFO -     val_aucpr      : 0.8874459254327198
+2026-10-15 21:10:16,806 - trainer - INFO - Saving checkpoint: /root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/checkpoint-epoch30.pth ...

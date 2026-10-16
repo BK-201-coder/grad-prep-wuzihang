@@ -1,0 +1,7 @@
+# The original 2023 CSVs and complete 30-epoch checkpoints are kept offline.
+/data_2023/
+/archives/
+/full_bundle/
+/light_bundle/
+*.csv
+checkpoint-epoch*.pth

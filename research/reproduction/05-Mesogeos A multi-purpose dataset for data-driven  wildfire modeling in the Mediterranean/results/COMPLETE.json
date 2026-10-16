@@ -1,0 +1,68 @@
+{
+  "verified": true,
+  "scope": "Mesogeos 2023 Track A official LSTM, one 30-epoch run",
+  "code_commit": "828db48231637884a3fde5795760e42338cf780c",
+  "seed": 12345,
+  "best_epoch": 29,
+  "epochs_completed": 30,
+  "checkpoints_saved": 30,
+  "test_samples": 4107,
+  "test_metrics": {
+    "loss": 1.4025316528662122,
+    "accuracy": 0.8500121743364987,
+    "precision": 0.7594762232942798,
+    "recall": 0.8049671292914536,
+    "f1_score": 0.7815602836879433,
+    "aucpr": 0.8494223018329344
+  },
+  "paper_table_1_lstm": {
+    "precision": 0.763,
+    "recall": 0.812,
+    "f1_score": 0.786,
+    "aucpr": 0.853
+  },
+  "difference_reproduction_minus_paper": {
+    "precision": -0.003524,
+    "recall": -0.007033,
+    "f1_score": -0.00444,
+    "aucpr": -0.003578
+  },
+  "best_checkpoint": "/root/autodl-tmp/mesogeos_repro/results/models/mesogeos_trackA_lstm_seed12345/1015_210509/model_best.pth",
+  "best_checkpoint_sha256": "e895b552d00bbbd4f3e5b95ae0f7189008bcc5bfd563969499d23c8d91b3b001",
+  "config_sha256": "c10c36072bab6c9888255100a537a5df121b198b4bd2bbc1f9c018f7edefbfa3",
+  "original_data": {
+    "positives.csv": {
+      "bytes": 72849438,
+      "sha256": "c44554e29f0d676ad13d42950500fb5bc6361c5dc5afe77958c59b7cc3c8ed0b",
+      "rows": 257220,
+      "samples": 8574,
+      "year_split_samples": {
+        "train": 6451,
+        "val": 754,
+        "test": 1369
+      },
+      "unique_sample_ids": {
+        "train": 6451,
+        "val": 754,
+        "test": 1369
+      }
+    },
+    "negatives.csv": {
+      "bytes": 144945185,
+      "sha256": "ce5e6fd204d4c26189fe45c2a2d709ccfdead6fa08c0fcbeb5ce5c59d654820b",
+      "rows": 520260,
+      "samples": 17342,
+      "year_split_samples": {
+        "train": 13053,
+        "val": 1538,
+        "test": 2751
+      },
+      "unique_sample_ids": {
+        "train": 13053,
+        "val": 1538,
+        "test": 2751
+      }
+    }
+  },
+  "note": "Official test.py does not seed NumPy before sampling the negative candidate pool; repeated test runs can vary slightly."
+}

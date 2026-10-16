@@ -8,7 +8,7 @@
 
 4.阅读了Wildfire Danger Prediction and Understanding With Deep Learning，这篇论文证明了多源环境数据与时间序列建模能够显著提高次日森林火灾危险预测能力，而下一步值得深入的方向不是简单换更复杂的模型，而是进一步**优化燃料状态表达、多时间尺度建模、空间尺度选择、样本构建和可解释性分析**。
 
-5.阅读了Mesogeos A multi-purpose dataset for data-driven  wildfire modeling in the Mediterranean，多源数据驱动的森林火灾短期风险预测首先要解决“**数据如何统一、标签如何可靠、时间信息如何组织**”的问题，**在此基础上再讨论长短期记忆网络、变换器等模型结构**，往往比单纯追求更复杂的深度学习网络更有研究价值。
+5.阅读并复现了Mesogeos A multi-purpose dataset for data-driven  wildfire modeling in the Mediterranean，多源数据驱动的森林火灾短期风险预测首先要解决“**数据如何统一、标签如何可靠、时间信息如何组织**”的问题，**在此基础上再讨论长短期记忆网络、变换器等模型结构**，往往比单纯追求更复杂的深度学习网络更有研究价值。
 
 6.阅读并复现了 Assessing and explaining temporal deep learning models for wildfire danger prediction，了解到森林火灾短期风险预测不仅要关注模型精度，还应重视**历史时间窗口、空间泛化和物理可解释性**；Transformer 能更好利用长期时序信息，但更复杂的模型不一定更优，因此后续研究应重点放在**多源数据融合、时空特征建模以及预测性能与物理一致性的协同提升**上。
 

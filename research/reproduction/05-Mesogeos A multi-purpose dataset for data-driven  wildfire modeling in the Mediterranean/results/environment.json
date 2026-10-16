@@ -1,0 +1,14 @@
+{
+  "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+  "platform": "Linux-5.15.0-86-generic-x86_64-with-glibc2.35",
+  "torch": "2.1.2+cu118",
+  "torch_cuda_runtime": "11.8",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA vGPU-32GB",
+  "numpy": "1.24.4",
+  "pandas": "1.5.3",
+  "scikit_learn": "1.2.2",
+  "git_commit": "828db48231637884a3fde5795760e42338cf780c",
+  "git_status_porcelain": "?? ml_tracks/a.fire_danger/__pycache__/\n?? ml_tracks/a.fire_danger/base/__pycache__/\n?? ml_tracks/a.fire_danger/dataloaders/__pycache__/\n?? ml_tracks/a.fire_danger/datasets/__pycache__/\n?? ml_tracks/a.fire_danger/logger/__pycache__/\n?? ml_tracks/a.fire_danger/models/__pycache__/\n?? ml_tracks/a.fire_danger/trainer/__pycache__/\n?? ml_tracks/a.fire_danger/utils/__pycache__/",
+  "gpu_driver": "550.120"
+}
