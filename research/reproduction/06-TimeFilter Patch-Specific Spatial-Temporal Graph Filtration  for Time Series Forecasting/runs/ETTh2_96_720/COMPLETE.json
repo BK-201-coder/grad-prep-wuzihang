@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "metrics": {
+    "mae": 0.43352413177490234,
+    "mse": 0.40691515803337097,
+    "rmse": 0.6378990411758423,
+    "mape": 1.83346426486969,
+    "mspe": 495.1637268066406
+  },
+  "prediction_shape": [
+    2161,
+    720,
+    7
+  ],
+  "result_dir": "/root/autodl-tmp/timefilter_repro/code/results/long_term_forecast_ETTh2_96_720_TimeFilter_ETTh2_ftM_sl96_ll48_pl720_dm256_nh4_el2_dl1_df256_fc3_ebtimeF_dtTrue_Exp_0",
+  "checkpoint_dir": "/root/autodl-tmp/timefilter_repro/code/checkpoints/long_term_forecast_ETTh2_96_720_TimeFilter_ETTh2_ftM_sl96_ll48_pl720_dm256_nh4_el2_dl1_df256_fc3_ebtimeF_dtTrue_Exp_0"
+}

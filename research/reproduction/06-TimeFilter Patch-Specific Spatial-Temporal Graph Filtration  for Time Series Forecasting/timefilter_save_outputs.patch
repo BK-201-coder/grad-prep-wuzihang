@@ -1,0 +1,11 @@
+--- a/exp/exp_long_term_forecasting.py
++++ b/exp/exp_long_term_forecasting.py
+@@ -235,4 +235,4 @@
+-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe]))
+-        # np.save(folder_path + 'input.npy', inputs)
+-        # np.save(folder_path + 'pred.npy', preds)
+-        # np.save(folder_path + 'true.npy', trues)
++        np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe]))
++        np.save(folder_path + 'input.npy', inputs)
++        np.save(folder_path + 'pred.npy', preds)
++        np.save(folder_path + 'true.npy', trues)

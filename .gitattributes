@@ -2,3 +2,5 @@
 research/reproduction/03-patchtst双数据集复现/** text=auto eol=lf
 research/reproduction/04-timexer双数据集复现/** text=auto eol=lf
 research/reproduction/05-*/** text=auto eol=lf
+research/reproduction/06-*/** text=auto eol=lf
+*.pdf binary

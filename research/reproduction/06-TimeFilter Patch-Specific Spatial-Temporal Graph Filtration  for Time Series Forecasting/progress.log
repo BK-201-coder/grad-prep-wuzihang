@@ -1,0 +1,18 @@
+[2026-10-16 17:57:48 CST] TimeFilter 8-run queue started (official ETTh2/ETTm2 hyperparameters; GPU remapped to visible device 0)
+[2026-10-16 17:57:48 CST] START ETTh2_96_96; estimate about 20-75 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 17:58:12 CST] DONE ETTh2_96_96: verified model, predictions, targets and metrics
+[2026-10-16 17:58:12 CST] START ETTh2_96_192; estimate about 20-75 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:01:08 CST] DONE ETTh2_96_192: verified model, predictions, targets and metrics
+[2026-10-16 18:01:08 CST] START ETTh2_96_336; estimate about 20-75 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:03:58 CST] DONE ETTh2_96_336: verified model, predictions, targets and metrics
+[2026-10-16 18:03:58 CST] START ETTh2_96_720; estimate about 20-75 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:06:59 CST] DONE ETTh2_96_720: verified model, predictions, targets and metrics
+[2026-10-16 18:06:59 CST] START ETTm2_96_96; estimate about 35-120 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:08:45 CST] DONE ETTm2_96_96: verified model, predictions, targets and metrics
+[2026-10-16 18:08:45 CST] START ETTm2_96_192; estimate about 35-120 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:20:09 CST] DONE ETTm2_96_192: verified model, predictions, targets and metrics
+[2026-10-16 18:20:09 CST] START ETTm2_96_336; estimate about 35-120 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:31:39 CST] DONE ETTm2_96_336: verified model, predictions, targets and metrics
+[2026-10-16 18:31:39 CST] START ETTm2_96_720; estimate about 35-120 minutes (10 epoch cap; early stopping may shorten it)
+[2026-10-16 18:45:10 CST] DONE ETTm2_96_720: verified model, predictions, targets and metrics
+[2026-10-16 18:45:10 CST] ALL 8 RUNS COMPLETE
