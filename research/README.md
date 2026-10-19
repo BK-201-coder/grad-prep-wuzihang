@@ -29,3 +29,5 @@
 14.阅读了Probabilistic machine learning for noisy labels in Earth observation，**这篇论文最重要的贡献不是提出新的深度学习主干网络，而是研究地球观测任务中“不同样本的标签噪声程度不同、传统模型缺乏可靠不确定性表达”的问题。**作者将**输入相关的异方差概率分类方法**应用于森林火灾危险性预测等四种地球观测任务，通过在 Logit 层学习**均值与方差**、结合蒙特卡洛采样和温度缩放输出预测概率与偶然不确定性，发现森林火灾负样本的不确定性具有明显差异，为进一步研究**普通负样本、困难负样本和标签不确定样本的区分及差异化训练**提供了直接启发。
 
 15.阅读并复现了TimeFilter: Patch-Specific Spatial-Temporal Graph Filtration  for Time Series Forecasting，**这篇论文最重要的贡献不是简单引入图神经网络，而是解决多变量时间序列中“有用关联被忽略、无用关联被引入、变量关联随时间动态变化”的问题。**作者提出 **TimeFilter（ICML 2025）**，通过 **Patching 构建细粒度时空图节点、kNN 建立候选关联、MoE 与 Top-p 路由动态过滤时间和跨变量依赖，并利用 GNN 聚合有效关系**实现预测，为森林火灾研究中的**多源数据要素结构化表征和动态驱动关系学习**提供重要启发，但尚未直接解决**不同驱动因素有效历史窗口的逐样本自适应选择，以及普通负样本、困难负样本和标签不确定样本的差异化学习**问题。
+
+16.阅读并复现了GRAPH NEURAL NETWORKS FOR MULTIVARIATE TIME-SERIES FORECASTING VIA LEARNING HIERARCHICAL SPATIOTEMPORAL DEPENDENCIES，# HSDGNN 一句话总结**这篇论文最重要的贡献不是简单使用图神经网络，而是解决多变量时间序列中“变量内部属性依赖被忽略、变量间关系随时间变化却缺少充分建模”的问题。**作者提出 **HSDGNN（Engineering Applications of Artificial Intelligence，2025）**，通过**变量—属性两层图结构、属性级与变量级图卷积、GRU 时间特征学习、动态拓扑生成和第二个 GRU 对动态图融合状态的时间建模**提高预测表现，为森林火灾研究中**多源数据要素的分层结构化表示和时变关联学习**提供重要启发。

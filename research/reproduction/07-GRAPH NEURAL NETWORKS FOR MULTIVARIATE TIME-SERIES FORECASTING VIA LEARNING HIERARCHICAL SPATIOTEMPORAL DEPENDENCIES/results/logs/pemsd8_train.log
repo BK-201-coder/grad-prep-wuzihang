@@ -1,0 +1,537 @@
+current_dir: /root/autodl-tmp
+Namespace(mode='train', model='HSDGNN', dataset='PEMSD8', val_ratio=0.2, test_ratio=0.2, lag=12, horizon=12, num_nodes=170, steps_per_day=288, input_dim=3, output_dim=1, embed_dim=32, rnn_units=64, device='cuda:0', seed=0, batch_size=64, epochs=300, lr_decay=True, lr_init=0.003, weight_decay=0.0, early_stop=True, early_stop_patience=15, grad_norm=False, max_grad_norm=5, real_value=True, mae_thresh=None, mape_thresh=1e-05)
+Load PEMSD8 Dataset shaped:  (17856, 170, 3) 1147.0 0.0 98.16958719829445 64.0
+Normalize the dataset by Standard Normalization
+Train:  (10691, 12, 170, 5) (10691, 12, 170, 5)
+Val:  (3548, 12, 170, 5) (3548, 12, 170, 5)
+Test:  (3548, 12, 170, 5) (3548, 12, 170, 5)
+Total params num: 578814
+Applying learning rate decay.
+Creat Log File in:  /root/autodl-tmp/HSDGNN/experiments/PEMSD8/20261019183219/run.log
+2026-10-19 18:32: Experiment log path in: /root/autodl-tmp/HSDGNN/experiments/PEMSD8/20261019183219
+2026-10-19 18:32: Namespace(mode='train', model='HSDGNN', dataset='PEMSD8', val_ratio=0.2, test_ratio=0.2, lag=12, horizon=12, num_nodes=170, steps_per_day=288, input_dim=3, output_dim=1, embed_dim=32, rnn_units=64, device='cuda:0', seed=0, batch_size=64, epochs=300, lr_decay=True, lr_init=0.003, weight_decay=0.0, early_stop=True, early_stop_patience=15, grad_norm=False, max_grad_norm=5, real_value=True, mae_thresh=None, mape_thresh=1e-05, log_dir='/root/autodl-tmp/HSDGNN/experiments/PEMSD8/20261019183219')
+2026-10-19 18:32: *****************Model Parameter*****************
+2026-10-19 18:32: params_name: node_embeddings, params_shape: torch.Size([170, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: T_i_D_emb, params_shape: torch.Size([288, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: D_i_W_emb, params_shape: torch.Size([7, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.weights_pool, params_shape: torch.Size([32, 64, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.bias_pool, params_shape: torch.Size([32, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru1.weight_ih_l0, params_shape: torch.Size([192, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru1.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru1.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru1.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru2.weight_ih_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru2.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru2.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.gru2.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.diff.weight, params_shape: torch.Size([64, 128, 1, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.diff.bias, params_shape: torch.Size([64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc1.weight, params_shape: torch.Size([16, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.x_embedding.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc1.weight, params_shape: torch.Size([16, 3]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc1.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc1.weight, params_shape: torch.Size([16, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder1.fc2.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.weights_pool, params_shape: torch.Size([32, 64, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.bias_pool, params_shape: torch.Size([32, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru1.weight_ih_l0, params_shape: torch.Size([192, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru1.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru1.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru1.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru2.weight_ih_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru2.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru2.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.gru2.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.diff.weight, params_shape: torch.Size([64, 128, 1, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.diff.bias, params_shape: torch.Size([64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc1.weight, params_shape: torch.Size([16, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.x_embedding.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc1.weight, params_shape: torch.Size([16, 3]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc1.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc1.weight, params_shape: torch.Size([16, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder2.fc2.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv1.weight, params_shape: torch.Size([12, 1, 1, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv1.bias, params_shape: torch.Size([12]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv1_b.weight, params_shape: torch.Size([12, 1, 1, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv1_b.bias, params_shape: torch.Size([12]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv2.weight, params_shape: torch.Size([12, 1, 1, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv2.bias, params_shape: torch.Size([12]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.weights_pool, params_shape: torch.Size([32, 64, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.bias_pool, params_shape: torch.Size([32, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru1.weight_ih_l0, params_shape: torch.Size([192, 32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru1.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru1.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru1.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru2.weight_ih_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru2.weight_hh_l0, params_shape: torch.Size([192, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru2.bias_ih_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.gru2.bias_hh_l0, params_shape: torch.Size([192]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.diff.weight, params_shape: torch.Size([64, 128, 1, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.diff.bias, params_shape: torch.Size([64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc1.weight, params_shape: torch.Size([16, 1]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.x_embedding.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc1.weight, params_shape: torch.Size([16, 3]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc1.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc1.weight, params_shape: torch.Size([16, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc1.bias, params_shape: torch.Size([16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc2.weight, params_shape: torch.Size([2, 16]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc2.bias, params_shape: torch.Size([2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc3.weight, params_shape: torch.Size([32, 2]), params_require_grid: True
+2026-10-19 18:32: params_name: encoder3.fc2.fc3.bias, params_shape: torch.Size([32]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv2_b.weight, params_shape: torch.Size([12, 1, 1, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv2_b.bias, params_shape: torch.Size([12]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv3.weight, params_shape: torch.Size([12, 1, 1, 64]), params_require_grid: True
+2026-10-19 18:32: params_name: end_conv3.bias, params_shape: torch.Size([12]), params_require_grid: True
+2026-10-19 18:32: *****************Finish Parameter****************
+2026-10-19 18:32: Total params num: 578814
+2026-10-19 18:32: Start training
+2026-10-19 18:32: **********Train Epoch 0: averaged Loss: 47.304084
+***************Training Time: 12.7242 secs/epoch***************
+2026-10-19 18:32: **********Val Epoch 0: average Loss: 22.829361
+2026-10-19 18:32: *********************************Current best model saved!
+2026-10-19 18:32: **********Train Epoch 1: averaged Loss: 20.932794
+***************Training Time: 12.0175 secs/epoch***************
+2026-10-19 18:32: **********Val Epoch 1: average Loss: 18.201368
+2026-10-19 18:32: *********************************Current best model saved!
+2026-10-19 18:32: **********Train Epoch 2: averaged Loss: 18.365259
+***************Training Time: 12.0267 secs/epoch***************
+2026-10-19 18:32: **********Val Epoch 2: average Loss: 19.204080
+2026-10-19 18:33: **********Train Epoch 3: averaged Loss: 17.447116
+***************Training Time: 12.6144 secs/epoch***************
+2026-10-19 18:33: **********Val Epoch 3: average Loss: 17.003218
+2026-10-19 18:33: *********************************Current best model saved!
+2026-10-19 18:33: **********Train Epoch 4: averaged Loss: 16.897655
+***************Training Time: 12.7339 secs/epoch***************
+2026-10-19 18:33: **********Val Epoch 4: average Loss: 16.249151
+2026-10-19 18:33: *********************************Current best model saved!
+2026-10-19 18:33: **********Train Epoch 5: averaged Loss: 16.474695
+***************Training Time: 12.6048 secs/epoch***************
+2026-10-19 18:33: **********Val Epoch 5: average Loss: 15.954374
+2026-10-19 18:33: *********************************Current best model saved!
+2026-10-19 18:33: **********Train Epoch 6: averaged Loss: 16.188108
+***************Training Time: 12.7787 secs/epoch***************
+2026-10-19 18:33: **********Val Epoch 6: average Loss: 15.774318
+2026-10-19 18:33: *********************************Current best model saved!
+2026-10-19 18:34: **********Train Epoch 7: averaged Loss: 15.944829
+***************Training Time: 12.7597 secs/epoch***************
+2026-10-19 18:34: **********Val Epoch 7: average Loss: 15.835601
+2026-10-19 18:34: **********Train Epoch 8: averaged Loss: 15.809160
+***************Training Time: 12.6795 secs/epoch***************
+2026-10-19 18:34: **********Val Epoch 8: average Loss: 15.476556
+2026-10-19 18:34: *********************************Current best model saved!
+2026-10-19 18:34: **********Train Epoch 9: averaged Loss: 15.554899
+***************Training Time: 12.3715 secs/epoch***************
+2026-10-19 18:34: **********Val Epoch 9: average Loss: 15.638031
+2026-10-19 18:34: **********Train Epoch 10: averaged Loss: 15.446522
+***************Training Time: 12.3422 secs/epoch***************
+2026-10-19 18:34: **********Val Epoch 10: average Loss: 15.520273
+2026-10-19 18:35: **********Train Epoch 11: averaged Loss: 15.263729
+***************Training Time: 12.5630 secs/epoch***************
+2026-10-19 18:35: **********Val Epoch 11: average Loss: 15.451177
+2026-10-19 18:35: *********************************Current best model saved!
+2026-10-19 18:35: **********Train Epoch 12: averaged Loss: 15.128484
+***************Training Time: 12.4403 secs/epoch***************
+2026-10-19 18:35: **********Val Epoch 12: average Loss: 15.217643
+2026-10-19 18:35: *********************************Current best model saved!
+2026-10-19 18:35: **********Train Epoch 13: averaged Loss: 14.987862
+***************Training Time: 12.2579 secs/epoch***************
+2026-10-19 18:35: **********Val Epoch 13: average Loss: 14.975232
+2026-10-19 18:35: *********************************Current best model saved!
+2026-10-19 18:35: **********Train Epoch 14: averaged Loss: 14.889910
+***************Training Time: 12.3645 secs/epoch***************
+2026-10-19 18:35: **********Val Epoch 14: average Loss: 14.900112
+2026-10-19 18:35: *********************************Current best model saved!
+2026-10-19 18:35: **********Train Epoch 15: averaged Loss: 14.878706
+***************Training Time: 12.6558 secs/epoch***************
+2026-10-19 18:35: **********Val Epoch 15: average Loss: 14.917657
+2026-10-19 18:36: **********Train Epoch 16: averaged Loss: 14.672354
+***************Training Time: 12.1929 secs/epoch***************
+2026-10-19 18:36: **********Val Epoch 16: average Loss: 14.877562
+2026-10-19 18:36: *********************************Current best model saved!
+2026-10-19 18:36: **********Train Epoch 17: averaged Loss: 14.634580
+***************Training Time: 12.4310 secs/epoch***************
+2026-10-19 18:36: **********Val Epoch 17: average Loss: 15.101956
+2026-10-19 18:36: **********Train Epoch 18: averaged Loss: 14.518437
+***************Training Time: 12.6243 secs/epoch***************
+2026-10-19 18:36: **********Val Epoch 18: average Loss: 14.717666
+2026-10-19 18:36: *********************************Current best model saved!
+2026-10-19 18:36: **********Train Epoch 19: averaged Loss: 14.517353
+***************Training Time: 12.0105 secs/epoch***************
+2026-10-19 18:36: **********Val Epoch 19: average Loss: 14.694093
+2026-10-19 18:36: *********************************Current best model saved!
+2026-10-19 18:37: **********Train Epoch 20: averaged Loss: 14.455264
+***************Training Time: 12.0587 secs/epoch***************
+2026-10-19 18:37: **********Val Epoch 20: average Loss: 14.922328
+2026-10-19 18:37: **********Train Epoch 21: averaged Loss: 14.376230
+***************Training Time: 12.0587 secs/epoch***************
+2026-10-19 18:37: **********Val Epoch 21: average Loss: 14.999864
+2026-10-19 18:37: **********Train Epoch 22: averaged Loss: 14.467238
+***************Training Time: 12.2841 secs/epoch***************
+2026-10-19 18:37: **********Val Epoch 22: average Loss: 14.675060
+2026-10-19 18:37: *********************************Current best model saved!
+2026-10-19 18:37: **********Train Epoch 23: averaged Loss: 14.382748
+***************Training Time: 12.7412 secs/epoch***************
+2026-10-19 18:37: **********Val Epoch 23: average Loss: 14.997669
+2026-10-19 18:37: **********Train Epoch 24: averaged Loss: 14.262925
+***************Training Time: 12.6750 secs/epoch***************
+2026-10-19 18:37: **********Val Epoch 24: average Loss: 14.579758
+2026-10-19 18:37: *********************************Current best model saved!
+2026-10-19 18:38: **********Train Epoch 25: averaged Loss: 14.208558
+***************Training Time: 12.0790 secs/epoch***************
+2026-10-19 18:38: **********Val Epoch 25: average Loss: 14.560797
+2026-10-19 18:38: *********************************Current best model saved!
+2026-10-19 18:38: **********Train Epoch 26: averaged Loss: 14.196290
+***************Training Time: 12.5901 secs/epoch***************
+2026-10-19 18:38: **********Val Epoch 26: average Loss: 14.667445
+2026-10-19 18:38: **********Train Epoch 27: averaged Loss: 14.162688
+***************Training Time: 12.7772 secs/epoch***************
+2026-10-19 18:38: **********Val Epoch 27: average Loss: 14.637235
+2026-10-19 18:38: **********Train Epoch 28: averaged Loss: 14.084104
+***************Training Time: 12.7321 secs/epoch***************
+2026-10-19 18:38: **********Val Epoch 28: average Loss: 14.588766
+2026-10-19 18:39: **********Train Epoch 29: averaged Loss: 14.104881
+***************Training Time: 12.6176 secs/epoch***************
+2026-10-19 18:39: **********Val Epoch 29: average Loss: 14.573845
+2026-10-19 18:39: **********Train Epoch 30: averaged Loss: 14.088840
+***************Training Time: 12.4805 secs/epoch***************
+2026-10-19 18:39: **********Val Epoch 30: average Loss: 14.533698
+2026-10-19 18:39: *********************************Current best model saved!
+2026-10-19 18:39: **********Train Epoch 31: averaged Loss: 13.960016
+***************Training Time: 11.9733 secs/epoch***************
+2026-10-19 18:39: **********Val Epoch 31: average Loss: 14.498085
+2026-10-19 18:39: *********************************Current best model saved!
+2026-10-19 18:39: **********Train Epoch 32: averaged Loss: 13.983742
+***************Training Time: 12.1326 secs/epoch***************
+2026-10-19 18:39: **********Val Epoch 32: average Loss: 14.523655
+2026-10-19 18:39: **********Train Epoch 33: averaged Loss: 14.023475
+***************Training Time: 12.1237 secs/epoch***************
+2026-10-19 18:39: **********Val Epoch 33: average Loss: 14.361797
+2026-10-19 18:39: *********************************Current best model saved!
+2026-10-19 18:40: **********Train Epoch 34: averaged Loss: 13.969681
+***************Training Time: 12.1204 secs/epoch***************
+2026-10-19 18:40: **********Val Epoch 34: average Loss: 14.578444
+2026-10-19 18:40: **********Train Epoch 35: averaged Loss: 13.897911
+***************Training Time: 12.1196 secs/epoch***************
+2026-10-19 18:40: **********Val Epoch 35: average Loss: 14.503278
+2026-10-19 18:40: **********Train Epoch 36: averaged Loss: 13.856116
+***************Training Time: 12.7352 secs/epoch***************
+2026-10-19 18:40: **********Val Epoch 36: average Loss: 14.458267
+2026-10-19 18:40: **********Train Epoch 37: averaged Loss: 13.839417
+***************Training Time: 12.6804 secs/epoch***************
+2026-10-19 18:40: **********Val Epoch 37: average Loss: 14.739581
+2026-10-19 18:41: **********Train Epoch 38: averaged Loss: 13.823511
+***************Training Time: 12.0797 secs/epoch***************
+2026-10-19 18:41: **********Val Epoch 38: average Loss: 14.503402
+2026-10-19 18:41: **********Train Epoch 39: averaged Loss: 13.787422
+***************Training Time: 12.0835 secs/epoch***************
+2026-10-19 18:41: **********Val Epoch 39: average Loss: 14.576993
+2026-10-19 18:41: **********Train Epoch 40: averaged Loss: 13.790803
+***************Training Time: 12.4718 secs/epoch***************
+2026-10-19 18:41: **********Val Epoch 40: average Loss: 14.394441
+2026-10-19 18:41: **********Train Epoch 41: averaged Loss: 13.733230
+***************Training Time: 12.0822 secs/epoch***************
+2026-10-19 18:41: **********Val Epoch 41: average Loss: 14.321221
+2026-10-19 18:41: *********************************Current best model saved!
+2026-10-19 18:41: **********Train Epoch 42: averaged Loss: 13.676303
+***************Training Time: 12.0483 secs/epoch***************
+2026-10-19 18:41: **********Val Epoch 42: average Loss: 14.321094
+2026-10-19 18:41: *********************************Current best model saved!
+2026-10-19 18:42: **********Train Epoch 43: averaged Loss: 13.686812
+***************Training Time: 12.0949 secs/epoch***************
+2026-10-19 18:42: **********Val Epoch 43: average Loss: 14.392477
+2026-10-19 18:42: **********Train Epoch 44: averaged Loss: 13.684180
+***************Training Time: 12.0916 secs/epoch***************
+2026-10-19 18:42: **********Val Epoch 44: average Loss: 14.893224
+2026-10-19 18:42: **********Train Epoch 45: averaged Loss: 13.662735
+***************Training Time: 12.4641 secs/epoch***************
+2026-10-19 18:42: **********Val Epoch 45: average Loss: 14.264865
+2026-10-19 18:42: *********************************Current best model saved!
+2026-10-19 18:42: **********Train Epoch 46: averaged Loss: 13.565759
+***************Training Time: 12.2859 secs/epoch***************
+2026-10-19 18:42: **********Val Epoch 46: average Loss: 14.322148
+2026-10-19 18:43: **********Train Epoch 47: averaged Loss: 13.555483
+***************Training Time: 12.5176 secs/epoch***************
+2026-10-19 18:43: **********Val Epoch 47: average Loss: 14.290526
+2026-10-19 18:43: **********Train Epoch 48: averaged Loss: 13.549355
+***************Training Time: 12.7509 secs/epoch***************
+2026-10-19 18:43: **********Val Epoch 48: average Loss: 14.591197
+2026-10-19 18:43: **********Train Epoch 49: averaged Loss: 13.592588
+***************Training Time: 12.7619 secs/epoch***************
+2026-10-19 18:43: **********Val Epoch 49: average Loss: 14.434441
+2026-10-19 18:43: **********Train Epoch 50: averaged Loss: 13.550363
+***************Training Time: 12.0622 secs/epoch***************
+2026-10-19 18:43: **********Val Epoch 50: average Loss: 14.313194
+2026-10-19 18:43: **********Train Epoch 51: averaged Loss: 13.448115
+***************Training Time: 12.7533 secs/epoch***************
+2026-10-19 18:43: **********Val Epoch 51: average Loss: 14.304430
+2026-10-19 18:44: **********Train Epoch 52: averaged Loss: 13.600680
+***************Training Time: 12.0430 secs/epoch***************
+2026-10-19 18:44: **********Val Epoch 52: average Loss: 14.227797
+2026-10-19 18:44: *********************************Current best model saved!
+2026-10-19 18:44: **********Train Epoch 53: averaged Loss: 13.429015
+***************Training Time: 12.0889 secs/epoch***************
+2026-10-19 18:44: **********Val Epoch 53: average Loss: 14.379078
+2026-10-19 18:44: **********Train Epoch 54: averaged Loss: 13.391392
+***************Training Time: 12.1097 secs/epoch***************
+2026-10-19 18:44: **********Val Epoch 54: average Loss: 14.210913
+2026-10-19 18:44: *********************************Current best model saved!
+2026-10-19 18:44: **********Train Epoch 55: averaged Loss: 13.404167
+***************Training Time: 12.0790 secs/epoch***************
+2026-10-19 18:44: **********Val Epoch 55: average Loss: 14.281498
+2026-10-19 18:45: **********Train Epoch 56: averaged Loss: 13.384143
+***************Training Time: 12.7031 secs/epoch***************
+2026-10-19 18:45: **********Val Epoch 56: average Loss: 14.210409
+2026-10-19 18:45: *********************************Current best model saved!
+2026-10-19 18:45: **********Train Epoch 57: averaged Loss: 13.373831
+***************Training Time: 12.6310 secs/epoch***************
+2026-10-19 18:45: **********Val Epoch 57: average Loss: 14.273499
+2026-10-19 18:45: **********Train Epoch 58: averaged Loss: 13.299326
+***************Training Time: 12.7306 secs/epoch***************
+2026-10-19 18:45: **********Val Epoch 58: average Loss: 14.145437
+2026-10-19 18:45: *********************************Current best model saved!
+2026-10-19 18:45: **********Train Epoch 59: averaged Loss: 13.297473
+***************Training Time: 12.7226 secs/epoch***************
+2026-10-19 18:45: **********Val Epoch 59: average Loss: 14.369452
+2026-10-19 18:46: **********Train Epoch 60: averaged Loss: 13.288095
+***************Training Time: 12.7478 secs/epoch***************
+2026-10-19 18:46: **********Val Epoch 60: average Loss: 14.296060
+2026-10-19 18:46: **********Train Epoch 61: averaged Loss: 13.267027
+***************Training Time: 12.7752 secs/epoch***************
+2026-10-19 18:46: **********Val Epoch 61: average Loss: 14.123078
+2026-10-19 18:46: *********************************Current best model saved!
+2026-10-19 18:46: **********Train Epoch 62: averaged Loss: 13.189514
+***************Training Time: 12.0645 secs/epoch***************
+2026-10-19 18:46: **********Val Epoch 62: average Loss: 14.074080
+2026-10-19 18:46: *********************************Current best model saved!
+2026-10-19 18:46: **********Train Epoch 63: averaged Loss: 13.186047
+***************Training Time: 12.1605 secs/epoch***************
+2026-10-19 18:46: **********Val Epoch 63: average Loss: 14.283879
+2026-10-19 18:46: **********Train Epoch 64: averaged Loss: 13.192939
+***************Training Time: 12.0825 secs/epoch***************
+2026-10-19 18:46: **********Val Epoch 64: average Loss: 14.148429
+2026-10-19 18:47: **********Train Epoch 65: averaged Loss: 13.154807
+***************Training Time: 12.3679 secs/epoch***************
+2026-10-19 18:47: **********Val Epoch 65: average Loss: 14.139463
+2026-10-19 18:47: **********Train Epoch 66: averaged Loss: 13.134373
+***************Training Time: 12.8029 secs/epoch***************
+2026-10-19 18:47: **********Val Epoch 66: average Loss: 14.309887
+2026-10-19 18:47: **********Train Epoch 67: averaged Loss: 13.148708
+***************Training Time: 12.1856 secs/epoch***************
+2026-10-19 18:47: **********Val Epoch 67: average Loss: 14.318509
+2026-10-19 18:47: **********Train Epoch 68: averaged Loss: 13.099399
+***************Training Time: 12.3737 secs/epoch***************
+2026-10-19 18:47: **********Val Epoch 68: average Loss: 14.068120
+2026-10-19 18:47: *********************************Current best model saved!
+2026-10-19 18:48: **********Train Epoch 69: averaged Loss: 13.102310
+***************Training Time: 12.7015 secs/epoch***************
+2026-10-19 18:48: **********Val Epoch 69: average Loss: 14.185453
+2026-10-19 18:48: **********Train Epoch 70: averaged Loss: 13.056254
+***************Training Time: 12.7586 secs/epoch***************
+2026-10-19 18:48: **********Val Epoch 70: average Loss: 14.040165
+2026-10-19 18:48: *********************************Current best model saved!
+2026-10-19 18:48: **********Train Epoch 71: averaged Loss: 13.059283
+***************Training Time: 12.6866 secs/epoch***************
+2026-10-19 18:48: **********Val Epoch 71: average Loss: 14.180022
+2026-10-19 18:48: **********Train Epoch 72: averaged Loss: 13.045593
+***************Training Time: 12.7844 secs/epoch***************
+2026-10-19 18:48: **********Val Epoch 72: average Loss: 14.157188
+2026-10-19 18:48: **********Train Epoch 73: averaged Loss: 13.042872
+***************Training Time: 12.1726 secs/epoch***************
+2026-10-19 18:48: **********Val Epoch 73: average Loss: 14.082048
+2026-10-19 18:49: **********Train Epoch 74: averaged Loss: 13.040452
+***************Training Time: 11.9626 secs/epoch***************
+2026-10-19 18:49: **********Val Epoch 74: average Loss: 14.068107
+2026-10-19 18:49: **********Train Epoch 75: averaged Loss: 12.978771
+***************Training Time: 12.1121 secs/epoch***************
+2026-10-19 18:49: **********Val Epoch 75: average Loss: 14.006925
+2026-10-19 18:49: *********************************Current best model saved!
+2026-10-19 18:49: **********Train Epoch 76: averaged Loss: 12.951850
+***************Training Time: 12.0606 secs/epoch***************
+2026-10-19 18:49: **********Val Epoch 76: average Loss: 14.035620
+2026-10-19 18:49: **********Train Epoch 77: averaged Loss: 12.969998
+***************Training Time: 12.0643 secs/epoch***************
+2026-10-19 18:49: **********Val Epoch 77: average Loss: 14.023682
+2026-10-19 18:50: **********Train Epoch 78: averaged Loss: 12.962376
+***************Training Time: 12.0600 secs/epoch***************
+2026-10-19 18:50: **********Val Epoch 78: average Loss: 14.055612
+2026-10-19 18:50: **********Train Epoch 79: averaged Loss: 12.950251
+***************Training Time: 12.7259 secs/epoch***************
+2026-10-19 18:50: **********Val Epoch 79: average Loss: 14.036860
+2026-10-19 18:50: **********Train Epoch 80: averaged Loss: 12.909002
+***************Training Time: 12.1945 secs/epoch***************
+2026-10-19 18:50: **********Val Epoch 80: average Loss: 14.046210
+2026-10-19 18:50: **********Train Epoch 81: averaged Loss: 12.904911
+***************Training Time: 12.7175 secs/epoch***************
+2026-10-19 18:50: **********Val Epoch 81: average Loss: 14.239940
+2026-10-19 18:50: **********Train Epoch 82: averaged Loss: 12.916802
+***************Training Time: 12.6894 secs/epoch***************
+2026-10-19 18:50: **********Val Epoch 82: average Loss: 14.021325
+2026-10-19 18:51: **********Train Epoch 83: averaged Loss: 12.872999
+***************Training Time: 12.7650 secs/epoch***************
+2026-10-19 18:51: **********Val Epoch 83: average Loss: 14.100636
+2026-10-19 18:51: **********Train Epoch 84: averaged Loss: 12.848650
+***************Training Time: 12.4870 secs/epoch***************
+2026-10-19 18:51: **********Val Epoch 84: average Loss: 14.076956
+2026-10-19 18:51: **********Train Epoch 85: averaged Loss: 12.870206
+***************Training Time: 12.2514 secs/epoch***************
+2026-10-19 18:51: **********Val Epoch 85: average Loss: 14.017727
+2026-10-19 18:51: **********Train Epoch 86: averaged Loss: 12.852645
+***************Training Time: 12.0570 secs/epoch***************
+2026-10-19 18:51: **********Val Epoch 86: average Loss: 14.314060
+2026-10-19 18:52: **********Train Epoch 87: averaged Loss: 12.905624
+***************Training Time: 12.0581 secs/epoch***************
+2026-10-19 18:52: **********Val Epoch 87: average Loss: 14.033196
+2026-10-19 18:52: **********Train Epoch 88: averaged Loss: 12.788274
+***************Training Time: 12.2154 secs/epoch***************
+2026-10-19 18:52: **********Val Epoch 88: average Loss: 13.999645
+2026-10-19 18:52: *********************************Current best model saved!
+2026-10-19 18:52: **********Train Epoch 89: averaged Loss: 12.810895
+***************Training Time: 12.1163 secs/epoch***************
+2026-10-19 18:52: **********Val Epoch 89: average Loss: 14.070892
+2026-10-19 18:52: **********Train Epoch 90: averaged Loss: 12.850635
+***************Training Time: 12.0557 secs/epoch***************
+2026-10-19 18:52: **********Val Epoch 90: average Loss: 14.009351
+2026-10-19 18:52: **********Train Epoch 91: averaged Loss: 12.794782
+***************Training Time: 12.3427 secs/epoch***************
+2026-10-19 18:52: **********Val Epoch 91: average Loss: 14.044915
+2026-10-19 18:53: **********Train Epoch 92: averaged Loss: 12.750845
+***************Training Time: 12.6200 secs/epoch***************
+2026-10-19 18:53: **********Val Epoch 92: average Loss: 13.972603
+2026-10-19 18:53: *********************************Current best model saved!
+2026-10-19 18:53: **********Train Epoch 93: averaged Loss: 12.758020
+***************Training Time: 12.7195 secs/epoch***************
+2026-10-19 18:53: **********Val Epoch 93: average Loss: 14.146361
+2026-10-19 18:53: **********Train Epoch 94: averaged Loss: 12.745932
+***************Training Time: 12.6178 secs/epoch***************
+2026-10-19 18:53: **********Val Epoch 94: average Loss: 14.111537
+2026-10-19 18:53: **********Train Epoch 95: averaged Loss: 12.769369
+***************Training Time: 12.7641 secs/epoch***************
+2026-10-19 18:53: **********Val Epoch 95: average Loss: 14.119943
+2026-10-19 18:54: **********Train Epoch 96: averaged Loss: 12.743626
+***************Training Time: 12.6968 secs/epoch***************
+2026-10-19 18:54: **********Val Epoch 96: average Loss: 13.995414
+2026-10-19 18:54: **********Train Epoch 97: averaged Loss: 12.714861
+***************Training Time: 12.1381 secs/epoch***************
+2026-10-19 18:54: **********Val Epoch 97: average Loss: 13.982805
+2026-10-19 18:54: **********Train Epoch 98: averaged Loss: 12.724437
+***************Training Time: 12.2657 secs/epoch***************
+2026-10-19 18:54: **********Val Epoch 98: average Loss: 14.079049
+2026-10-19 18:54: **********Train Epoch 99: averaged Loss: 12.716018
+***************Training Time: 12.5784 secs/epoch***************
+2026-10-19 18:54: **********Val Epoch 99: average Loss: 14.004610
+2026-10-19 18:54: **********Train Epoch 100: averaged Loss: 12.698603
+***************Training Time: 12.8553 secs/epoch***************
+2026-10-19 18:54: **********Val Epoch 100: average Loss: 13.970221
+2026-10-19 18:54: *********************************Current best model saved!
+2026-10-19 18:55: **********Train Epoch 101: averaged Loss: 12.737282
+***************Training Time: 12.4761 secs/epoch***************
+2026-10-19 18:55: **********Val Epoch 101: average Loss: 13.981713
+2026-10-19 18:55: **********Train Epoch 102: averaged Loss: 12.645808
+***************Training Time: 12.7700 secs/epoch***************
+2026-10-19 18:55: **********Val Epoch 102: average Loss: 14.031900
+2026-10-19 18:55: **********Train Epoch 103: averaged Loss: 12.642276
+***************Training Time: 12.7564 secs/epoch***************
+2026-10-19 18:55: **********Val Epoch 103: average Loss: 13.994194
+2026-10-19 18:55: **********Train Epoch 104: averaged Loss: 12.662718
+***************Training Time: 12.7315 secs/epoch***************
+2026-10-19 18:55: **********Val Epoch 104: average Loss: 14.043788
+2026-10-19 18:56: **********Train Epoch 105: averaged Loss: 12.641363
+***************Training Time: 12.7411 secs/epoch***************
+2026-10-19 18:56: **********Val Epoch 105: average Loss: 14.015876
+2026-10-19 18:56: **********Train Epoch 106: averaged Loss: 12.638611
+***************Training Time: 12.0906 secs/epoch***************
+2026-10-19 18:56: **********Val Epoch 106: average Loss: 13.968836
+2026-10-19 18:56: *********************************Current best model saved!
+2026-10-19 18:56: **********Train Epoch 107: averaged Loss: 12.643421
+***************Training Time: 12.3371 secs/epoch***************
+2026-10-19 18:56: **********Val Epoch 107: average Loss: 14.000051
+2026-10-19 18:56: **********Train Epoch 108: averaged Loss: 12.614440
+***************Training Time: 12.0602 secs/epoch***************
+2026-10-19 18:56: **********Val Epoch 108: average Loss: 14.107701
+2026-10-19 18:57: **********Train Epoch 109: averaged Loss: 12.628914
+***************Training Time: 12.7746 secs/epoch***************
+2026-10-19 18:57: **********Val Epoch 109: average Loss: 13.987247
+2026-10-19 18:57: **********Train Epoch 110: averaged Loss: 12.605868
+***************Training Time: 12.1690 secs/epoch***************
+2026-10-19 18:57: **********Val Epoch 110: average Loss: 13.974448
+2026-10-19 18:57: **********Train Epoch 111: averaged Loss: 12.630704
+***************Training Time: 12.6445 secs/epoch***************
+2026-10-19 18:57: **********Val Epoch 111: average Loss: 14.217560
+2026-10-19 18:57: **********Train Epoch 112: averaged Loss: 12.589757
+***************Training Time: 12.7350 secs/epoch***************
+2026-10-19 18:57: **********Val Epoch 112: average Loss: 14.014591
+2026-10-19 18:57: **********Train Epoch 113: averaged Loss: 12.577220
+***************Training Time: 12.3476 secs/epoch***************
+2026-10-19 18:57: **********Val Epoch 113: average Loss: 14.049452
+2026-10-19 18:58: **********Train Epoch 114: averaged Loss: 12.561753
+***************Training Time: 12.8484 secs/epoch***************
+2026-10-19 18:58: **********Val Epoch 114: average Loss: 13.993785
+2026-10-19 18:58: **********Train Epoch 115: averaged Loss: 12.562322
+***************Training Time: 12.2670 secs/epoch***************
+2026-10-19 18:58: **********Val Epoch 115: average Loss: 14.039448
+2026-10-19 18:58: **********Train Epoch 116: averaged Loss: 12.561613
+***************Training Time: 12.7358 secs/epoch***************
+2026-10-19 18:58: **********Val Epoch 116: average Loss: 14.016654
+2026-10-19 18:58: **********Train Epoch 117: averaged Loss: 12.599321
+***************Training Time: 12.6210 secs/epoch***************
+2026-10-19 18:58: **********Val Epoch 117: average Loss: 13.993501
+2026-10-19 18:59: **********Train Epoch 118: averaged Loss: 12.530329
+***************Training Time: 12.5022 secs/epoch***************
+2026-10-19 18:59: **********Val Epoch 118: average Loss: 13.980714
+2026-10-19 18:59: **********Train Epoch 119: averaged Loss: 12.533144
+***************Training Time: 12.0793 secs/epoch***************
+2026-10-19 18:59: **********Val Epoch 119: average Loss: 13.988246
+2026-10-19 18:59: **********Train Epoch 120: averaged Loss: 12.542084
+***************Training Time: 12.7633 secs/epoch***************
+2026-10-19 18:59: **********Val Epoch 120: average Loss: 14.096546
+2026-10-19 18:59: **********Train Epoch 121: averaged Loss: 12.538672
+***************Training Time: 12.7632 secs/epoch***************
+2026-10-19 18:59: **********Val Epoch 121: average Loss: 14.087134
+2026-10-19 18:59: Validation performance didn't improve for 15 epochs. Training stops.
+2026-10-19 18:59: Saving current best model to /root/autodl-tmp/HSDGNN/experiments/PEMSD8/20261019183219/best_model.pth
+2026-10-19 18:59: Horizon 01, MAE: 11.978820, RMSE: 19.893122, MAPE: 8.010147%
+2026-10-19 18:59: Horizon 02, MAE: 12.455697, RMSE: 21.067091, MAPE: 8.217312%
+2026-10-19 18:59: Horizon 03, MAE: 12.947705, RMSE: 22.046490, MAPE: 8.605572%
+2026-10-19 18:59: Horizon 04, MAE: 13.273881, RMSE: 22.872871, MAPE: 8.855186%
+2026-10-19 18:59: Horizon 05, MAE: 13.617519, RMSE: 23.532000, MAPE: 9.246096%
+2026-10-19 18:59: Horizon 06, MAE: 13.881396, RMSE: 24.153168, MAPE: 9.407614%
+2026-10-19 18:59: Horizon 07, MAE: 14.106011, RMSE: 24.635479, MAPE: 9.567074%
+2026-10-19 18:59: Horizon 08, MAE: 14.354027, RMSE: 25.013264, MAPE: 9.789218%
+2026-10-19 18:59: Horizon 09, MAE: 14.544379, RMSE: 25.363152, MAPE: 9.917779%
+2026-10-19 18:59: Horizon 10, MAE: 14.694681, RMSE: 25.669775, MAPE: 10.059808%
+2026-10-19 18:59: Horizon 11, MAE: 14.951059, RMSE: 26.016108, MAPE: 10.406198%
+2026-10-19 18:59: Horizon 12, MAE: 15.208480, RMSE: 26.365705, MAPE: 10.488356%
+2026-10-19 18:59: Average Horizon, MAE: 13.834472, RMSE: 23.966454, MAPE: 9.380860%
+***************Inference Time: 1.0774 secs/epoch***************

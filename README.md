@@ -30,6 +30,8 @@
 
 15.阅读并复现了TimeFilter: Patch-Specific Spatial-Temporal Graph Filtration  for Time Series Forecasting，**这篇论文最重要的贡献不是简单引入图神经网络，而是解决多变量时间序列中“有用关联被忽略、无用关联被引入、变量关联随时间动态变化”的问题。**作者提出 **TimeFilter（ICML 2025）**，通过 **Patching 构建细粒度时空图节点、kNN 建立候选关联、MoE 与 Top-p 路由动态过滤时间和跨变量依赖，并利用 GNN 聚合有效关系**实现预测，为森林火灾研究中的**多源数据要素结构化表征和动态驱动关系学习**提供重要启发，但尚未直接解决**不同驱动因素有效历史窗口的逐样本自适应选择，以及普通负样本、困难负样本和标签不确定样本的差异化学习**问题。
 
+16.阅读并复现了GRAPH NEURAL NETWORKS FOR MULTIVARIATE TIME-SERIES FORECASTING VIA LEARNING HIERARCHICAL SPATIOTEMPORAL DEPENDENCIES，# HSDGNN 一句话总结**这篇论文最重要的贡献不是简单使用图神经网络，而是解决多变量时间序列中“变量内部属性依赖被忽略、变量间关系随时间变化却缺少充分建模”的问题。**作者提出 **HSDGNN（Engineering Applications of Artificial Intelligence，2025）**，通过**变量—属性两层图结构、属性级与变量级图卷积、GRU 时间特征学习、动态拓扑生成和第二个 GRU 对动态图融合状态的时间建模**提高预测表现，为森林火灾研究中**多源数据要素的分层结构化表示和时变关联学习**提供重要启发。
+
 工程实践：
 
 ​	本次工程实践主要完成了一个基于 min-DALLE 的 AI 图像生成系统。在实践过程中，我先从 min-DALLE 的基本生成流程入手，了解了文本提示词经过分词、编码后，如何通过模型生成图像 Token，再利用 VQGAN 将这些 Token 还原成最终图像。通过对 `min-DALLE.py` 和 Notebook 代码的运行和分析，我对文本生成图像模型的基本工作过程有了比较直观的认识。

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+experiments/
+data/*
+!data/README.md
+*.tar.gz
+*.zip
+
