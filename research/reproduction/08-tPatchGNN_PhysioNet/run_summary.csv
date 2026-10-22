@@ -1,0 +1,6 @@
+﻿run,epochs,best_epoch_zero_based,test_mse,test_mae,sum_epoch_seconds
+A_smoke,1,0,0.00911,0.05563,10.82
+seed1,27,16,0.00499,0.03742,258.48
+seed2,29,18,0.00509,0.03879,272.42
+seed3,47,36,0.00507,0.03731,425.86
+wo_transformer_seed1,29,18,0.00506,0.03879,248.48

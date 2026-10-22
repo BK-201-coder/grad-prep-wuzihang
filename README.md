@@ -32,6 +32,8 @@
 
 16.阅读并复现了GRAPH NEURAL NETWORKS FOR MULTIVARIATE TIME-SERIES FORECASTING VIA LEARNING HIERARCHICAL SPATIOTEMPORAL DEPENDENCIES，# HSDGNN 一句话总结**这篇论文最重要的贡献不是简单使用图神经网络，而是解决多变量时间序列中“变量内部属性依赖被忽略、变量间关系随时间变化却缺少充分建模”的问题。**作者提出 **HSDGNN（Engineering Applications of Artificial Intelligence，2025）**，通过**变量—属性两层图结构、属性级与变量级图卷积、GRU 时间特征学习、动态拓扑生成和第二个 GRU 对动态图融合状态的时间建模**提高预测表现，为森林火灾研究中**多源数据要素的分层结构化表示和时变关联学习**提供重要启发。
 
+17.阅读了CanadaFireSat: Toward high-resolution wildfire  forecasting with multiple modalities，**这篇论文最重要的贡献不是提出新的CNN或Transformer，而是解决森林火灾预测中“缺少高分辨率多模态标准数据、卫星影像与环境历史难以统一利用，以及常规评估难以揭示困难负样本问题”的不足。**作者提出 **CanadaFireSat（ISPRS Journal of Photogrammetry and Remote Sensing，2026）**，整合 **Sentinel-2多时相影像、MODIS植被数据、ERA5-Land气象数据和CEMS火灾天气指标**，构建**100米空间分辨率、未来8天火灾发生预测**基准，并通过 **ResNet/ViT＋ConvLSTM/LSTM的后期多模态融合**验证互补价值，以及通过 **Test Hard 的FWI匹配困难负样本测试**揭示点火条件难以建模的问题。
+
 工程实践：
 
 ​	本次工程实践主要完成了一个基于 min-DALLE 的 AI 图像生成系统。在实践过程中，我先从 min-DALLE 的基本生成流程入手，了解了文本提示词经过分词、编码后，如何通过模型生成图像 Token，再利用 VQGAN 将这些 Token 还原成最终图像。通过对 `min-DALLE.py` 和 Notebook 代码的运行和分析，我对文本生成图像模型的基本工作过程有了比较直观的认识。

@@ -1,0 +1,65 @@
+{
+  "runs": {
+    "A_smoke": {
+      "epochs": 1,
+      "best_epoch_zero_based": 0,
+      "test_mse": 0.00911,
+      "test_mae": 0.05563,
+      "sum_epoch_seconds": 10.82
+    },
+    "seed1": {
+      "epochs": 27,
+      "best_epoch_zero_based": 16,
+      "test_mse": 0.00499,
+      "test_mae": 0.03742,
+      "sum_epoch_seconds": 258.48
+    },
+    "seed2": {
+      "epochs": 29,
+      "best_epoch_zero_based": 18,
+      "test_mse": 0.00509,
+      "test_mae": 0.03879,
+      "sum_epoch_seconds": 272.42
+    },
+    "seed3": {
+      "epochs": 47,
+      "best_epoch_zero_based": 36,
+      "test_mse": 0.00507,
+      "test_mae": 0.03731,
+      "sum_epoch_seconds": 425.86
+    },
+    "wo_transformer_seed1": {
+      "epochs": 29,
+      "best_epoch_zero_based": 18,
+      "test_mse": 0.00506,
+      "test_mae": 0.03879,
+      "sum_epoch_seconds": 248.48
+    }
+  },
+  "complete_seed_statistics": {
+    "test_mse": {
+      "mean": 0.00505,
+      "sample_std": 5.2915026221291954e-05,
+      "n": 3
+    },
+    "test_mae": {
+      "mean": 0.03784,
+      "sample_std": 0.0008245604889879188,
+      "n": 3
+    }
+  },
+  "paper": {
+    "complete": {
+      "mse": 0.00498,
+      "mse_std": 8e-05,
+      "mae": 0.0372,
+      "mae_std": 0.0003
+    },
+    "wo_transformer": {
+      "mse": 0.0051,
+      "mse_std": 0.00012,
+      "mae": 0.0383,
+      "mae_std": 0.0007
+    }
+  }
+}

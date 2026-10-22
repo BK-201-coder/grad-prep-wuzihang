@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+run_logs/
+source/tPatchGNN/logs/
+source/tPatchGNN_wo_transformer/logs/
+source/data/physionet/*
+!source/data/physionet/.gitkeep
+*.ckpt
