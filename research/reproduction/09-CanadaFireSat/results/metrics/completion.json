@@ -1,0 +1,21 @@
+{
+  "elapsed_seconds": 1975.8785531520844,
+  "best_epoch": 11,
+  "official": {
+    "AP": 0.22584947183143997,
+    "fire_F1_at_0.5": 0.2507348481313862,
+    "fire_precision_at_0.5": 0.17669494311830078,
+    "fire_recall_at_0.5": 0.4315772566655959,
+    "positive_cell_fraction": 0.07195358727810651,
+    "cells": 86528
+  },
+  "retrained": {
+    "AP": 0.146043407884212,
+    "fire_F1_at_0.5": 0.24763076923076924,
+    "fire_precision_at_0.5": 0.1462251809645629,
+    "fire_recall_at_0.5": 0.8079023450048185,
+    "positive_cell_fraction": 0.07195358727810651,
+    "cells": 86528
+  },
+  "scope": "small Alberta validation subset, not national benchmark"
+}

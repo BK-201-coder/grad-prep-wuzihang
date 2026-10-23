@@ -1,0 +1,5 @@
+{
+  "repo_id": "timm/resnet50.a1_in1k",
+  "revision": "767268603ca0cb0bfe326fa87277f19c419566ef",
+  "download_method": "standard HTTP, HF_HUB_DISABLE_XET=1"
+}

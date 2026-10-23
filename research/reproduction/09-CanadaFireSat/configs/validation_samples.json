@@ -1,0 +1,1026 @@
+[
+  {
+    "row": 2,
+    "region": "Alberta",
+    "tile_id": 3409,
+    "file_id": "POS",
+    "date": "2022-04-23 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 10,
+    "region": "Alberta",
+    "tile_id": 15154,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 11,
+    "region": "Alberta",
+    "tile_id": 16007,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 14,
+    "region": "Alberta",
+    "tile_id": 16447,
+    "file_id": "POS",
+    "date": "2022-05-09 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 15,
+    "region": "Alberta",
+    "tile_id": 16600,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 16,
+    "region": "Alberta",
+    "tile_id": 16601,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 18,
+    "region": "Alberta",
+    "tile_id": 16758,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 19,
+    "region": "Alberta",
+    "tile_id": 16759,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 20,
+    "region": "Alberta",
+    "tile_id": 16760,
+    "file_id": "POS",
+    "date": "2022-05-17 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 24,
+    "region": "Alberta",
+    "tile_id": 19044,
+    "file_id": "POS",
+    "date": "2022-10-08 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 26,
+    "region": "Alberta",
+    "tile_id": 19654,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 33,
+    "region": "Alberta",
+    "tile_id": 20426,
+    "file_id": "POS",
+    "date": "2022-07-04 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 35,
+    "region": "Alberta",
+    "tile_id": 20846,
+    "file_id": "POS",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 37,
+    "region": "Alberta",
+    "tile_id": 22335,
+    "file_id": "POS",
+    "date": "2022-06-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 38,
+    "region": "Alberta",
+    "tile_id": 22485,
+    "file_id": "POS",
+    "date": "2022-06-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 39,
+    "region": "Alberta",
+    "tile_id": 22782,
+    "file_id": "POS",
+    "date": "2022-05-17 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 42,
+    "region": "Alberta",
+    "tile_id": 25624,
+    "file_id": "POS",
+    "date": "2022-09-22 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 43,
+    "region": "Alberta",
+    "tile_id": 26466,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 46,
+    "region": "Alberta",
+    "tile_id": 26688,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 48,
+    "region": "Alberta",
+    "tile_id": 26691,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 49,
+    "region": "Alberta",
+    "tile_id": 26933,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 57,
+    "region": "Alberta",
+    "tile_id": 27454,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 59,
+    "region": "Alberta",
+    "tile_id": 27456,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 62,
+    "region": "Alberta",
+    "tile_id": 27732,
+    "file_id": "POS",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 67,
+    "region": "Alberta",
+    "tile_id": 28298,
+    "file_id": "POS",
+    "date": "2022-05-01 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 74,
+    "region": "Alberta",
+    "tile_id": 30401,
+    "file_id": "POS",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 77,
+    "region": "Alberta",
+    "tile_id": 31812,
+    "file_id": "POS",
+    "date": "2022-04-15 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 81,
+    "region": "Alberta",
+    "tile_id": 65302,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 82,
+    "region": "Alberta",
+    "tile_id": 65388,
+    "file_id": "POS",
+    "date": "2022-08-21 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 83,
+    "region": "Alberta",
+    "tile_id": 65396,
+    "file_id": "POS",
+    "date": "2022-08-21 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 85,
+    "region": "Alberta",
+    "tile_id": 65519,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 86,
+    "region": "Alberta",
+    "tile_id": 65520,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 91,
+    "region": "Alberta",
+    "tile_id": 66042,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 92,
+    "region": "Alberta",
+    "tile_id": 66044,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 94,
+    "region": "Alberta",
+    "tile_id": 66048,
+    "file_id": "POS",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 95,
+    "region": "Alberta",
+    "tile_id": 66050,
+    "file_id": "POS",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 97,
+    "region": "Alberta",
+    "tile_id": 66173,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 103,
+    "region": "Alberta",
+    "tile_id": 66262,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 104,
+    "region": "Alberta",
+    "tile_id": 66264,
+    "file_id": "POS",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 108,
+    "region": "Alberta",
+    "tile_id": 66477,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 112,
+    "region": "Alberta",
+    "tile_id": 66482,
+    "file_id": "POS",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 117,
+    "region": "Alberta",
+    "tile_id": 66694,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 119,
+    "region": "Alberta",
+    "tile_id": 66696,
+    "file_id": "POS",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 120,
+    "region": "Alberta",
+    "tile_id": 66809,
+    "file_id": "POS",
+    "date": "2022-06-18 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 122,
+    "region": "Alberta",
+    "tile_id": 66825,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 123,
+    "region": "Alberta",
+    "tile_id": 66844,
+    "file_id": "POS",
+    "date": "2022-07-04 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 124,
+    "region": "Alberta",
+    "tile_id": 66850,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 132,
+    "region": "Alberta",
+    "tile_id": 67009,
+    "file_id": "POS",
+    "date": "2022-06-18 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 134,
+    "region": "Alberta",
+    "tile_id": 67028,
+    "file_id": "POS",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 135,
+    "region": "Alberta",
+    "tile_id": 67043,
+    "file_id": "POS",
+    "date": "2022-07-04 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 136,
+    "region": "Alberta",
+    "tile_id": 67098,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 137,
+    "region": "Alberta",
+    "tile_id": 67211,
+    "file_id": "POS",
+    "date": "2022-06-18 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 139,
+    "region": "Alberta",
+    "tile_id": 67235,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 142,
+    "region": "Alberta",
+    "tile_id": 67418,
+    "file_id": "POS",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 144,
+    "region": "Alberta",
+    "tile_id": 67791,
+    "file_id": "POS",
+    "date": "2022-07-12 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 145,
+    "region": "Alberta",
+    "tile_id": 175131,
+    "file_id": "NEG",
+    "date": "2022-11-01 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 146,
+    "region": "Alberta",
+    "tile_id": 175398,
+    "file_id": "NEG",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 149,
+    "region": "Alberta",
+    "tile_id": 175816,
+    "file_id": "NEG",
+    "date": "2022-06-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 152,
+    "region": "Alberta",
+    "tile_id": 176899,
+    "file_id": "NEG",
+    "date": "2022-07-28 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 158,
+    "region": "Alberta",
+    "tile_id": 177539,
+    "file_id": "NEG",
+    "date": "2022-02-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 159,
+    "region": "Alberta",
+    "tile_id": 177540,
+    "file_id": "NEG",
+    "date": "2022-02-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 160,
+    "region": "Alberta",
+    "tile_id": 177541,
+    "file_id": "NEG",
+    "date": "2022-12-11 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 164,
+    "region": "Alberta",
+    "tile_id": 177546,
+    "file_id": "NEG",
+    "date": "2022-07-20 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 166,
+    "region": "Alberta",
+    "tile_id": 177549,
+    "file_id": "NEG",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 168,
+    "region": "Alberta",
+    "tile_id": 177554,
+    "file_id": "NEG",
+    "date": "2022-03-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 170,
+    "region": "Alberta",
+    "tile_id": 177557,
+    "file_id": "NEG",
+    "date": "2022-10-08 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 171,
+    "region": "Alberta",
+    "tile_id": 177559,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 172,
+    "region": "Alberta",
+    "tile_id": 177560,
+    "file_id": "NEG",
+    "date": "2022-03-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 176,
+    "region": "Alberta",
+    "tile_id": 177568,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 178,
+    "region": "Alberta",
+    "tile_id": 177570,
+    "file_id": "NEG",
+    "date": "2022-08-13 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 179,
+    "region": "Alberta",
+    "tile_id": 177571,
+    "file_id": "NEG",
+    "date": "2022-10-16 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 180,
+    "region": "Alberta",
+    "tile_id": 177572,
+    "file_id": "NEG",
+    "date": "2022-02-18 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 181,
+    "region": "Alberta",
+    "tile_id": 177574,
+    "file_id": "NEG",
+    "date": "2022-12-11 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 182,
+    "region": "Alberta",
+    "tile_id": 177577,
+    "file_id": "NEG",
+    "date": "2022-10-24 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 183,
+    "region": "Alberta",
+    "tile_id": 177578,
+    "file_id": "NEG",
+    "date": "2022-11-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 184,
+    "region": "Alberta",
+    "tile_id": 177579,
+    "file_id": "NEG",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 185,
+    "region": "Alberta",
+    "tile_id": 177582,
+    "file_id": "NEG",
+    "date": "2022-10-24 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 190,
+    "region": "Alberta",
+    "tile_id": 177589,
+    "file_id": "NEG",
+    "date": "2022-10-24 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 191,
+    "region": "Alberta",
+    "tile_id": 177590,
+    "file_id": "NEG",
+    "date": "2022-02-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 192,
+    "region": "Alberta",
+    "tile_id": 177592,
+    "file_id": "NEG",
+    "date": "2022-02-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 193,
+    "region": "Alberta",
+    "tile_id": 177593,
+    "file_id": "NEG",
+    "date": "2022-09-22 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 194,
+    "region": "Alberta",
+    "tile_id": 177595,
+    "file_id": "NEG",
+    "date": "2022-07-04 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 195,
+    "region": "Alberta",
+    "tile_id": 177597,
+    "file_id": "NEG",
+    "date": "2022-04-15 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 196,
+    "region": "Alberta",
+    "tile_id": 177598,
+    "file_id": "NEG",
+    "date": "2022-09-14 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 202,
+    "region": "Alberta",
+    "tile_id": 177605,
+    "file_id": "NEG",
+    "date": "2022-12-03 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 204,
+    "region": "Alberta",
+    "tile_id": 177608,
+    "file_id": "NEG",
+    "date": "2022-10-08 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 205,
+    "region": "Alberta",
+    "tile_id": 177609,
+    "file_id": "NEG",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 206,
+    "region": "Alberta",
+    "tile_id": 177610,
+    "file_id": "NEG",
+    "date": "2022-11-09 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 208,
+    "region": "Alberta",
+    "tile_id": 177612,
+    "file_id": "NEG",
+    "date": "2022-02-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 210,
+    "region": "Alberta",
+    "tile_id": 177614,
+    "file_id": "NEG",
+    "date": "2022-09-22 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 211,
+    "region": "Alberta",
+    "tile_id": 177615,
+    "file_id": "NEG",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 223,
+    "region": "Alberta",
+    "tile_id": 177633,
+    "file_id": "NEG",
+    "date": "2022-08-21 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 224,
+    "region": "Alberta",
+    "tile_id": 177634,
+    "file_id": "NEG",
+    "date": "2022-03-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 225,
+    "region": "Alberta",
+    "tile_id": 177635,
+    "file_id": "NEG",
+    "date": "2022-10-16 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 227,
+    "region": "Alberta",
+    "tile_id": 177638,
+    "file_id": "NEG",
+    "date": "2022-11-01 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 228,
+    "region": "Alberta",
+    "tile_id": 177639,
+    "file_id": "NEG",
+    "date": "2022-11-17 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 229,
+    "region": "Alberta",
+    "tile_id": 177640,
+    "file_id": "NEG",
+    "date": "2022-04-07 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 231,
+    "region": "Alberta",
+    "tile_id": 177642,
+    "file_id": "NEG",
+    "date": "2022-03-06 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 232,
+    "region": "Alberta",
+    "tile_id": 177643,
+    "file_id": "NEG",
+    "date": "2022-05-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 234,
+    "region": "Alberta",
+    "tile_id": 177645,
+    "file_id": "NEG",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 238,
+    "region": "Alberta",
+    "tile_id": 178239,
+    "file_id": "NEG",
+    "date": "2022-10-24 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 240,
+    "region": "Alberta",
+    "tile_id": 178242,
+    "file_id": "NEG",
+    "date": "2022-04-23 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 241,
+    "region": "Alberta",
+    "tile_id": 178243,
+    "file_id": "NEG",
+    "date": "2022-07-28 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 243,
+    "region": "Alberta",
+    "tile_id": 178245,
+    "file_id": "NEG",
+    "date": "2022-05-17 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 246,
+    "region": "Alberta",
+    "tile_id": 178249,
+    "file_id": "NEG",
+    "date": "2022-11-25 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 250,
+    "region": "Alberta",
+    "tile_id": 178255,
+    "file_id": "NEG",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 251,
+    "region": "Alberta",
+    "tile_id": 178256,
+    "file_id": "NEG",
+    "date": "2022-05-01 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 252,
+    "region": "Alberta",
+    "tile_id": 178257,
+    "file_id": "NEG",
+    "date": "2022-08-21 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 258,
+    "region": "Alberta",
+    "tile_id": 178268,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 262,
+    "region": "Alberta",
+    "tile_id": 178272,
+    "file_id": "NEG",
+    "date": "2022-04-23 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 265,
+    "region": "Alberta",
+    "tile_id": 178275,
+    "file_id": "NEG",
+    "date": "2022-09-22 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 266,
+    "region": "Alberta",
+    "tile_id": 178276,
+    "file_id": "NEG",
+    "date": "2022-06-10 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 267,
+    "region": "Alberta",
+    "tile_id": 178277,
+    "file_id": "NEG",
+    "date": "2022-07-04 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 272,
+    "region": "Alberta",
+    "tile_id": 178283,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 273,
+    "region": "Alberta",
+    "tile_id": 178284,
+    "file_id": "NEG",
+    "date": "2022-10-24 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 275,
+    "region": "Alberta",
+    "tile_id": 178286,
+    "file_id": "NEG",
+    "date": "2022-11-17 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 276,
+    "region": "Alberta",
+    "tile_id": 178287,
+    "file_id": "NEG",
+    "date": "2022-10-16 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 281,
+    "region": "Alberta",
+    "tile_id": 178292,
+    "file_id": "NEG",
+    "date": "2022-11-09 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 283,
+    "region": "Alberta",
+    "tile_id": 178295,
+    "file_id": "NEG",
+    "date": "2022-03-22 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 285,
+    "region": "Alberta",
+    "tile_id": 178299,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 288,
+    "region": "Alberta",
+    "tile_id": 178303,
+    "file_id": "NEG",
+    "date": "2022-06-02 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 291,
+    "region": "Alberta",
+    "tile_id": 178307,
+    "file_id": "NEG",
+    "date": "2022-05-01 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 295,
+    "region": "Alberta",
+    "tile_id": 178313,
+    "file_id": "NEG",
+    "date": "2022-06-26 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 296,
+    "region": "Alberta",
+    "tile_id": 178314,
+    "file_id": "NEG",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 297,
+    "region": "Alberta",
+    "tile_id": 178315,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 300,
+    "region": "Alberta",
+    "tile_id": 178320,
+    "file_id": "NEG",
+    "date": "2022-07-28 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 309,
+    "region": "Alberta",
+    "tile_id": 181459,
+    "file_id": "NEG",
+    "date": "2022-08-29 00:00:00",
+    "year": 2022
+  },
+  {
+    "row": 311,
+    "region": "Alberta",
+    "tile_id": 181461,
+    "file_id": "NEG",
+    "date": "2022-09-30 00:00:00",
+    "year": 2022
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "File": "best.pt",
+    "SHA256": "b36158929066435511e4aeadaa3ff2f0dd95cbe503f8480fe1282dea974415e9",
+    "Verified": true,
+    "Bytes": 209078212
+  },
+  {
+    "File": "last.pt",
+    "SHA256": "d6a4d83899c6bd6351eb34f87324b9d5fdf1ea2ea418552629fd484a74530332",
+    "Verified": true,
+    "Bytes": 209078212
+  }
+]

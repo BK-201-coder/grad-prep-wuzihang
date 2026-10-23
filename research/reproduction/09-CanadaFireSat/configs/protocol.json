@@ -1,0 +1,40 @@
+{
+  "train": {
+    "samples": 512,
+    "classes": {
+      "POS": 187,
+      "NEG": 325
+    },
+    "years": {
+      "2018": 72,
+      "2017": 86,
+      "2016": 49,
+      "2019": 217,
+      "2021": 50,
+      "2020": 38
+    }
+  },
+  "validation": {
+    "samples": 128,
+    "classes": {
+      "POS": 55,
+      "NEG": 73
+    },
+    "years": {
+      "2022": 128
+    }
+  },
+  "batch_size": 4,
+  "epochs": 20,
+  "training": "ImageNet initialized; not fine-tuned from official wildfire checkpoint",
+  "evaluation": "Alberta validation subset; center crop 260 -> 26; latest 5 images; threshold 0.5",
+  "loss": "official combined_dice_ce",
+  "seed": 42,
+  "precision": "float32",
+  "normalization": "author supplied; fitting population not independently verified",
+  "metric": "pixel-pooled sklearn AP and fire F1; no national-table equivalence claimed",
+  "loader_adaptation": "retain fwi and date; read only required columns; reuse official adapters",
+  "code_commit": "18ae64336b33167c52e30c40c76892bf950379a7",
+  "torch": "2.1.2+cu118",
+  "gpu": "NVIDIA GeForce RTX 4090 D"
+}

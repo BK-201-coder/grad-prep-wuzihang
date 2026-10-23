@@ -1,0 +1,13 @@
+{
+  "official_repository": "https://github.com/eceo-epfl/CanadaFireSat-Model",
+  "official_commit": "18ae64336b33167c52e30c40c76892bf950379a7",
+  "submodule_repository": "https://github.com/hugoporta/DeepSatModels",
+  "submodule_commit": "0a6a477e230aa05666489cf499f8aa03b530edf7",
+  "source": "actual successful-run source snapshot in full package",
+  "modifications": [
+    "SMP use_norm keyword compatibility patch already applied",
+    "wrapper reads provenance JSON instead of .git",
+    "download wrapper reads fixed manifest instead of current main"
+  ],
+  "scope": "Alberta 512 train / 128 validation, 20 epochs; not national benchmark"
+}

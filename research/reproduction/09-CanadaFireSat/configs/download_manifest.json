@@ -1,0 +1,210 @@
+{
+  "dataset": "EPFL-ECEO/CanadaFireSat",
+  "dataset_revision": "6738cfb809987504e6ae26c36cd663464a03bda2",
+  "model": "EPFL-ECEO/canadafiresat-multi-resnet-50",
+  "model_revision": "2c96584249a44164fe6358108ebf31bab4b525a1",
+  "download_endpoint": "https://huggingface.co",
+  "total_bytes": 5865865888,
+  "files": [
+    {
+      "local": "data/Alberta/train-00000-of-00111.parquet",
+      "size": 339948450,
+      "sha256": "8366c0efabdb372f993c2ed414314013bdc0d5e50844e53d8d947816c27e3b77",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00000-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00010-of-00111.parquet",
+      "size": 378277138,
+      "sha256": "51f422009694db2a0f8c389fdcfe3f311e7dd36eb55ab62098ccf97ad33710b5",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00010-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00020-of-00111.parquet",
+      "size": 476844403,
+      "sha256": "7c23f0bfa95b11916c3572236f31b46dfcd3d0a5486d2465ec85ffd4cb918009",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00020-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00030-of-00111.parquet",
+      "size": 347844315,
+      "sha256": "ba0bc5522c23c2d0c1119d7fce9cfb9874718c5f1775575ea2d423aa84372669",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00030-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00040-of-00111.parquet",
+      "size": 265499874,
+      "sha256": "31b3573da4acbe87ae73a57d97725c754c0daf5432a476876a9fc00185fa7065",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00040-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00050-of-00111.parquet",
+      "size": 257275174,
+      "sha256": "a8922a4a63be84fd9051f7410090a1a18b22c13a9f9bd96059c7d2ace0b2802c",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00050-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00060-of-00111.parquet",
+      "size": 369873047,
+      "sha256": "f77b0abc5f3afabe5ecf39012306da132ac69290f318875e0f83cd48c8bfe262",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00060-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00070-of-00111.parquet",
+      "size": 346441065,
+      "sha256": "7dc8106a6bb4aef598fc6dc5ec8df2aa2f3f76f911f6ebe4106cd86bbdced5f2",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00070-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00080-of-00111.parquet",
+      "size": 350517769,
+      "sha256": "d83827769ca4e71823bc8b3195eae874de6c8575b03cf2efa21c0887606f8e3a",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00080-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00090-of-00111.parquet",
+      "size": 381622355,
+      "sha256": "7d2af50ad2184c6972f7f2c7657514250cd26b7e74a410d86d8ec3170da4a127",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00090-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00100-of-00111.parquet",
+      "size": 336225822,
+      "sha256": "dae00860132f3a3203a6c58f9e46710182142eab35287c7a81c1139f9af99a0b",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00100-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/train-00110-of-00111.parquet",
+      "size": 391068649,
+      "sha256": "e888ce375dbd50496d299543331d30ee31be39cc1a10e2565740a1519aa67c64",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/train-00110-of-00111.parquet"
+    },
+    {
+      "local": "data/Alberta/validation-00000-of-00022.parquet",
+      "size": 355953150,
+      "sha256": "a54219aa1b7a85cacd2efbcc1cdc2788e78cd2b9f627e89447fa7ab65b921d18",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/validation-00000-of-00022.parquet"
+    },
+    {
+      "local": "data/Alberta/validation-00007-of-00022.parquet",
+      "size": 379528419,
+      "sha256": "8575ee9e06ea998333d3ea66068e5be374eb9ab040826f93add925855793f6bc",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/validation-00007-of-00022.parquet"
+    },
+    {
+      "local": "data/Alberta/validation-00014-of-00022.parquet",
+      "size": 321617576,
+      "sha256": "abb5d722f0b4b4d5e476e2adaa37115f873be6d3b21583ed074d88a4a5044502",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/validation-00014-of-00022.parquet"
+    },
+    {
+      "local": "data/Alberta/validation-00021-of-00022.parquet",
+      "size": 358209116,
+      "sha256": "91e88ef710edd2849f9dce2bcc3a79427f88a41aa26bbf861569793266bc55ba",
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/Alberta/validation-00021-of-00022.parquet"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/cds_mean.json",
+      "size": 202,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/cds_mean.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/cds_std.json",
+      "size": 205,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/cds_std.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/era5_mean.json",
+      "size": 2233,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/era5_mean.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/era5_std.json",
+      "size": 2231,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/era5_std.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/modis11_mean.json",
+      "size": 116,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/modis11_mean.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/modis11_std.json",
+      "size": 118,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/modis11_std.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/modis13_15_mean.json",
+      "size": 119,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/modis13_15_mean.json"
+    },
+    {
+      "local": "data/metadata/SPA_ENV/modis13_15_std.json",
+      "size": 122,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/SPA_ENV/modis13_15_std.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/cds_mean.json",
+      "size": 201,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/cds_mean.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/cds_std.json",
+      "size": 202,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/cds_std.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/era5_mean.json",
+      "size": 2231,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/era5_mean.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/era5_std.json",
+      "size": 2233,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/era5_std.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/modis_mean.json",
+      "size": 237,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/modis_mean.json"
+    },
+    {
+      "local": "data/metadata/TAB_ENV/modis_std.json",
+      "size": 238,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/TAB_ENV/modis_std.json"
+    },
+    {
+      "local": "data/metadata/bands_mean.json",
+      "size": 332,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/bands_mean.json"
+    },
+    {
+      "local": "data/metadata/bands_std.json",
+      "size": 333,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/bands_std.json"
+    },
+    {
+      "local": "data/metadata/env_cols.json",
+      "size": 3209,
+      "url": "https://huggingface.co/datasets/EPFL-ECEO/CanadaFireSat/resolve/6738cfb809987504e6ae26c36cd663464a03bda2/metadata/env_cols.json"
+    },
+    {
+      "local": "checkpoints/official/README.md",
+      "size": 24,
+      "sha256": null,
+      "url": "https://huggingface.co/EPFL-ECEO/canadafiresat-multi-resnet-50/resolve/2c96584249a44164fe6358108ebf31bab4b525a1/README.md"
+    },
+    {
+      "local": "checkpoints/official/ResNet_MULTI.yaml",
+      "size": 2189,
+      "sha256": null,
+      "url": "https://huggingface.co/EPFL-ECEO/canadafiresat-multi-resnet-50/resolve/2c96584249a44164fe6358108ebf31bab4b525a1/ResNet_MULTI.yaml"
+    },
+    {
+      "local": "checkpoints/official/TabResNetConvLSTM-18-f1-0.51.ckpt",
+      "size": 209102791,
+      "sha256": "af5c359437386ee9329d9870716c2ca1ce13f03897535c0886d5a50c70736237",
+      "url": "https://huggingface.co/EPFL-ECEO/canadafiresat-multi-resnet-50/resolve/2c96584249a44164fe6358108ebf31bab4b525a1/TabResNetConvLSTM-18-f1-0.51.ckpt"
+    }
+  ],
+  "scope": "Alberta small-subset reproduction; official years retained; not national benchmark"
+}
